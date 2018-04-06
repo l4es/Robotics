@@ -1,0 +1,3 @@
+[submodule "hFramework"]
+	path = hFramework
+	url = git@github.com:husarion/hFramework.git
