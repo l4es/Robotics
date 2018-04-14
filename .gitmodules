@@ -1,3 +1,3 @@
 [submodule "hFramework"]
-	path = hFramework
+	path = HusarionCORE2/hFramework
 	url = git@github.com:husarion/hFramework.git
