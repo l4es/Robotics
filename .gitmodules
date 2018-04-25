@@ -52,26 +52,26 @@
 [submodule "RFCommunication/Libraries/libblepp"]
 	path = RFCommunication/Libraries/libblepp
 	url = https://github.com/edrosten/libblepp.git
-[submodule "UAV/MAVLink/qgroundcontrol"]
-	path = UAV/MAVLink/qgroundcontrol
+[submodule "UAV/Middlewares/MAVLink/qgroundcontrol"]
+	path = UAV/Middlewares/MAVLink/qgroundcontrol
 	url = https://github.com/mavlink/qgroundcontrol.git
-[submodule "UAV/MAVLink/mavlink"]
-	path = UAV/MAVLink/mavlink
+[submodule "UAV/Middlewares/MAVLink/mavlink"]
+	path = UAV/Middlewares/MAVLink/mavlink
 	url = https://github.com/mavlink/mavlink.git
-[submodule "UAV/MAVLink/c_library_v1"]
-	path = UAV/MAVLink/c_library_v1
+[submodule "UAV/Middlewares/MAVLink/c_library_v1"]
+	path = UAV/Middlewares/MAVLink/c_library_v1
 	url = https://github.com/mavlink/c_library_v1.git
-[submodule "UAV/MAVLink/mavlink-devguide"]
-	path = UAV/MAVLink/mavlink-devguide
+[submodule "UAV/Middlewares/MAVLink/mavlink-devguide"]
+	path = UAV/Middlewares/MAVLink/mavlink-devguide
 	url = https://github.com/mavlink/mavlink-devguide.git
-[submodule "UAV/MAVLink/qgc-dev-guide"]
-	path = UAV/MAVLink/qgc-dev-guide
+[submodule "UAV/Middlewares/MAVLink/qgc-dev-guide"]
+	path = UAV/Middlewares/MAVLink/qgc-dev-guide
 	url = https://github.com/mavlink/qgc-dev-guide.git
-[submodule "UAV/MAVLink/mavlink-ivy-interface"]
-	path = UAV/MAVLink/mavlink-ivy-interface
+[submodule "UAV/Middlewares/MAVLink/mavlink-ivy-interface"]
+	path = UAV/Middlewares/MAVLink/mavlink-ivy-interface
 	url = https://github.com/mavlink/mavlink-ivy-interface.git
-[submodule "UAV/MAVLink/c_uart_interface_example"]
-	path = UAV/MAVLink/c_uart_interface_example
+[submodule "UAV/Middlewares/MAVLink/c_uart_interface_example"]
+	path = UAV/Middlewares/MAVLink/c_uart_interface_example
 	url = https://github.com/mavlink/c_uart_interface_example.git
 [submodule "UAV/MatrixPilot"]
 	path = UAV/MatrixPilot
