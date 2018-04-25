@@ -1,9 +1,9 @@
 [submodule "hFramework"]
 	path = HusarionCORE2/hFramework
-	url = git@github.com:husarion/hFramework.git
+	url = https://github.com/husarion/hFramework.git
 [submodule "HusarionCORE2/hSensors"]
 	path = HusarionCORE2/hSensors
-	url = git@github.com:husarion/hSensors.git
+	url = https://github.com/husarion/hSensors.git
 [submodule "HusarionCORE2/modules"]
 	path = HusarionCORE2/modules
-	url = git@github.com:husarion/modules.git
+	url = https://github.com/husarion/modules.git
