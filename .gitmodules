@@ -124,3 +124,9 @@
 [submodule "UAV/Middlewares/MAVLink/c_library_v2"]
 	path = UAV/Middlewares/MAVLink/c_library_v2
 	url = https://github.com/mavlink/c_library_v2.git
+[submodule "UAV/Middlewares/eProsima/Fast-RTPS"]
+	path = UAV/Middlewares/eProsima/Fast-RTPS
+	url = https://github.com/eProsima/Fast-RTPS.git
+[submodule "UAV/Middlewares/eProsima/micro-RTPS"]
+	path = UAV/Middlewares/eProsima/micro-RTPS
+	url = https://github.com/eProsima/micro-RTPS.git
