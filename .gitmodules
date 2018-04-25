@@ -28,3 +28,18 @@
 [submodule "UAV/Paparazzi/paparazzi-hardware"]
 	path = UAV/Paparazzi/paparazzi-hardware
 	url = https://github.com/paparazzi/paparazzi-hardware.git
+[submodule "MotorControl/VESC/bldc-bootloader"]
+	path = MotorControl/VESC/bldc-bootloader
+	url = https://github.com/vedderb/bldc-bootloader.git
+[submodule "MotorControl/VESC/bldc"]
+	path = MotorControl/VESC/bldc
+	url = https://github.com/vedderb/bldc.git
+[submodule "MotorControl/VESC/bldc-tool"]
+	path = MotorControl/VESC/bldc-tool
+	url = https://github.com/vedderb/bldc-tool.git
+[submodule "MotorControl/VESC/bldc-logger"]
+	path = MotorControl/VESC/bldc-logger
+	url = https://github.com/vedderb/bldc-logger.git
+[submodule "MotorControl/VESC/bldc_uart_comm_stm32f4_discovery"]
+	path = MotorControl/VESC/bldc_uart_comm_stm32f4_discovery
+	url = https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery.git
