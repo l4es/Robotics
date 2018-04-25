@@ -52,27 +52,6 @@
 [submodule "RFCommunication/Libraries/libblepp"]
 	path = RFCommunication/Libraries/libblepp
 	url = https://github.com/edrosten/libblepp.git
-[submodule "UAV/Middlewares/MAVLink/qgroundcontrol"]
-	path = UAV/Middlewares/MAVLink/qgroundcontrol
-	url = https://github.com/mavlink/qgroundcontrol.git
-[submodule "UAV/Middlewares/MAVLink/mavlink"]
-	path = UAV/Middlewares/MAVLink/mavlink
-	url = https://github.com/mavlink/mavlink.git
-[submodule "UAV/Middlewares/MAVLink/c_library_v1"]
-	path = UAV/Middlewares/MAVLink/c_library_v1
-	url = https://github.com/mavlink/c_library_v1.git
-[submodule "UAV/Middlewares/MAVLink/mavlink-devguide"]
-	path = UAV/Middlewares/MAVLink/mavlink-devguide
-	url = https://github.com/mavlink/mavlink-devguide.git
-[submodule "UAV/Middlewares/MAVLink/qgc-dev-guide"]
-	path = UAV/Middlewares/MAVLink/qgc-dev-guide
-	url = https://github.com/mavlink/qgc-dev-guide.git
-[submodule "UAV/Middlewares/MAVLink/mavlink-ivy-interface"]
-	path = UAV/Middlewares/MAVLink/mavlink-ivy-interface
-	url = https://github.com/mavlink/mavlink-ivy-interface.git
-[submodule "UAV/Middlewares/MAVLink/c_uart_interface_example"]
-	path = UAV/Middlewares/MAVLink/c_uart_interface_example
-	url = https://github.com/mavlink/c_uart_interface_example.git
 [submodule "UAV/MatrixPilot"]
 	path = UAV/MatrixPilot
 	url = https://github.com/MatrixPilot/MatrixPilot.git
@@ -121,12 +100,3 @@
 [submodule "UAV/UAVCAN/dsdl"]
 	path = UAV/UAVCAN/dsdl
 	url = https://github.com/UAVCAN/dsdl.git
-[submodule "UAV/Middlewares/MAVLink/c_library_v2"]
-	path = UAV/Middlewares/MAVLink/c_library_v2
-	url = https://github.com/mavlink/c_library_v2.git
-[submodule "UAV/Middlewares/eProsima/Fast-RTPS"]
-	path = UAV/Middlewares/eProsima/Fast-RTPS
-	url = https://github.com/eProsima/Fast-RTPS.git
-[submodule "UAV/Middlewares/eProsima/micro-RTPS"]
-	path = UAV/Middlewares/eProsima/micro-RTPS
-	url = https://github.com/eProsima/micro-RTPS.git
