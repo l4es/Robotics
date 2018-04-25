@@ -100,3 +100,6 @@
 [submodule "UAV/UAVCAN/dsdl"]
 	path = UAV/UAVCAN/dsdl
 	url = https://github.com/UAVCAN/dsdl.git
+[submodule "UAV/LibrePilot"]
+	path = UAV/LibrePilot
+	url = https://github.com/librepilot/LibrePilot.git
