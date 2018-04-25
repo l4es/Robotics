@@ -46,3 +46,9 @@
 [submodule "UAV/QuadcopterSystem"]
 	path = UAV/QuadcopterSystem
 	url = https://github.com/vedderb/QuadcopterSystem.git
+[submodule "ComputerVision/Libraries/libcvd"]
+	path = ComputerVision/Libraries/libcvd
+	url = https://github.com/edrosten/libcvd.git
+[submodule "RFCommunication/Libraries/libblepp"]
+	path = RFCommunication/Libraries/libblepp
+	url = https://github.com/edrosten/libblepp.git
