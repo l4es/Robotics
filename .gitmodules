@@ -43,3 +43,6 @@
 [submodule "MotorControl/VESC/bldc_uart_comm_stm32f4_discovery"]
 	path = MotorControl/VESC/bldc_uart_comm_stm32f4_discovery
 	url = https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery.git
+[submodule "UAV/QuadcopterSystem"]
+	path = UAV/QuadcopterSystem
+	url = https://github.com/vedderb/QuadcopterSystem.git
