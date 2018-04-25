@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 39
+THUMB *
+aqv6.6.hzs
+.settings
+.cproject
+
+K 13
+svn:mergeinfo
+V 21
+/branches/maxp-dev:73
+END

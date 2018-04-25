@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 192
+logDump-np.c
+AQ_Ground_Tools.config
+AQ_Ground_Tools.creator
+AQ_Ground_Tools.creator.user
+AQ_Ground_Tools.files
+AQ_Ground_Tools.includes
+logdump.bat
+libgcc_s_dw2-1.dll
+logDump.exe
+plplot
+*.dll
+
+END

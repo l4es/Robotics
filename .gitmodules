@@ -136,3 +136,9 @@
 [submodule "MIDDLEWARE/MAVLink/qgc-dev-guide"]
 	path = MIDDLEWARE/MAVLink/qgc-dev-guide
 	url = https://github.com/mavlink/qgc-dev-guide.git
+[submodule "UAV/Autoquad/autoquad"]
+	path = UAV/Autoquad/autoquad
+	url = https://github.com/MJ666/autoquad.git
+[submodule "UAV/Autoquad/aq_flight_control"]
+	path = UAV/Autoquad/aq_flight_control
+	url = https://github.com/mpaperno/aq_flight_control.git

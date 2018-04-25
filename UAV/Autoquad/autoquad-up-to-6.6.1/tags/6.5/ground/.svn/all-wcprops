@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/3/tags/6.5/ground
+END
+stmbootloader.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/tags/6.5/ground/stmbootloader.c
+END
+logger.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/logger.c
+END
+serial.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/serial.c
+END
+telemetryDump.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/tags/6.5/ground/telemetryDump.c
+END
+stmbootloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/tags/6.5/ground/stmbootloader.h
+END
+serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/serial.h
+END
+logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/logger.h
+END
+telemetryDump.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/tags/6.5/ground/telemetryDump.h
+END
+loader.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/loader.c
+END
+logDump.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/3/tags/6.5/ground/logDump.c
+END
+batCal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/3/tags/6.5/ground/batCal.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3/tags/6.5/ground/Makefile
+END

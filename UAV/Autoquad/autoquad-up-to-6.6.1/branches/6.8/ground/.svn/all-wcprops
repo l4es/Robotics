@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/272/branches/6.8/ground
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/Makefile
+END
+logDump_mavlink.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/272/branches/6.8/ground/logDump_mavlink.h
+END
+telemetryDump.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/272/branches/6.8/ground/telemetryDump.c
+END
+l1_example.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/272/branches/6.8/ground/l1_example.xml
+END
+telemetryDump.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/272/branches/6.8/ground/telemetryDump.h
+END
+loader.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/loader.c
+END
+logDump.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/272/branches/6.8/ground/logDump.c
+END
+logDump.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/272/branches/6.8/ground/logDump.h
+END
+l1Tool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/272/branches/6.8/ground/l1Tool.cc
+END
+stmbootloader.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/272/branches/6.8/ground/stmbootloader.c
+END
+logger.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/logger.c
+END
+serial.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/serial.c
+END
+mot_mixes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/272/branches/6.8/ground/mot_mixes.xml
+END
+stmbootloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/272/branches/6.8/ground/stmbootloader.h
+END
+serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/serial.h
+END
+logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/272/branches/6.8/ground/logger.h
+END
+logDump_mavlink.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/272/branches/6.8/ground/logDump_mavlink.cpp
+END
+mot_mixes.bat
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/272/branches/6.8/ground/mot_mixes.bat
+END
+batCal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/272/branches/6.8/ground/batCal.cc
+END
+logDump_templates.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/272/branches/6.8/ground/logDump_templates.h
+END
