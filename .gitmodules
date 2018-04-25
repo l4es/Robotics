@@ -7,3 +7,24 @@
 [submodule "HusarionCORE2/modules"]
 	path = HusarionCORE2/modules
 	url = https://github.com/husarion/modules.git
+[submodule "UAV/Emlid/Navio2"]
+	path = UAV/Emlid/Navio2
+	url = https://github.com/emlid/Navio2.git
+[submodule "UAV/Emlid/Navio"]
+	path = UAV/Emlid/Navio
+	url = https://github.com/emlid/Navio.git
+[submodule "UAV/ArduPilot/ardupilot"]
+	path = UAV/ArduPilot/ardupilot
+	url = https://github.com/ArduPilot/ardupilot.git
+[submodule "UAV/ArduPilot/apm_planner"]
+	path = UAV/ArduPilot/apm_planner
+	url = https://github.com/ArduPilot/apm_planner.git
+[submodule "UAV/Paparazzi/paparazzi"]
+	path = UAV/Paparazzi/paparazzi
+	url = https://github.com/paparazzi/paparazzi.git
+[submodule "UAV/Paparazzi/pprzlink"]
+	path = UAV/Paparazzi/pprzlink
+	url = https://github.com/paparazzi/pprzlink.git
+[submodule "UAV/Paparazzi/paparazzi-hardware"]
+	path = UAV/Paparazzi/paparazzi-hardware
+	url = https://github.com/paparazzi/paparazzi-hardware.git
