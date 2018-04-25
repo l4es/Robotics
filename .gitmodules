@@ -103,3 +103,36 @@
 [submodule "UAV/LibrePilot"]
 	path = UAV/LibrePilot
 	url = https://github.com/librepilot/LibrePilot.git
+[submodule "MIDDLEWARE/drone-middleware"]
+	path = MIDDLEWARE/drone-middleware
+	url = https://github.com/gtoonstra/drone-middleware.git
+[submodule "MIDDLEWARE/eProsima/Fast-RTPS"]
+	path = MIDDLEWARE/eProsima/Fast-RTPS
+	url = https://github.com/eProsima/Fast-RTPS.git
+[submodule "MIDDLEWARE/eProsima/micro-RTPS"]
+	path = MIDDLEWARE/eProsima/micro-RTPS
+	url = https://github.com/eProsima/micro-RTPS.git
+[submodule "MIDDLEWARE/MAVLink/mavlink"]
+	path = MIDDLEWARE/MAVLink/mavlink
+	url = https://github.com/mavlink/mavlink.git
+[submodule "MIDDLEWARE/MAVLink/qgroundcontrol"]
+	path = MIDDLEWARE/MAVLink/qgroundcontrol
+	url = https://github.com/mavlink/qgroundcontrol.git
+[submodule "MIDDLEWARE/MAVLink/c_library_v1"]
+	path = MIDDLEWARE/MAVLink/c_library_v1
+	url = https://github.com/mavlink/c_library_v1.git
+[submodule "MIDDLEWARE/MAVLink/c_library_v2"]
+	path = MIDDLEWARE/MAVLink/c_library_v2
+	url = https://github.com/mavlink/c_library_v2.git
+[submodule "MIDDLEWARE/MAVLink/c_uart_interface_example"]
+	path = MIDDLEWARE/MAVLink/c_uart_interface_example
+	url = https://github.com/mavlink/c_uart_interface_example.git
+[submodule "MIDDLEWARE/MAVLink/mavlink-ivy-interface"]
+	path = MIDDLEWARE/MAVLink/mavlink-ivy-interface
+	url = https://github.com/mavlink/mavlink-ivy-interface.git
+[submodule "MIDDLEWARE/MAVLink/mavlink-devguide"]
+	path = MIDDLEWARE/MAVLink/mavlink-devguide
+	url = https://github.com/mavlink/mavlink-devguide.git
+[submodule "MIDDLEWARE/MAVLink/qgc-dev-guide"]
+	path = MIDDLEWARE/MAVLink/qgc-dev-guide
+	url = https://github.com/mavlink/qgc-dev-guide.git
