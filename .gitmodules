@@ -52,3 +52,72 @@
 [submodule "RFCommunication/Libraries/libblepp"]
 	path = RFCommunication/Libraries/libblepp
 	url = https://github.com/edrosten/libblepp.git
+[submodule "UAV/MAVLink/qgroundcontrol"]
+	path = UAV/MAVLink/qgroundcontrol
+	url = https://github.com/mavlink/qgroundcontrol.git
+[submodule "UAV/MAVLink/mavlink"]
+	path = UAV/MAVLink/mavlink
+	url = https://github.com/mavlink/mavlink.git
+[submodule "UAV/MAVLink/c_library_v1"]
+	path = UAV/MAVLink/c_library_v1
+	url = https://github.com/mavlink/c_library_v1.git
+[submodule "UAV/MAVLink/mavlink-devguide"]
+	path = UAV/MAVLink/mavlink-devguide
+	url = https://github.com/mavlink/mavlink-devguide.git
+[submodule "UAV/MAVLink/qgc-dev-guide"]
+	path = UAV/MAVLink/qgc-dev-guide
+	url = https://github.com/mavlink/qgc-dev-guide.git
+[submodule "UAV/MAVLink/mavlink-ivy-interface"]
+	path = UAV/MAVLink/mavlink-ivy-interface
+	url = https://github.com/mavlink/mavlink-ivy-interface.git
+[submodule "UAV/MAVLink/c_uart_interface_example"]
+	path = UAV/MAVLink/c_uart_interface_example
+	url = https://github.com/mavlink/c_uart_interface_example.git
+[submodule "UAV/MatrixPilot"]
+	path = UAV/MatrixPilot
+	url = https://github.com/MatrixPilot/MatrixPilot.git
+[submodule "UAV/OpenDroneMap"]
+	path = UAV/OpenDroneMap
+	url = https://github.com/OpenDroneMap/OpenDroneMap.git
+[submodule "UAV/PX4/Bootloader"]
+	path = UAV/PX4/Bootloader
+	url = https://github.com/PX4/Bootloader.git
+[submodule "UAV/PX4/Firmware"]
+	path = UAV/PX4/Firmware
+	url = https://github.com/PX4/Firmware.git
+[submodule "UAV/PX4/UAVCAN_Bootloaders"]
+	path = UAV/PX4/UAVCAN_Bootloaders
+	url = https://github.com/PX4/UAVCAN_Bootloaders.git
+[submodule "UAV/PX4/PX4NuttX"]
+	path = UAV/PX4/PX4NuttX
+	url = https://github.com/PX4/PX4NuttX.git
+[submodule "UAV/PX4/Matrix"]
+	path = UAV/PX4/Matrix
+	url = https://github.com/PX4/Matrix.git
+[submodule "UAV/PX4/DriverFramework"]
+	path = UAV/PX4/DriverFramework
+	url = https://github.com/PX4/DriverFramework.git
+[submodule "UAV/PX4/Toolchains"]
+	path = UAV/PX4/Toolchains
+	url = https://github.com/PX4/Toolchains.git
+[submodule "UAV/PX4/Devguide"]
+	path = UAV/PX4/Devguide
+	url = https://github.com/PX4/Devguide.git
+[submodule "UAV/PX4/Hardware"]
+	path = UAV/PX4/Hardware
+	url = https://github.com/PX4/Hardware.git
+[submodule "UAV/UAVCAN/libuavcan"]
+	path = UAV/UAVCAN/libuavcan
+	url = https://github.com/UAVCAN/libuavcan.git
+[submodule "UAV/UAVCAN/libcanard"]
+	path = UAV/UAVCAN/libcanard
+	url = https://github.com/UAVCAN/libcanard.git
+[submodule "UAV/UAVCAN/pyuavcan"]
+	path = UAV/UAVCAN/pyuavcan
+	url = https://github.com/UAVCAN/pyuavcan.git
+[submodule "UAV/UAVCAN/gui_tool"]
+	path = UAV/UAVCAN/gui_tool
+	url = https://github.com/UAVCAN/gui_tool.git
+[submodule "UAV/UAVCAN/dsdl"]
+	path = UAV/UAVCAN/dsdl
+	url = https://github.com/UAVCAN/dsdl.git
