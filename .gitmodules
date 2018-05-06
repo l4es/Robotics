@@ -142,3 +142,6 @@
 [submodule "UAV/Autoquad/aq_flight_control"]
 	path = UAV/Autoquad/aq_flight_control
 	url = https://github.com/mpaperno/aq_flight_control.git
+[submodule "UAV/OpenUAV-FW"]
+	path = UAV/OpenUAV-FW
+	url = https://github.com/Open-UAV/Firmware.git
