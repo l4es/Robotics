@@ -145,3 +145,15 @@
 [submodule "UAV/OpenUAV-FW"]
 	path = UAV/OpenUAV-FW
 	url = https://github.com/Open-UAV/Firmware.git
+[submodule "MIDDLEWARE/WPILibSuite/allwpilib"]
+	path = MIDDLEWARE/WPILibSuite/allwpilib
+	url = https://github.com/wpilibsuite/allwpilib.git
+[submodule "MIDDLEWARE/WPILibSuite/cscore"]
+	path = MIDDLEWARE/WPILibSuite/cscore
+	url = https://github.com/wpilibsuite/cscore.git
+[submodule "MIDDLEWARE/WPILibSuite/ntcore"]
+	path = MIDDLEWARE/WPILibSuite/ntcore
+	url = https://github.com/wpilibsuite/ntcore.git
+[submodule "MIDDLEWARE/WPILibSuite/wpiutil"]
+	path = MIDDLEWARE/WPILibSuite/wpiutil
+	url = https://github.com/wpilibsuite/wpiutil.git
