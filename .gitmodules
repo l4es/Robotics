@@ -157,3 +157,15 @@
 [submodule "MIDDLEWARE/WPILibSuite/wpiutil"]
 	path = MIDDLEWARE/WPILibSuite/wpiutil
 	url = https://github.com/wpilibsuite/wpiutil.git
+[submodule "VikingRobotics580/C-Style-Guide"]
+	path = VikingRobotics580/C-Style-Guide
+	url = https://github.com/VikingRobotics580/C-Style-Guide.git
+[submodule "VikingRobotics580/EventRobot"]
+	path = VikingRobotics580/EventRobot
+	url = https://github.com/VikingRobotics580/EventRobot.git
+[submodule "VikingRobotics580/RobotCode2016"]
+	path = VikingRobotics580/RobotCode2016
+	url = https://github.com/VikingRobotics580/RobotCode2016.git
+[submodule "IronPanthers/FRC-2015"]
+	path = IronPanthers/FRC-2015
+	url = https://github.com/Iron-Panthers/FRC-2015.git
