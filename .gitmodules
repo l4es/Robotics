@@ -169,3 +169,21 @@
 [submodule "IronPanthers/FRC-2015"]
 	path = IronPanthers/FRC-2015
 	url = https://github.com/Iron-Panthers/FRC-2015.git
+[submodule "Pollen-Robotics/luos"]
+	path = Pollen-Robotics/luos
+	url = https://github.com/pollen-robotics/luos.git
+[submodule "Pollen-Robotics/luos-drivers"]
+	path = Pollen-Robotics/luos-drivers
+	url = https://github.com/pollen-robotics/luos-drivers.git
+[submodule "Pollen-Robotics/robus"]
+	path = Pollen-Robotics/robus
+	url = https://github.com/pollen-robotics/robus.git
+[submodule "Pollen-Robotics/stm32f0"]
+	path = Pollen-Robotics/stm32f0
+	url = https://github.com/pollen-robotics/stm32f0.git
+[submodule "Pollen-Robotics/stm32-mockup-hal"]
+	path = Pollen-Robotics/stm32-mockup-hal
+	url = https://github.com/pollen-robotics/stm32-mockup-hal.git
+[submodule "Pollen-Robotics/robus-gate"]
+	path = Pollen-Robotics/robus-gate
+	url = https://github.com/pollen-robotics/robus-gate.git
