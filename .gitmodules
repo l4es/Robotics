@@ -187,3 +187,9 @@
 [submodule "Pollen-Robotics/robus-gate"]
 	path = Pollen-Robotics/robus-gate
 	url = https://github.com/pollen-robotics/robus-gate.git
+[submodule "Braun-Robotics/rust-lpc82x-hal"]
+	path = Braun-Robotics/rust-lpc82x-hal
+	url = https://github.com/braun-robotics/rust-lpc82x-hal.git
+[submodule "Braun-Robotics/rust-lpc82x"]
+	path = Braun-Robotics/rust-lpc82x
+	url = https://github.com/braun-robotics/rust-lpc82x.git
