@@ -193,3 +193,9 @@
 [submodule "Braun-Robotics/rust-lpc82x"]
 	path = Braun-Robotics/rust-lpc82x
 	url = https://github.com/braun-robotics/rust-lpc82x.git
+[submodule "BotBakery/wpirb"]
+	path = BotBakery/wpirb
+	url = https://github.com/althebaker43/wpirb.git
+[submodule "BotBakery/frc_cpputest_examples"]
+	path = BotBakery/frc_cpputest_examples
+	url = https://github.com/althebaker43/frc_cpputest_examples.git
