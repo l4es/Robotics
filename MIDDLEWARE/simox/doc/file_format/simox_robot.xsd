@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="Joint-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fixed"/>
+            <xs:enumeration value="revolute"/>
+            <xs:enumeration value="prismatic"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Coord-Location-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="joint"/>
+            <xs:enumeration value="VisualizationBBoxCenter"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="EEFActorCollision-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Actors"/>
+            <xs:enumeration value="Static"/>
+            <xs:enumeration value="All"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FileLocation-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="relative"/>
+            <xs:enumeration value="absolute"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Unit-Length-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="meter"/>
+            <xs:enumeration value="millimeter"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Unit-Time-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="s"/>
+            <xs:enumeration value="sec"/>
+            <xs:enumeration value="second"/>
+            <xs:enumeration value="min"/>
+            <xs:enumeration value="minute"/>
+            <xs:enumeration value="h"/>
+            <xs:enumeration value="hour"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Unit-Weight-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="kg"/>
+            <xs:enumeration value="t"/>
+            <xs:enumeration value="gram"/>
+            <xs:enumeration value="kilogram"/>
+            <xs:enumeration value="ton"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Unit-Angle-Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="rad"/>
+            <xs:enumeration value="radian"/>
+            <xs:enumeration value="deg"/>
+            <xs:enumeration value="degree"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Com-Type">
+        <xs:attribute name="location" type="Coord-Location-Type" default="joint"/>
+        <xs:attribute name="x"        type="xs:decimal" default="0"/>
+        <xs:attribute name="y"        type="xs:decimal" default="0"/>
+        <xs:attribute name="z"        type="xs:decimal" default="0"/>
+        <xs:attribute name="unit"     type="Unit-Length-Type" default="m"/>
+    </xs:complexType>
+
+    <xs:complexType name="Matrix3x3Row-Type">
+        <xs:attribute name="c1" type="xs:decimal" default="0"/>
+        <xs:attribute name="c2" type="xs:decimal" default="0"/>
+        <xs:attribute name="c3" type="xs:decimal" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="Matrix3x3-Type">
+        <xs:sequence>
+            <xs:element name="row1" type="Matrix3x3Row-Type" minOccurs="1"/>
+            <xs:element name="row2" type="Matrix3x3Row-Type" minOccurs="1"/>
+            <xs:element name="row3" type="Matrix3x3Row-Type" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InertiaMatrix-Type">
+        <xs:complexContent>
+            <xs:extension base="Matrix3x3-Type">
+                <xs:attribute name="unitsLength" type="Unit-Length-Type" default="m"/>
+                <xs:attribute name="unitsWeight" type="Unit-Weight-Type" default="kg"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Matrix4x4Row-Type">
+        <xs:attribute name="c1" type="xs:decimal" default="0"/>
+        <xs:attribute name="c2" type="xs:decimal" default="0"/>
+        <xs:attribute name="c3" type="xs:decimal" default="0"/>
+        <xs:attribute name="c4" type="xs:decimal" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="Matrix4x4-Type">
+        <xs:sequence>
+            <xs:element name="row1" type="Matrix4x4Row-Type" minOccurs="1"/>
+            <xs:element name="row2" type="Matrix4x4Row-Type" minOccurs="1"/>
+            <xs:element name="row3" type="Matrix4x4Row-Type" minOccurs="1"/>
+            <xs:element name="row4" type="Matrix4x4Row-Type" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="unitsLength" type="Unit-Length-Type" default="mm"/>
+    </xs:complexType>
+
+    <xs:complexType name="RollPitchYaw-Type">
+        <xs:attribute name="roll"       type="xs:decimal" use="required"/>
+        <xs:attribute name="pitch"      type="xs:decimal" use="required"/>
+        <xs:attribute name="yaw"        type="xs:decimal" use="required"/>
+        <xs:attribute name="unitsAngle" type="Unit-Angle-Type" default="radian"/>
+    </xs:complexType>
+
+    <xs:complexType name="Quaternion-Type">
+        <xs:attribute name="x" type="xs:decimal" use="required"/>
+        <xs:attribute name="y" type="xs:decimal" use="required"/>
+        <xs:attribute name="z" type="xs:decimal" use="required"/>
+        <xs:attribute name="w" type="xs:decimal" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Translation-Type">
+        <xs:attribute name="x"            type="xs:decimal" use="required"/>
+        <xs:attribute name="y"            type="xs:decimal" use="required"/>
+        <xs:attribute name="z"            type="xs:decimal" use="required"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="mm"/>
+    </xs:complexType>
+
+    <xs:complexType name="Velocity-Type">
+        <xs:attribute name="value"        type="xs:decimal" default="0"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="m"/>
+        <xs:attribute name="unitsTime"    type="Unit-Time-Type" default="sec"/>
+    </xs:complexType>
+
+    <xs:complexType name="Acceleration-Type">
+        <xs:attribute name="value"        type="xs:decimal" default="0"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="m"/>
+        <xs:attribute name="unitsTime"    type="Unit-Time-Type" default="sec"/>
+    </xs:complexType>
+
+    <xs:complexType name="Torque-Type">
+        <xs:attribute name="value"        type="xs:decimal" default="0"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="m"/>
+    </xs:complexType>
+
+    <xs:complexType name="Limits-Type">
+        <xs:attribute name="lo"           type="xs:decimal" default="-3.14"/>
+        <xs:attribute name="hi"           type="xs:decimal" default="3.14"/>
+        <xs:attribute name="unitsAngle"   type="Unit-Angle-Type" default="rad"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="mm"/>
+    </xs:complexType>
+
+    <xs:complexType name="DH-Type">
+        <xs:attribute name="a"            type="xs:decimal" default="0"/>
+        <xs:attribute name="d"            type="xs:decimal" default="0"/>
+        <xs:attribute name="alpha"        type="xs:decimal" default="0"/>
+        <xs:attribute name="theta"        type="xs:decimal" default="0"/>
+        <xs:attribute name="unitsAngle"   type="Unit-Angle-Type" default="rad"/>
+        <xs:attribute name="unitsLength"  type="Unit-Length-Type" default="mm"/>
+    </xs:complexType>
+
+    <xs:complexType name="Transform-Type">
+        <xs:all>
+            <xs:element name="matrix4x4"    type="Matrix4x4-Type" minOccurs="0"/>
+            <xs:element name="matrix3x3"    type="Matrix3x3-Type" minOccurs="0"/>
+            <xs:element name="rollpitchyaw" type="RollPitchYaw-Type" minOccurs="0"/>
+            <xs:element name="quaternion"   type="Quaternion-Type" minOccurs="0"/>
+            <xs:element name="translation"  type="Translation-Type" minOccurs="0"/>
+            <xs:element name="dh"			  type="DH-Type" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="File-Type">
+        <xs:all>
+            <xs:element name="file" type="xs:string" minOccurs="1"/>
+        </xs:all>
+        <xs:attribute name="type" type="xs:string" default="Inventor"/>
+        <xs:attribute name="path" type="FileLocation-Type" default="relative"/>
+    </xs:complexType>
+
+    <xs:complexType name="Col-File-Type">
+        <xs:complexContent>
+            <xs:extension base="File-Type">
+                <xs:attribute name="BoundingBox" type="xs:boolean" default="false"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Coordinate-Type">
+        <xs:attribute name="enale"    type="xs:boolean" default="true"/>
+        <xs:attribute name="scaling"  type="xs:decimal" default="1.0"/>
+        <xs:attribute name="text"     type="xs:string" default=""/>
+    </xs:complexType>
+
+    <xs:complexType name="PropagateJointValue-Type">
+        <xs:attribute name="factor"  type="xs:decimal" default="1.0"/>
+        <xs:attribute name="name"     type="xs:string" default=""/>
+    </xs:complexType>
+
+    <xs:complexType name="PrimitiveBox-Type">
+        <xs:all>
+            <xs:element name="Transform" type="Transform-Type" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="width" type="xs:decimal" default="0.0"/>
+        <xs:attribute name="height" type="xs:decimal" default="0.0"/>
+        <xs:attribute name="depth" type="xs:decimal" default="0.0"/>
+    </xs:complexType>
+
+    <xs:complexType name="PrimitiveSphere-Type">
+        <xs:all>
+            <xs:element name="Transform" type="Transform-Type" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="radius" type="xs:decimal" default="1.0"/>
+    </xs:complexType>
+
+    <xs:complexType name="Primitive-Type">
+        <xs:all>
+            <xs:element name="box" type="PrimitiveBox-Type" minOccurs="0"  maxOccurs="unbounded"/>
+            <xs:element name="sphere" type="PrimitiveSphere-Type" minOccurs="0"  maxOccurs="unbounded"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="JointElement">
+        <xs:all>
+            <xs:element name="limits"               type="Limits-Type" minOccurs="1"/>
+            <xs:element name="axis"                 type="Translation-Type" minOccurs="1"/>
+            <xs:element name="translationdirection" type="Translation-Type" minOccurs="1"/>
+            <xs:element name="maxvelocity"          type="Velocity-Type" minOccurs="1"/>
+            <xs:element name="maxacceleration"      type="Acceleration-Type" minOccurs="1"/>
+            <xs:element name="maxtorque"            type="Torque-Type" minOccurs="1"/>
+            <xs:element name="propagatejointvalue"  type="PropagateJointValue-Type" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="type" type="Joint-Type" default="fixed"/>
+    </xs:complexType>
+
+    <xs:complexType name="PhysicsElement">
+        <xs:all>
+            <xs:element name="Mass"           type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="CoM"            type="Com-Type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="IntertiaMatrix" type="InertiaMatrix-Type" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="VisualizationElement">
+        <xs:all>
+            <xs:element name="File"           type="File-Type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Primitives"     type="Primitive-Type" minOccurs="0"/>
+            <xs:element name="CoordinateAxis" type="Coordinate-Type" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+        <xs:attribute name="enable"               type="xs:boolean" default="true"/>
+        <xs:attribute name="useAsCollisionModel"  type="xs:boolean" default="false"/>
+    </xs:complexType>
+
+    <xs:complexType name="CollisionElement">
+        <xs:all>
+            <xs:element name="File"           type="Col-File-Type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Primitives"     type="Primitive-Type" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+        <xs:attribute name="enable"               type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <xs:complexType name="NodeListElement">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="ActorNodeListElement">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="considercollisions" type="EEFActorCollision-Type" default="All"/>
+        <xs:attribute name="direction" type="xs:float" default="1.0"/>
+    </xs:complexType>
+
+    <xs:complexType name="SensorElement">
+        <xs:all>
+            <xs:element name="Transform" type="Transform-Type" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="ConfigurationNodeListElement">
+        <xs:attribute name="name"       type="xs:string" use="required"/>
+        <xs:attribute name="unitsAngle" type="Unit-Angle-Type" default="radian"/>
+        <xs:attribute name="value"      type="xs:float" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="RobotNodeElement">
+        <xs:choice>
+            <xs:element name="Joint"          type="JointElement" minOccurs="0"/>
+            <xs:element name="Physics"        type="PhysicsElement" minOccurs="0"/>
+            <xs:element name="Visualization"  type="VisualizationElement" minOccurs="0"/>
+            <xs:element name="CollisionModel" type="CollisionElement" minOccurs="0"/>
+            <xs:element name="Transform"	  type="Transform-Type" minOccurs="0"/>
+            <xs:element name="Sensor"		  type="SensorElement" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Child" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ChildFromRobot" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="file" type="File-Type" minOccurs="1" maxOccurs="1"/>
+                    </xs:all>
+                    <xs:attribute name="importEEF" type="xs:boolean" default="true"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="RobotNodeSetElement">
+        <xs:choice>
+            <xs:element name="Node" type="NodeListElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="tcp" type="xs:string"/>
+        <xs:attribute name="kinematicroot" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="EEFStaticElement">
+        <xs:choice>
+            <xs:element name="Node" type="NodeListElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="EEFPreshapeElement">
+        <xs:choice>
+            <xs:element name="Node" type="ConfigurationNodeListElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="EEFActorElement">
+        <xs:choice>
+            <xs:element name="Node" type="ActorNodeListElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="EndEffectorElement">
+        <xs:choice>
+            <xs:element name="Actor"    type="EEFActorElement" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="Static"   type="EEFStaticElement" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Preshape" type="EEFPreshapeElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="tcp" type="xs:string"/>
+        <xs:attribute name="gcp" type="xs:string"/>
+        <xs:attribute name="base" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:element name="Robot">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="RobotNode"    type="RobotNodeElement" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="RobotNodeSet" type="RobotNodeSetElement" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="EndEffector"  type="EndEffectorElement" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+            <xs:attribute name="Type"     type="xs:string"/>
+            <xs:attribute name="RootNode" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

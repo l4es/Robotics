@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Simple3DoFRobot" StandardName="Simple3DoFRobot" RootNode="Start">
+	
+	<RobotNode name="Start">
+		<Visualization enable="false">
+			<CoordinateAxis enable="true" scaling="1" text="Root"/>
+		</Visualization>
+		<Child name="Joint1"/>
+	</RobotNode>
+
+	<RobotNode name="Joint1">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+      <DH a="300" d="0" theta="0" alpha="90" units="degree"/>
+    </Joint>
+		<Visualization enable="true">
+			 <File type="osg">joint_rot_sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Child name="Joint2"/>
+	</RobotNode>
+
+	<RobotNode name="Joint2">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="360"/>
+      <DH a="300" d="0" theta="0" alpha="0" units="degree"/>
+    </Joint>
+		<Visualization enable="true">
+			 <File type="osg">joint_rot_sphere.iv</File>
+		</Visualization>
+		<CollisionModel>
+			 <File type="osg" boundingbox="true">joint_rot_sphere.iv</File>
+		</CollisionModel>
+		<Child name="Joint3"/>
+	</RobotNode>
+
+	<RobotNode name="Joint3">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+      <DH a="300" d="0" theta="0" alpha="0" units="degree"/>
+    </Joint>
+		<Visualization enable="true">
+			 <File type="osg">joint_rot_sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Child name="EndPoint"/>
+	</RobotNode>
+
+	<RobotNode name="EndPoint">
+	  <Joint type="fixed">
+    </Joint>
+		<Visualization enable="true">
+			 <File type="osg">sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+	</RobotNode>
+
+	<RobotNodeSet name="AllJoints" kinematicRoot="Joint1">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="CollisionModel">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+  	<Node name="EndPoint"/>
+	</RobotNodeSet>
+
+</Robot>

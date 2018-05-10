@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="MyDemoRobotType" StandardName="ExampleRobo" RootNode="Joint1">
+	
+	<RobotNode name="Joint1">
+		<Visualization enable="true">
+			<File type="Inventor">test.iv</File>
+			<CoordinateAxis type="Inventor" enable="true" scaling="1" text="Axis1"/>
+		</Visualization>
+		<CollisionModel>
+      <File type="Inventor">test.iv</File>
+		</CollisionModel>
+		<Child name="Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Joint2">
+		<Joint type="revolute" offset="0">
+			<Limits unit="degree" lo="-90" hi="45"/>
+			<DH a="0" d="100" theta="-30" alpha="15" units="degree"/>
+		</Joint>
+		<Visualization enable="true">
+      <File type="Inventor">test.iv</File>
+			<CoordinateAxis type="Inventor" enable="true" scaling="1" text="Axis2"/>
+		</Visualization>
+		<CollisionModel>
+			<File boundingbox="true" type="Inventor">test.iv</File>
+		</CollisionModel>
+		<Child name="Joint3"/>
+	</RobotNode>
+
+	<RobotNode name="Joint3">
+		<Joint type="revolute" offset="0">
+			<Limits unit="degree" lo="-180" hi="180"/>
+			<PreJointTransform>
+				<Transform>
+					<Translation x="100" y="0" z="0"/>
+					<Quaternion x="0.3" y="0.4" z="0.2" w="0.1"/>
+				</Transform>
+			</PreJointTransform>
+			<Axis x="1" y="0" z="0"/>
+			<PostJointTransform>
+				<Transform>
+					<Matrix4x4>
+						<row1 c1="1" c2="0" c3="0" c4="100"/>
+						<row2 c1="0" c2="1" c3="0" c4="-40"/>
+						<row3 c1="0" c2="0" c3="1" c4="30"/>
+						<row4 c1="0" c2="0" c3="0" c4="1"/>
+					</Matrix4x4>	
+				</Transform>
+			</PostJointTransform>			
+		</Joint>
+		<Visualization enable="true">
+      <File type="Inventor">test.iv</File>
+      <UseAsCollisionModel/>
+		</Visualization>
+		<Child name="TCP"/>
+		<!-- Imports the kinematic structure form otherRobot.xml and adds otherRobot's rootnode as a child to this node -->
+		<ChildFromRobot>
+			<File importEEF="true">OtherRobot.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+
+	<RobotNode name="TCP">
+		<Joint type="fixed">
+			<PreJointTransform>
+				<Transform>
+					<Translation x="100" y="0" z="0"/>
+					<RollPitchYaw unit="radian" roll="1.57" pitch="0" yaw="-0.9"/>
+				</Transform>
+			</PreJointTransform>
+		</Joint>
+	</RobotNode>
+
+</Robot>

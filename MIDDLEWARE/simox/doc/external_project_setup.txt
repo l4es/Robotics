@@ -1,0 +1,25 @@
+When you intend to use Simox with an external project, you can use the following CMakeLists.txt code.
+Set the environment variable Simox_DIR to the (build or install) location of Simox. It will be considered by the FIND_PACKAGE method.
+
+<---- snippet ----->
+
+PROJECT ( DemoProject )
+
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
+CMAKE_POLICY(VERSION 2.6)
+
+############################# SETUP PATHS TO Simox #############################
+FIND_PACKAGE(Simox REQUIRED)
+
+# Build only if Simox was created with Coin3D support.
+IF(Simox_USE_COIN_VISUALIZATION)
+	FILE(GLOB SRCS ${PROJECT_SOURCE_DIR}/myDemo.cpp ${PROJECT_SOURCE_DIR}/myWindow.cpp)
+	FILE(GLOB INCS ${PROJECT_SOURCE_DIR}/myWindow.h)
+	set(GUI_MOC_HDRS ${PROJECT_SOURCE_DIR}/myWindow.h)
+	set(GUI_UIS ${PROJECT_SOURCE_DIR}/myWindow.ui)
+	
+	# The simox macro handles qt-mocing, qt-ui building and simox related inlcude, compile and linker flags
+	SimoxQtApplication(${PROJECT_NAME} "${SRCS}" "${INCS}" "${GUI_MOC_HDRS}" "${GUI_UIS}")
+ENDIF()
+
+<---- snippet ----->

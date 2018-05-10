@@ -1,0 +1,6 @@
+<ManipulationObject name='pig'>
+	<Visualization>
+		<File type='inventor'>stl/Piggy6.stl</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="Lego">
+
+	<ManipulationObject name="Lego">
+	    <File>objects/iCub/LegoGate_Grasps_RightHand_200.xml</File>
+ 	</ManipulationObject>
+ 	
+    <!--Obstacle name="LegoGate">
+	    <Visualization>
+		    <File type="Inventor">objects/iv/lego_gate.iv</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+ 	</Obstacle-->
+ 	
+    <Obstacle name="LegoBrick1">
+	    <Visualization>
+		    <File type="Inventor">objects/iv/duplo_2x2.wrl</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+		<GlobalPose>
+		    <Transform>
+		        <Translation x="0" y="0" z="140"/>
+    	    </Transform>
+    	</GlobalPose>
+ 	</Obstacle>
+    <Obstacle name="LegoBrick2">
+	    <Visualization>
+		    <File type="Inventor">objects/iv/duplo_2x2.wrl</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+		<GlobalPose>
+		    <Transform>
+		        <Translation x="128" y="0" z="140"/>
+    	    </Transform>
+    	</GlobalPose>
+ 	</Obstacle>
+ </Scene>

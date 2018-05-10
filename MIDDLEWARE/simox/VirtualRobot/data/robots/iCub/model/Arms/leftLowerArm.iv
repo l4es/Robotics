@@ -1,0 +1,26 @@
+#Inventor V2.1 ascii
+
+Separator {
+
+
+    Units {
+            units METERS
+    }
+
+	Transform {
+		translation 0 0 0
+		rotation 1 0 0 1.57
+	}
+
+
+Transform {
+		translation 0 0.137 0.005
+		rotation 0 1 0 0
+	}
+	
+
+	Separator 
+	{
+		File {name lowerArm_conv.wrl }
+	}
+}

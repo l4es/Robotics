@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="GraspRrtScene">
+
+	<Robot name="Armar-III" initConfig="init">
+		<File>/robots/ArmarIII/ArmarIII.xml</File>
+		<Configuration name="init">
+		    <Node name="Hip Pitch" unit="radian" value="0"/>
+		    <Node name="Hip Roll" unit="radian" value="0"/>
+		    <Node name="Hip Yaw" unit="radian" value="0"/>
+		    <Node name="Shoulder 1 L" unit="radian" value="0.26"/>
+    		<Node name="Shoulder 2 L" unit="radian" value="0"/>
+    		<Node name="Upperarm L" unit="radian" value="0.46"/>
+    		<Node name="Elbow L" unit="radian" value="0.2"/>
+    		<Node name="Underarm L" unit="radian" value="0"/>
+    		<Node name="Wrist 1 L" unit="radian" value="0"/>
+    		<Node name="Wrist 2 L" unit="radian" value="0"/>
+		    <Node name="Shoulder 1 R" unit="radian" value="0.26"/>
+    		<Node name="Shoulder 2 R" unit="radian" value="0"/>
+    		<Node name="Upperarm R" unit="radian" value="-0.46"/>
+    		<Node name="Elbow R" unit="radian" value="0.2"/>
+    		<Node name="Underarm R" unit="radian" value="0"/>
+    		<Node name="Wrist 1 R" unit="radian" value="0"/>
+    		<Node name="Wrist 2 R" unit="radian" value="0"/>
+		</Configuration>
+
+		
+		<!-- These joints are considered for motion planning-->
+		<RobotNodeSet name="Planning Left" kinematicRoot="Platform" tcp="TCP L">
+    		<Node name="Hip Pitch"/>
+    		<Node name="Hip Roll"/>
+    		<Node name="Hip Yaw"/>
+    		<Node name="Shoulder 1 L"/>
+    		<Node name="Shoulder 2 L"/>
+    		<Node name="Upperarm L"/>
+    		<Node name="Elbow L"/>
+    		<Node name="Underarm L"/>
+    		<Node name="Wrist 1 L"/>
+    		<Node name="Wrist 2 L"/>
+    	</RobotNodeSet>
+		<RobotNodeSet name="Planning Right" kinematicRoot="Platform" tcp="TCP R">
+    		<Node name="Hip Pitch"/>
+    		<Node name="Hip Roll"/>
+    		<Node name="Hip Yaw"/>
+    		<Node name="Shoulder 1 R"/>
+    		<Node name="Shoulder 2 R"/>
+    		<Node name="Upperarm R"/>
+    		<Node name="Elbow R"/>
+    		<Node name="Underarm R"/>
+    		<Node name="Wrist 1 R"/>
+    		<Node name="Wrist 2 R"/>
+    	</RobotNodeSet>
+    	
+    	<!-- The first collision model (arm and hand) -->
+        <RobotNodeSet name="ColModel Robot Moving Left">
+     		<Node name="Upperarm L"/>
+    		<Node name="Underarm L"/>
+    		<Node name="Hand Palm 1 L"/>
+    		<Node name="Hand Palm 2 L"/>
+    		<Node name="Thumb L J0"/>
+    		<Node name="Thumb L J1"/>
+    		<Node name="Index L J0"/>
+    		<Node name="Index L J1"/>
+    		<Node name="Middle L J0"/>
+    		<Node name="Middle L J1"/>
+    		<Node name="Ring L J0"/>
+    		<Node name="Ring L J1"/>
+    		<Node name="Pinky L J0"/>
+    		<Node name="Pinky L J1"/>
+    	</RobotNodeSet>
+    	
+        <RobotNodeSet name="ColModel Robot Moving Right">
+     		<Node name="Upperarm R"/>
+    		<Node name="Underarm R"/>
+    		<Node name="Hand Palm 1 R"/>
+    		<Node name="Hand Palm 2 R"/>
+    		<Node name="Thumb R J0"/>
+    		<Node name="Thumb R J1"/>
+    		<Node name="Index R J0"/>
+    		<Node name="Index R J1"/>
+    		<Node name="Middle R J0"/>
+    		<Node name="Middle R J1"/>
+    		<Node name="Ring R J0"/>
+    		<Node name="Ring R J1"/>
+    		<Node name="Pinky R J0"/>
+    		<Node name="Pinky R J1"/>
+    	</RobotNodeSet>
+    	
+    	<!-- The second collision model (torso, head and platform)-->
+    	<RobotNodeSet name="ColModel Robot Body">
+			<Node name="Platform"/>
+    		<Node name="Hip Yaw"/>
+    		<Node name="Head_Tilt"/>
+    	</RobotNodeSet>
+
+        <GlobalPose>
+			<Transform>
+				<Translation x="-6115.0" y="3580.0" z="0"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="0"/>
+			</Transform>
+		</GlobalPose>
+	</Robot>
+	
+	<Obstacle name="Can">
+	    <Visualization>
+    		<File type='inventor'>objects/iv/can_online.wrl</File>
+    		<UseAsCollisionModel/>
+	    </Visualization>
+		<GlobalPose>
+			<Transform>
+				<Translation x="-6170" y="4200" z="930"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="0"/>
+			</Transform>
+		</GlobalPose>
+	</Obstacle>
+	
+	
+	<Obstacle name="Vitalis">
+	    <Visualization>
+    		<File type='inventor'>objects/iv/vitalis.iv</File>
+    		<UseAsCollisionModel/>
+	    </Visualization>
+		<GlobalPose>
+			<Transform>
+				<Translation x="-6025" y="4150" z="1025"/>
+				<rollpitchyaw units="degree" roll="90" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+	</Obstacle>
+	
+	<Obstacle name="Environment">
+	    <Visualization>
+    		<File type='inventor'>environment/KIT_kitchen.wrl</File>
+	    </Visualization>
+    	<CollisionModel>
+    		<File type='inventor'>environment/KIT_kitchen_sideboard.wrl</File>
+    	</CollisionModel>
+ 	</Obstacle>
+	
+ 	<SceneObjectSet name="ColModel Obstacles">
+ 	    <SceneObject name="Environment"/>
+ 	    <SceneObject name="Vitalis"/>
+ 	</SceneObjectSet>
+
+</Scene>

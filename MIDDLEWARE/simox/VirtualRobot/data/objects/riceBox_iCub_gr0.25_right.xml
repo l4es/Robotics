@@ -1,0 +1,1492 @@
+<ManipulationObject name='RiceBox'>
+	<Visualization>
+		<File type='inventor'>iv/ricefit.iv</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>iv/ricefit.iv</File>
+	</CollisionModel>
+
+	<GraspSet name='Grasp Planner - Right Hand' RobotType='iCub' EndEffector='Right Hand'>
+		<Grasp name='Grasp 1' quality='0.308454' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.316471' c2='-0.708113' c3='-0.631207' c4='60.4229'/>
+					<row2 c1='0.894255' c2='-0.000712767' c3='-0.447556' c4='13.6511'/>
+					<row3 c1='0.316471' c2='-0.706099' c3='0.633459' c4='88.9127'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 2' quality='0.282951' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.390696' c3='-0.58937' c4='72.0683'/>
+					<row2 c1='1.49012e-008' c2='-0.833495' c3='-0.552527' c4='-37.9456'/>
+					<row3 c1='-0.707107' c2='-0.390696' c3='0.58937' c4='68.0749'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 3' quality='0.280563' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.464393' c3='-0.533234' c4='34.8758'/>
+					<row2 c1='0' c2='-0.754108' c3='-0.656751' c4='33.1947'/>
+					<row3 c1='-0.707107' c2='-0.464393' c3='0.533235' c4='96.7821'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 4' quality='0.27636' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.640619' c2='-0.707583' c3='-0.298217' c4='41.1856'/>
+					<row2 c1='0.423336' c2='-0.0014428' c3='-0.905972' c4='22.6584'/>
+					<row3 c1='0.640619' c2='-0.706629' c3='0.30047' c4='103.907'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 5' quality='0.367347' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.0864417' c3='0.701803' c4='56.0177'/>
+					<row2 c1='1.11759e-008' c2='-0.9925' c3='-0.122247' c4='-52.2072'/>
+					<row3 c1='0.707107' c2='0.0864417' c3='-0.701803' c4='71.3976'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 6' quality='0.350305' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0100147' c3='0.707036' c4='57.6221'/>
+					<row2 c1='2.79397e-009' c2='0.9999' c3='-0.0141629' c4='-62.9995'/>
+					<row3 c1='-0.707107' c2='-0.0100147' c3='-0.707036' c4='65.5505'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 7' quality='0.26464' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.491911' c3='-0.50796' c4='37.1261'/>
+					<row2 c1='-4.47035e-008' c2='-0.718363' c3='-0.695668' c4='43.5324'/>
+					<row3 c1='-0.707107' c2='-0.491912' c3='0.50796' c4='94.5318'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 8' quality='0.347317' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0233991' c2='0.70598' c3='-0.707844' c4='64.3664'/>
+					<row2 c1='-0.999452' c2='-5.26998e-005' c3='-0.0330913' c4='-60.5416'/>
+					<row3 c1='-0.0233991' c2='0.708231' c3='0.705592' c4='72.2412'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 9' quality='0.277862' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.211575' c2='-0.706031' c3='0.675837' c4='59.4518'/>
+					<row2 c1='-0.954187' c2='0.000476509' c3='0.299212' c4='38.6991'/>
+					<row3 c1='-0.211575' c2='-0.70818' c3='-0.673585' c4='81.3985'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 10' quality='0.250978' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0519782' c3='-0.705194' c4='56.6256'/>
+					<row2 c1='-4.09782e-008' c2='-0.997295' c3='-0.0735083' c4='13.2639'/>
+					<row3 c1='-0.707107' c2='-0.0519782' c3='0.705194' c4='79.2749'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 11' quality='0.252147' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.145988' c3='0.691872' c4='58.9569'/>
+					<row2 c1='2.23517e-008' c2='-0.978455' c3='0.206458' c4='-19.2857'/>
+					<row3 c1='0.707107' c2='-0.145988' c3='-0.691872' c4='72.701'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 12' quality='0.293972' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.440648' c3='-0.553018' c4='33.7025'/>
+					<row2 c1='1.49012e-008' c2='0.782086' c3='-0.62317' c4='34.2238'/>
+					<row3 c1='0.707107' c2='0.440648' c3='0.553018' c4='93.7128'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 13' quality='0.306785' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.604553' c2='-0.706522' c3='0.367889' c4='45.514'/>
+					<row2 c1='-0.518682' c2='0.00136161' c3='0.854967' c4='22.0704'/>
+					<row3 c1='-0.604554' c2='-0.70769' c3='-0.365637' c4='103.822'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 14' quality='0.284351' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.481653' c3='0.517697' c4='53.1834'/>
+					<row2 c1='-4.47035e-008' c2='-0.732134' c3='0.68116' c4='7.66003'/>
+					<row3 c1='0.707107' c2='-0.481653' c3='-0.517697' c4='95.4452'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 15' quality='0.279771' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.110702' c3='-0.698388' c4='59.9979'/>
+					<row2 c1='0' c2='-0.987669' c3='0.156556' c4='-2.54055'/>
+					<row3 c1='-0.707107' c2='0.110702' c3='0.698388' c4='71.66'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 16' quality='0.299201' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.381628' c2='-0.708054' c3='-0.594155' c4='63.4936'/>
+					<row2 c1='0.841855' c2='0.000859484' c3='0.539703' c4='-42.2209'/>
+					<row3 c1='-0.381628' c2='-0.706158' c3='0.596407' c4='90.0846'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 17' quality='0.268568' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.470085' c2='0.706265' c3='-0.529349' c4='65.122'/>
+					<row2 c1='-0.747021' c2='0.00105873' c3='0.6648' c4='-36.6934'/>
+					<row3 c1='0.470085' c2='0.707947' c3='0.527096' c4='96.9416'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 18' quality='0.250324' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.507916' c3='0.491956' c4='84.3145'/>
+					<row2 c1='0' c2='-0.695731' c3='0.718302' c4='-35.3615'/>
+					<row3 c1='0.707107' c2='-0.507916' c3='-0.491956' c4='68.5566'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 19' quality='0.261835' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.221328' c2='-0.706036' c3='0.672701' c4='67.589'/>
+					<row2 c1='-0.949751' c2='-0.000498489' c3='-0.313005' c4='-17.1198'/>
+					<row3 c1='0.221328' c2='-0.708175' c3='-0.670449' c4='85.9892'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 20' quality='0.289109' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0714947' c3='-0.703483' c4='69.0061'/>
+					<row2 c1='-2.6077e-008' c2='-0.994875' c3='-0.101109' c4='-61.3536'/>
+					<row3 c1='-0.707107' c2='-0.0714947' c3='0.703483' c4='62.6518'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 21' quality='0.251084' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0891356' c2='0.705989' c3='-0.702591' c4='84.2277'/>
+					<row2 c1='-0.992023' c2='0.000200748' c3='0.126056' c4='45.0451'/>
+					<row3 c1='0.0891356' c2='0.708223' c3='0.700339' c4='69.3505'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 22' quality='0.273283' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.187187' c3='0.681881' c4='66.0316'/>
+					<row2 c1='0' c2='-0.964325' c3='0.264722' c4='44.3662'/>
+					<row3 c1='0.707107' c2='-0.187187' c3='-0.681881' c4='78.3542'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 23' quality='0.257294' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.107475' c2='-0.705993' c3='0.700016' c4='76.4685'/>
+					<row2 c1='-0.988382' c2='-0.000242047' c3='-0.151992' c4='10.6659'/>
+					<row3 c1='0.107475' c2='-0.708219' c3='-0.697764' c4='72.8671'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 24' quality='0.283602' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.307831' c3='0.636585' c4='44.9967'/>
+					<row2 c1='-1.49012e-008' c2='0.900266' c3='0.435339' c4='29.5001'/>
+					<row3 c1='-0.707107' c2='0.307831' c3='-0.636585' c4='86.6612'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 25' quality='0.30876' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.206899' c3='-0.67616' c4='62.7947'/>
+					<row2 c1='0' c2='0.956235' c3='-0.292599' c4='-40.0846'/>
+					<row3 c1='0.707107' c2='0.206899' c3='0.67616' c4='64.6206'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 26' quality='0.32727' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.037664' c2='-0.70823' c3='-0.704976' c4='67.264'/>
+					<row2 c1='0.998581' c2='8.48155e-005' c3='0.0532648' c4='-41.7497'/>
+					<row3 c1='-0.037664' c2='-0.705981' c3='0.707228' c4='73.5863'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 27' quality='0.283135' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.398295' c2='-0.708036' c3='-0.583134' c4='73.0231'/>
+					<row2 c1='0.82627' c2='-0.000897065' c3='-0.563274' c4='-25.0816'/>
+					<row3 c1='0.398295' c2='-0.706175' c3='0.585386' c4='76.3125'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 28' quality='0.293366' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.0146516' c3='-0.706955' c4='67.9321'/>
+					<row2 c1='-2.79397e-009' c2='0.999785' c3='0.0207205' c4='36.0092'/>
+					<row3 c1='0.707107' c2='-0.0146516' c3='0.706955' c4='63.7258'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 29' quality='0.250506' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.243994' c2='-0.706049' c3='0.664802' c4='84.8663'/>
+					<row2 c1='-0.938581' c2='-0.000549525' c3='-0.345059' c4='31.7503'/>
+					<row3 c1='0.243994' c2='-0.708163' c3='-0.66255' c4='72.9546'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 30' quality='0.266397' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.486057' c3='-0.513565' c4='59.4703'/>
+					<row2 c1='0' c2='-0.72629' c3='-0.687388' c4='7.40637'/>
+					<row3 c1='-0.707107' c2='-0.486057' c3='0.513565' c4='97.6434'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 31' quality='0.29954' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.429398' c3='-0.561798' c4='62.2122'/>
+					<row2 c1='4.47035e-008' c2='0.794502' c3='-0.607261' c4='-14.3506'/>
+					<row3 c1='0.707107' c2='0.429398' c3='0.561798' c4='77.9309'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 32' quality='0.255761' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.491927' c3='-0.507945' c4='44.4659'/>
+					<row2 c1='-2.98023e-008' c2='0.718342' c3='0.69569' c4='-54.1142'/>
+					<row3 c1='0.707107' c2='-0.491927' c3='0.507945' c4='95.6773'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 33' quality='0.293713' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.14876' c2='-0.706005' c3='0.692407' c4='65.928'/>
+					<row2 c1='-0.97762' c2='0.00033506' c3='0.210379' c4='-22.676'/>
+					<row3 c1='-0.14876' c2='-0.708207' c3='-0.690155' c4='74.9224'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 34' quality='0.273929' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.454174' c3='0.541965' c4='61.7279'/>
+					<row2 c1='-1.49012e-008' c2='-0.766454' c3='0.6423' c4='-10.5195'/>
+					<row3 c1='0.707107' c2='-0.454174' c3='-0.541965' c4='91.1432'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 35' quality='0.324605' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.203203' c2='0.708184' c3='0.676153' c4='73.1916'/>
+					<row2 c1='0.957819' c2='-0.000457674' c3='-0.287372' c4='21.6253'/>
+					<row3 c1='-0.203203' c2='0.706027' c3='-0.678405' c4='71.9013'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 36' quality='0.252543' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.595462' c3='-0.381347' c4='55.2351'/>
+					<row2 c1='2.98024e-008' c2='0.539307' c3='-0.84211' c4='30.4179'/>
+					<row3 c1='0.707107' c2='0.595462' c3='0.381348' c4='101.879'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 37' quality='0.258105' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.29836' c3='-0.641078' c4='68.056'/>
+					<row2 c1='-4.47035e-008' c2='0.906621' c3='-0.421945' c4='-40.6285'/>
+					<row3 c1='0.707107' c2='0.29836' c3='0.641078' c4='67.8446'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 38' quality='0.301515' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.0624855' c3='0.70434' c4='58.8973'/>
+					<row2 c1='1.49012e-008' c2='0.996088' c3='0.0883677' c4='51.9069'/>
+					<row3 c1='-0.707107' c2='0.0624855' c3='-0.70434' c4='68.5179'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 39' quality='0.258448' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.347517' c3='-0.615818' c4='62.1076'/>
+					<row2 c1='0' c2='-0.870898' c3='0.491464' c4='-49.994'/>
+					<row3 c1='-0.707107' c2='0.347517' c3='0.615818' c4='86.5209'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 40' quality='0.295667' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.0241815' c3='0.706693' c4='73.3297'/>
+					<row2 c1='0' c2='0.999415' c3='0.0341978' c4='-55.6811'/>
+					<row3 c1='-0.707107' c2='0.0241815' c3='-0.706693' c4='62.5708'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 41' quality='0.305434' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.03429' c3='-0.706275' c4='73.8951'/>
+					<row2 c1='-2.23517e-008' c2='-0.998823' c3='0.0484933' c4='-12.6883'/>
+					<row3 c1='-0.707107' c2='0.03429' c3='0.706275' c4='66.2481'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 42' quality='0.271568' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.279976' c2='0.70814' c3='0.648191' c4='48.913'/>
+					<row2 c1='0.918274' c2='0.000630572' c3='0.395945' c4='43.7354'/>
+					<row3 c1='0.279976' c2='0.706072' c3='-0.650443' c4='91.9373'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 43' quality='0.33411' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0282591' c2='0.705981' c3='-0.707667' c4='66.7926'/>
+					<row2 c1='-0.999201' c2='-6.36484e-005' c3='-0.0399643' c4='-54.8607'/>
+					<row3 c1='-0.0282591' c2='0.708231' c3='0.705415' c4='69.815'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 44' quality='0.315043' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0624936' c2='0.705984' c3='-0.705465' c4='67.8031'/>
+					<row2 c1='-0.996087' c2='-0.000140741' c3='-0.0883792' c4='-56.5003'/>
+					<row3 c1='-0.0624936' c2='0.708227' c3='0.703213' c4='68.8046'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 45' quality='0.255858' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.463621' c2='-0.706255' c3='0.535032' c4='70.8924'/>
+					<row2 c1='-0.755058' c2='0.00104412' c3='0.655658' c4='-0.749447'/>
+					<row3 c1='-0.463621' c2='-0.707956' c3='-0.53278' c4='95.4138'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 46' quality='0.329956' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.0193893' c3='-0.706841' c4='61.9387'/>
+					<row2 c1='2.42144e-008' c2='-0.999624' c3='0.0274207' c4='9.31723'/>
+					<row3 c1='-0.707107' c2='0.0193893' c3='0.706841' c4='65.4766'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 47' quality='0.255568' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.15913' c3='0.688968' c4='67.1595'/>
+					<row2 c1='0' c2='-0.974348' c3='0.225044' c4='-70.398'/>
+					<row3 c1='0.707107' c2='-0.15913' c3='-0.688968' c4='60.2557'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 48' quality='0.260906' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.116187' c3='-0.697496' c4='76.4026'/>
+					<row2 c1='-7.45058e-009' c2='0.986408' c3='-0.164313' c4='1.55666'/>
+					<row3 c1='0.707107' c2='0.116187' c3='0.697496' c4='67.9832'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 49' quality='0.364549' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0820337' c2='0.705987' c3='-0.703457' c4='68.5891'/>
+					<row2 c1='-0.993247' c2='0.000184741' c3='0.116013' c4='7.12582'/>
+					<row3 c1='0.0820337' c2='0.708224' c3='0.701205' c4='72.2611'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 50' quality='0.274648' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.0147253' c3='-0.706953' c4='56.3881'/>
+					<row2 c1='2.70084e-008' c2='-0.999783' c3='0.0208248' c4='-80.7136'/>
+					<row3 c1='-0.707107' c2='0.0147253' c3='0.706953' c4='66.7846'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 51' quality='0.257137' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0761263' c2='-0.708225' c3='-0.70187' c4='72.7172'/>
+					<row2 c1='0.994188' c2='-0.000171449' c3='-0.107659' c4='56.3778'/>
+					<row3 c1='0.0761263' c2='-0.705986' c3='0.704122' c4='76.6184'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 52' quality='0.305056' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.169875' c3='0.686398' c4='60.9379'/>
+					<row2 c1='1.49012e-008' c2='0.970713' c3='0.24024' c4='-36.4129'/>
+					<row3 c1='-0.707107' c2='0.169875' c3='-0.686398' c4='66.4773'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 53' quality='0.310151' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.431567' c3='0.560134' c4='59.1975'/>
+					<row2 c1='0' c2='0.792149' c3='-0.610327' c4='-43.1356'/>
+					<row3 c1='-0.707107' c2='-0.431567' c3='-0.560134' c4='89.431'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 54' quality='0.286726' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.487126' c3='-0.51255' c4='34.258'/>
+					<row2 c1='4.47035e-008' c2='0.724856' c3='-0.688901' c4='32.9956'/>
+					<row3 c1='0.707107' c2='0.487127' c3='0.51255' c4='97.3999'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 55' quality='0.261757' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.311033' c2='0.706094' c3='-0.636151' c4='79.015'/>
+					<row2 c1='-0.898062' c2='0.000700473' c3='0.439867' c4='47.578'/>
+					<row3 c1='0.311033' c2='0.708117' c3='0.633899' c4='66.078'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 56' quality='0.423869' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0681238' c3='-0.703818' c4='57.2513'/>
+					<row2 c1='0' c2='-0.995348' c3='-0.0963416' c4='2.93807'/>
+					<row3 c1='-0.707107' c2='-0.0681238' c3='0.703818' c4='65.9213'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 57' quality='0.295959' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.363924' c3='-0.606267' c4='47.8688'/>
+					<row2 c1='-1.49012e-008' c2='0.857391' c3='0.514666' c4='-54.5871'/>
+					<row3 c1='0.707107' c2='-0.363924' c3='0.606267' c4='88.0317'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 58' quality='0.30922' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.418361' c3='0.570065' c4='67.9691'/>
+					<row2 c1='0' c2='-0.806194' c3='0.591652' c4='-20.994'/>
+					<row3 c1='0.707107' c2='-0.418361' c3='-0.570065' c4='72.174'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 59' quality='0.266683' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.366025' c3='0.605001' c4='83.5341'/>
+					<row2 c1='1.49012e-008' c2='0.8556' c3='0.517637' c4='-63.7308'/>
+					<row3 c1='-0.707107' c2='0.366025' c3='-0.605001' c4='60.8517'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 60' quality='0.250016' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.334835' c2='0.708098' c3='0.621678' c4='71.8572'/>
+					<row2 c1='0.880779' c2='-0.000754133' c3='-0.473527' c4='48.853'/>
+					<row3 c1='-0.334835' c2='0.706114' c3='-0.62393' c4='68.9931'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 61' quality='0.291732' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.494922' c2='0.706302' c3='-0.506153' c4='48.7193'/>
+					<row2 c1='-0.714217' c2='-0.00111462' c3='-0.699924' c4='18.5015'/>
+					<row3 c1='-0.494922' c2='0.70791' c3='0.5039' c4='100.616'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 62' quality='0.273001' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.456903' c3='0.539666' c4='55.7312'/>
+					<row2 c1='0' c2='-0.763203' c3='0.646159' c4='-0.190728'/>
+					<row3 c1='0.707107' c2='-0.456903' c3='-0.539666' c4='97.1399'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 63' quality='0.252507' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.225532' c2='-0.708173' c3='-0.669048' c4='69.227'/>
+					<row2 c1='0.947771' c2='-0.000507951' c3='-0.31895' c4='49.325'/>
+					<row3 c1='0.225532' c2='-0.706038' c3='0.671301' c4='84.3512'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 64' quality='0.263213' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.198074' c2='0.708187' c3='0.677671' c4='77.0087'/>
+					<row2 c1='0.959965' c2='0.000446141' c3='0.280119' c4='-45.5092'/>
+					<row3 c1='0.198074' c2='0.706025' c3='-0.679923' c4='68.0843'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 65' quality='0.333135' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.115965' c2='0.708217' c3='0.696406' c4='62.1202'/>
+					<row2 c1='0.98646' c2='0.000261165' c3='0.163999' c4='28.2611'/>
+					<row3 c1='0.115965' c2='0.705995' c3='-0.698658' c4='78.73'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 66' quality='0.298364' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.145659' c2='-0.708208' c3='-0.690815' c4='65.3341'/>
+					<row2 c1='0.978553' c2='0.000328079' c3='0.205993' c4='-44.6409'/>
+					<row3 c1='-0.145659' c2='-0.706004' c3='0.693067' c4='79.7589'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 67' quality='0.274513' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.509696' c2='0.707886' c3='0.488986' c4='51.0988'/>
+					<row2 c1='0.693124' c2='0.00114791' c3='0.720818' c4='14.8396'/>
+					<row3 c1='0.509696' c2='0.706325' c3='-0.491238' c4='102.48'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 68' quality='0.2627' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.541496' c3='-0.454733' c4='33.9577'/>
+					<row2 c1='0' c2='-0.64309' c3='-0.765791' c4='27.226'/>
+					<row3 c1='-0.707107' c2='-0.541496' c3='0.454733' c4='106.185'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 69' quality='0.256196' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.173394' c3='-0.685518' c4='74.07'/>
+					<row2 c1='0' c2='-0.969469' c3='0.245216' c4='-26.1629'/>
+					<row3 c1='-0.707107' c2='0.173394' c3='0.685518' c4='74.5585'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 70' quality='0.260193' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.494376' c3='-0.505561' c4='84.2523'/>
+					<row2 c1='-2.98023e-008' c2='-0.714972' c3='-0.699154' c4='-40.0824'/>
+					<row3 c1='-0.707107' c2='-0.494376' c3='0.505561' c4='72.8615'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 71' quality='0.286059' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.402968' c3='0.581048' c4='71.8291'/>
+					<row2 c1='0' c2='-0.821726' c3='0.569883' c4='-12.8602'/>
+					<row3 c1='0.707107' c2='-0.402968' c3='-0.581048' c4='76.7994'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 72' quality='0.29476' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.271182' c2='-0.708146' c3='-0.651912' c4='70.2135'/>
+					<row2 c1='0.923537' c2='-0.000610769' c3='-0.383509' c4='-32.2621'/>
+					<row3 c1='0.271182' c2='-0.706066' c3='0.654164' c4='70.6368'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 73' quality='0.272596' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.394322' c3='0.58695' c4='36.9504'/>
+					<row2 c1='2.98023e-008' c2='-0.830072' c3='0.557656' c4='48.8451'/>
+					<row3 c1='0.707107' c2='-0.394322' c3='-0.58695' c4='90.4649'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 74' quality='0.304857' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.18' c3='0.683813' c4='52.335'/>
+					<row2 c1='0' c2='0.967057' c3='-0.254559' c4='-64.8718'/>
+					<row3 c1='-0.707107' c2='-0.18' c3='-0.683813' c4='75.0802'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 75' quality='0.299017' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0607714' c2='0.705984' c3='-0.705616' c4='79.5304'/>
+					<row2 c1='-0.9963' c2='0.000136822' c3='0.0859437' c4='-1.50161'/>
+					<row3 c1='0.0607714' c2='0.708228' c3='0.703364' c4='74.0478'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 76' quality='0.277783' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0719733' c2='0.708226' c3='0.702307' c4='60.2956'/>
+					<row2 c1='0.994806' c2='-0.000162099' c3='-0.101786' c4='-69.4816'/>
+					<row3 c1='-0.0719733' c2='0.705986' c3='-0.70456' c4='76.3121'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 77' quality='0.300718' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.14165' c2='0.708209' c3='0.691647' c4='61.7616'/>
+					<row2 c1='0.97973' c2='0.000319034' c3='0.200323' c4='17.6142'/>
+					<row3 c1='0.14165' c2='0.706002' c3='-0.693899' c4='79.0886'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 78' quality='0.285483' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.30406' c2='-0.706089' c3='0.63952' c4='56.8843'/>
+					<row2 c1='-0.902827' c2='0.000684783' c3='0.430005' c4='19.4727'/>
+					<row3 c1='-0.30406' c2='-0.708122' c3='-0.637268' c4='88.2085'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 79' quality='0.28223' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.181936' c3='0.6833' c4='68.9007'/>
+					<row2 c1='1.49012e-008' c2='-0.966332' c3='0.257296' c4='-42.5682'/>
+					<row3 c1='0.707107' c2='-0.181936' c3='-0.6833' c4='62.7572'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 80' quality='0.251127' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.18094' c3='0.683565' c4='75.2586'/>
+					<row2 c1='0' c2='-0.966706' c3='0.255888' c4='-7.51654'/>
+					<row3 c1='0.707107' c2='-0.18094' c3='-0.683565' c4='69.1272'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 81' quality='0.267071' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.198795' c3='0.678587' c4='66.6449'/>
+					<row2 c1='1.49012e-008' c2='0.959667' c3='0.281139' c4='-54.8556'/>
+					<row3 c1='-0.707107' c2='0.198795' c3='-0.678587' c4='69.2557'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 82' quality='0.277605' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.120315' c3='-0.696796' c4='57.3629'/>
+					<row2 c1='0' c2='0.985418' c3='0.170151' c4='-57.7814'/>
+					<row3 c1='0.707106' c2='-0.120315' c3='0.696796' c4='74.2949'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 83' quality='0.26015' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.165018' c3='0.687582' c4='65.0838'/>
+					<row2 c1='1.49012e-008' c2='0.972388' c3='0.23337' c4='-51.4237'/>
+					<row3 c1='-0.707107' c2='0.165018' c3='-0.687582' c4='70.8167'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 84' quality='0.328957' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.335339' c3='-0.622534' c4='55.5972'/>
+					<row2 c1='-1.49012e-008' c2='-0.880396' c3='-0.47424' c4='5.98558'/>
+					<row3 c1='-0.707107' c2='-0.335339' c3='0.622534' c4='80.3035'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 85' quality='0.299244' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.100906' c2='0.705991' c3='-0.700995' c4='77.8051'/>
+					<row2 c1='-0.989766' c2='-0.000227265' c3='-0.142702' c4='-23.549'/>
+					<row3 c1='-0.100906' c2='0.70822' c3='0.698743' c4='71.5305'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 86' quality='0.262841' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.45445' c3='-0.541734' c4='49.426'/>
+					<row2 c1='-1.49012e-008' c2='-0.766128' c3='-0.642689' c4='26.4408'/>
+					<row3 c1='-0.707107' c2='-0.45445' c3='0.541734' c4='90.7173'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 87' quality='0.259959' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.0442259' c3='-0.705722' c4='81.0434'/>
+					<row2 c1='-1.67638e-008' c2='0.998042' c3='-0.0625448' c4='-63.471'/>
+					<row3 c1='0.707107' c2='0.0442259' c3='0.705722' c4='63.3424'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 88' quality='0.2781' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0902063' c3='0.701329' c4='53.0508'/>
+					<row2 c1='2.23517e-008' c2='0.99183' c3='-0.127571' c4='-69.0797'/>
+					<row3 c1='-0.707107' c2='-0.0902063' c3='-0.701329' c4='74.3644'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 89' quality='0.265147' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.164269' c3='0.687761' c4='73.4794'/>
+					<row2 c1='7.45058e-009' c2='0.972641' c3='0.232311' c4='-62.6431'/>
+					<row3 c1='-0.707107' c2='0.164269' c3='-0.687761' c4='58.1785'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 90' quality='0.300104' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.102997' c2='0.705992' c3='-0.70069' c4='73.7543'/>
+					<row2 c1='-0.989335' c2='0.000231974' c3='0.14566' c4='-51.4576'/>
+					<row3 c1='0.102997' c2='0.70822' c3='0.698438' c4='75.5812'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 91' quality='0.252306' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.452829' c2='-0.707971' c3='-0.541962' c4='81.7423'/>
+					<row2 c1='0.768044' c2='-0.00101987' c3='-0.640396' c4='-17.0931'/>
+					<row3 c1='0.452829' c2='-0.706241' c3='0.544214' c4='84.5638'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 92' quality='0.34714' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.0819148' c3='-0.702346' c4='65.2804'/>
+					<row2 c1='1.11759e-008' c2='0.993267' c3='0.115845' c4='48.6593'/>
+					<row3 c1='0.707107' c2='-0.0819148' c3='0.702346' c4='62.1349'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 93' quality='0.281512' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0171127' c2='-0.708232' c3='-0.705773' c4='64.2863'/>
+					<row2 c1='0.999707' c2='3.85456e-005' c3='0.024201' c4='59.0196'/>
+					<row3 c1='-0.0171127' c2='-0.70598' c3='0.708025' c4='72.3214'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 94' quality='0.259618' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.510168' c3='0.489621' c4='87.7569'/>
+					<row2 c1='8.9407e-008' c2='-0.692428' c3='0.721487' c4='-43.184'/>
+					<row3 c1='0.707107' c2='-0.510168' c3='-0.489621' c4='69.3568'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 95' quality='0.278781' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.386252' c3='0.592292' c4='69.485'/>
+					<row2 c1='-1.49012e-008' c2='-0.837627' c3='0.546243' c4='-33.696'/>
+					<row3 c1='0.707107' c2='-0.386252' c3='-0.592291' c4='70.6582'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 96' quality='0.296685' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.251403' c2='-0.706053' c3='0.662031' c4='69.2821'/>
+					<row2 c1='-0.934662' c2='0.000566244' c3='0.355537' c4='-16.205'/>
+					<row3 c1='-0.251403' c2='-0.708158' c3='-0.659779' c4='75.8109'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 97' quality='0.286964' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.048166' c3='0.705464' c4='72.7036'/>
+					<row2 c1='-7.45058e-009' c2='0.997677' c3='-0.068117' c4='-53.7578'/>
+					<row3 c1='-0.707107' c2='-0.048166' c3='-0.705464' c4='67.4396'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 98' quality='0.252214' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.150649' c2='0.706005' c3='-0.691998' c4='68.1475'/>
+					<row2 c1='-0.977041' c2='-0.000339292' c3='-0.21305' c4='33.1115'/>
+					<row3 c1='-0.150649' c2='0.708206' c3='0.689745' c4='81.1881'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 99' quality='0.287044' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.28178' c2='0.708139' c3='0.64741' c4='68.7546'/>
+					<row2 c1='0.91717' c2='0.000634611' c3='0.398497' c4='-22.4909'/>
+					<row3 c1='0.28178' c2='0.706073' c3='-0.649662' c4='76.3384'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 100' quality='0.288061' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.392966' c3='-0.587859' c4='60.0689'/>
+					<row2 c1='-0' c2='-0.831358' c3='-0.555737' c4='-10.8256'/>
+					<row3 c1='-0.707107' c2='-0.392966' c3='0.587859' c4='80.0743'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 101' quality='0.266735' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.202943' c3='0.677358' c4='69.2171'/>
+					<row2 c1='0' c2='0.957929' c3='0.287005' c4='-16.5812'/>
+					<row3 c1='-0.707107' c2='0.202943' c3='-0.677358' c4='66.6834'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 102' quality='0.272287' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.00991738' c3='0.707037' c4='68.4907'/>
+					<row2 c1='0' c2='-0.999902' c3='-0.0140253' c4='32.7139'/>
+					<row3 c1='0.707107' c2='0.00991737' c3='-0.707037' c4='63.1672'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 103' quality='0.255477' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.443416' c3='0.550801' c4='85.3489'/>
+					<row2 c1='2.98023e-008' c2='0.77895' c3='0.627086' c4='-51.6739'/>
+					<row3 c1='-0.707107' c2='0.443416' c3='-0.550801' c4='67.5222'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 104' quality='0.356254' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.128671' c3='-0.695301' c4='56.7284'/>
+					<row2 c1='0' c2='0.983304' c3='-0.181969' c4='20.1833'/>
+					<row3 c1='0.707107' c2='0.128671' c3='0.695301' c4='70.6869'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 105' quality='0.259006' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.503245' c2='-0.707897' c3='-0.495608' c4='51.2522'/>
+					<row2 c1='0.702488' c2='-0.00113341' c3='-0.711694' c4='36.7315'/>
+					<row3 c1='0.503245' c2='-0.706315' c3='0.49786' c4='98.0833'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 106' quality='0.352661' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.223365' c3='-0.670901' c4='45.5324'/>
+					<row2 c1='2.98023e-008' c2='0.948797' c3='-0.315885' c4='46.975'/>
+					<row3 c1='0.707107' c2='0.223365' c3='0.670901' c4='77.6402'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 107' quality='0.256986' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.101264' c3='0.699818' c4='69.8364'/>
+					<row2 c1='2.98023e-008' c2='0.989692' c3='-0.143209' c4='-62.0243'/>
+					<row3 c1='-0.707107' c2='-0.101264' c3='-0.699818' c4='70.3067'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 108' quality='0.25262' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.320711' c2='-0.708109' c3='-0.629067' c4='80.8312'/>
+					<row2 c1='0.891229' c2='-0.000722319' c3='-0.453553' c4='-58.5961'/>
+					<row3 c1='0.320711' c2='-0.706102' c3='0.631319' c4='64.2617'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 109' quality='0.279184' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.402639' c2='-0.708031' c3='-0.580149' c4='46.8487'/>
+					<row2 c1='0.822048' c2='-0.000906839' c3='-0.569417' c4='29.9323'/>
+					<row3 c1='0.402639' c2='-0.70618' c3='0.582401' c4='98.2442'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 110' quality='0.311808' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.320066' c2='-0.706102' c3='0.631647' c4='73.0052'/>
+					<row2 c1='-0.891693' c2='0.000720859' c3='0.452641' c4='-18.7895'/>
+					<row3 c1='-0.320066' c2='-0.70811' c3='-0.629395' c4='76.3304'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 111' quality='0.252028' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.502572' c2='-0.707898' c3='-0.496288' c4='54.9872'/>
+					<row2 c1='0.703451' c2='-0.00113186' c3='-0.710743' c4='37.6242'/>
+					<row3 c1='0.502572' c2='-0.706314' c3='0.49854' c4='98.5911'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 112' quality='0.262491' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.264002' c3='0.655975' c4='45.4958'/>
+					<row2 c1='-0' c2='-0.927688' c3='-0.373355' c4='-63.8296'/>
+					<row3 c1='0.707107' c2='0.264002' c3='-0.655975' c4='81.9194'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 113' quality='0.269339' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.233545' c2='-0.706043' c3='0.668551' c4='49.1155'/>
+					<row2 c1='-0.943882' c2='0.000525981' c3='0.330282' c4='48.1087'/>
+					<row3 c1='-0.233545' c2='-0.708169' c3='-0.666298' c4='87.4922'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 114' quality='0.277983' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.570723' c3='0.417463' c4='33.4769'/>
+					<row2 c1='0' c2='0.590382' c3='0.807124' c4='30.8147'/>
+					<row3 c1='-0.707107' c2='0.570723' c3='-0.417463' c4='98.181'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 115' quality='0.282754' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.437376' c3='0.55561' c4='58.644'/>
+					<row2 c1='-2.98024e-008' c2='0.785752' c3='0.618543' c4='-4.8588'/>
+					<row3 c1='-0.707107' c2='0.437376' c3='-0.55561' c4='85.7419'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 116' quality='0.303802' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.260411' c2='-0.708153' c3='-0.656282' c4='62.5005'/>
+					<row2 c1='0.929716' c2='-0.000586584' c3='-0.368276' c4='-4.9048'/>
+					<row3 c1='0.260411' c2='-0.706059' c3='0.658534' c4='78.3499'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 117' quality='0.258297' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.19871' c3='0.678612' c4='49.7897'/>
+					<row2 c1='0' c2='-0.959702' c3='0.281019' c4='26.7576'/>
+					<row3 c1='0.707107' c2='-0.19871' c3='-0.678612' c4='86.1108'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 118' quality='0.319182' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.10858' c2='0.705993' c3='-0.699846' c4='67.5281'/>
+					<row2 c1='-0.98814' c2='0.00024455' c3='0.153556' c4='-21.7237'/>
+					<row3 c1='0.10858' c2='0.708219' c3='0.697593' c4='77.5649'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999999'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 119' quality='0.263246' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.274814' c3='0.651519' c4='79.2195'/>
+					<row2 c1='0' c2='0.921387' c3='-0.388646' c4='17.8135'/>
+					<row3 c1='-0.707107' c2='-0.274814' c3='-0.651519' c4='69.409'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 120' quality='0.273581' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.456694' c2='-0.707965' c3='-0.538716' c4='53.8749'/>
+					<row2 c1='0.763454' c2='-0.00102857' c3='-0.645862' c4='35.3743'/>
+					<row3 c1='0.456694' c2='-0.706246' c3='0.540969' c4='95.4606'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 121' quality='0.250625' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.527239' c2='-0.707856' c3='-0.470062' c4='28.4573'/>
+					<row2 c1='0.666362' c2='-0.00118743' c3='-0.745627' c4='44.0623'/>
+					<row3 c1='0.527239' c2='-0.706355' c3='0.472314' c4='99.665'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 122' quality='0.268765' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.407513' c2='0.706186' c3='-0.578995' c4='74.7338'/>
+					<row2 c1='-0.81723' c2='-0.000917837' c3='-0.57631' c4='-27.5924'/>
+					<row3 c1='-0.407513' c2='0.708026' c3='0.576742' c4='78.8443'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 123' quality='0.265058' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.188522' c3='-0.681512' c4='77.9602'/>
+					<row2 c1='0' c2='0.963804' c3='0.266611' c4='48.1442'/>
+					<row3 c1='0.707107' c2='-0.188522' c3='0.681512' c4='62.183'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 124' quality='0.323886' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.149677' c3='-0.691084' c4='63.8664'/>
+					<row2 c1='-2.23517e-008' c2='-0.97734' c3='0.211675' c4='1.8594'/>
+					<row3 c1='-0.707107' c2='0.149677' c3='0.691084' c4='67.7915'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 125' quality='0.305968' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.290813' c2='0.706079' c3='-0.645662' c4='53.04'/>
+					<row2 c1='-0.911512' c2='-0.00065492' c3='-0.411272' c4='31.9056'/>
+					<row3 c1='-0.290813' c2='0.708132' c3='0.64341' c4='87.8103'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 126' quality='0.253904' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.375111' c2='0.706151' c3='-0.600535' c4='64.288'/>
+					<row2 c1='-0.847693' c2='-0.000844792' c3='-0.530487' c4='25.6116'/>
+					<row3 c1='-0.375111' c2='0.70806' c3='0.598283' c4='89.2903'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 127' quality='0.262495' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.468459' c3='-0.529666' c4='46.5245'/>
+					<row2 c1='2.98023e-008' c2='0.749061' c3='-0.662501' c4='13.9253'/>
+					<row3 c1='0.707107' c2='0.468459' c3='0.529666' c4='97.8613'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 128' quality='0.316844' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.0141529' c3='-0.706965' c4='67.9345'/>
+					<row2 c1='2.79397e-009' c2='-0.9998' c3='-0.0200151' c4='-20.5303'/>
+					<row3 c1='-0.707107' c2='-0.0141529' c3='0.706965' c4='63.7234'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 129' quality='0.33157' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0229463' c2='-0.708231' c3='-0.705607' c4='69.0666'/>
+					<row2 c1='0.999473' c2='-5.16735e-005' c3='-0.0324509' c4='-42.8075'/>
+					<row3 c1='0.0229463' c2='-0.70598' c3='0.70786' c4='71.7837'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 130' quality='0.328373' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.0300478' c2='0.705981' c3='-0.707593' c4='69.8087'/>
+					<row2 c1='-0.999097' c2='-6.76494e-005' c3='-0.0424939' c4='-47.0935'/>
+					<row3 c1='-0.0300478' c2='0.708231' c3='0.705341' c4='71.0416'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 131' quality='0.29917' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.65685' c2='0.706689' c3='-0.262943' c4='57.4562'/>
+					<row2 c1='-0.370265' c2='-0.0014794' c3='-0.928925' c4='10.78'/>
+					<row3 c1='-0.65685' c2='0.707523' c3='0.26069' c4='104.607'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 132' quality='0.266892' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.440241' c3='-0.553342' c4='34.6632'/>
+					<row2 c1='-1.49012e-008' c2='0.782544' c3='-0.622595' c4='45.6345'/>
+					<row3 c1='0.707107' c2='0.440241' c3='0.553342' c4='92.752'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 133' quality='0.25237' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.5083' c2='0.706323' c3='-0.492685' c4='68.6954'/>
+					<row2 c1='-0.69517' c2='-0.0011448' c3='-0.718844' c4='-4.79563'/>
+					<row3 c1='-0.5083' c2='0.707889' c3='0.490433' c4='97.6107'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 134' quality='0.301076' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.3339' c3='-0.623307' c4='76.1411'/>
+					<row2 c1='-2.98023e-008' c2='0.881489' c3='-0.472205' c4='-37.827'/>
+					<row3 c1='0.707107' c2='0.3339' c3='0.623307' c4='64.0021'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 135' quality='0.253984' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.145071' c2='0.708208' c3='0.690938' c4='68.455'/>
+					<row2 c1='0.978728' c2='-0.000326745' c3='-0.205161' c4='-0.373199'/>
+					<row3 c1='-0.145071' c2='0.706004' c3='-0.69319' c4='80.8805'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 136' quality='0.284808' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.533438' c2='-0.707845' c3='-0.463033' c4='51.9593'/>
+					<row2 c1='0.656421' c2='-0.00120139' c3='-0.754394' c4='14.5731'/>
+					<row3 c1='0.533438' c2='-0.706367' c3='0.465285' c4='101.619'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 137' quality='0.301654' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='-0.357891' c3='0.609848' c4='48.1478'/>
+					<row2 c1='-1.49012e-008' c2='-0.862455' c3='-0.506135' c4='-54.0703'/>
+					<row3 c1='0.707107' c2='0.357891' c3='-0.609848' c4='87.7527'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 138' quality='0.252198' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.400771' c2='0.708034' c3='0.581439' c4='88.1572'/>
+					<row2 c1='0.823872' c2='0.000902564' c3='0.566775' c4='-52.3859'/>
+					<row3 c1='0.400771' c2='0.706178' c3='-0.583691' c4='69.6637'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 139' quality='0.286761' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.707107' c2='0.255287' c3='-0.659415' c4='57.2835'/>
+					<row2 c1='1.49012e-008' c2='0.932554' c3='0.36103' c4='-42.0397'/>
+					<row3 c1='0.707107' c2='-0.255287' c3='0.659415' c4='82.8597'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 140' quality='0.30866' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='0.138583' c3='-0.693394' c4='62.2815'/>
+					<row2 c1='-7.45058e-009' c2='-0.980606' c3='-0.195987' c4='-43.3616'/>
+					<row3 c1='-0.707107' c2='-0.138583' c3='0.693394' c4='65.1338'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 141' quality='0.286015' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.000975772' c2='0.70598' c3='-0.708231' c4='70.2958'/>
+					<row2 c1='-0.999999' c2='-2.18639e-006' c3='-0.00137991' c4='-51.2213'/>
+					<row3 c1='-0.000975772' c2='0.708232' c3='0.705979' c4='70.5545'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 142' quality='0.350817' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.115588' c2='-0.708217' c3='-0.696468' c4='64.8663'/>
+					<row2 c1='0.986549' c2='0.000260353' c3='0.163465' c4='-14.2916'/>
+					<row3 c1='-0.115588' c2='-0.705995' c3='0.698721' c4='80.2267'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 143' quality='0.259211' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.285943' c3='0.646712' c4='67.4594'/>
+					<row2 c1='0' c2='0.914589' c3='0.404384' c4='-37.8477'/>
+					<row3 c1='-0.707107' c2='0.285943' c3='-0.646712' c4='72.6838'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 144' quality='0.255151' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.234777' c3='0.666993' c4='76.9443'/>
+					<row2 c1='0' c2='0.943271' c3='0.332025' c4='-51.5803'/>
+					<row3 c1='-0.707107' c2='0.234777' c3='-0.666993' c4='58.9562'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 145' quality='0.25592' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.707107' c2='-0.0467351' c3='0.705561' c4='59.1672'/>
+					<row2 c1='7.45058e-009' c2='0.997813' c3='0.0660933' c4='-23.9808'/>
+					<row3 c1='-0.707107' c2='0.0467351' c3='-0.705561' c4='72.4907'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 146' quality='0.264853' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.470151' c2='-0.707947' c3='-0.527038' c4='55.3911'/>
+					<row2 c1='0.746938' c2='-0.00105889' c3='-0.664893' c4='35.7524'/>
+					<row3 c1='0.470151' c2='-0.706265' c3='0.52929' c4='93.9446'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 147' quality='0.293375' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.351643' c2='-0.706129' c3='0.614597' c4='74.5602'/>
+					<row2 c1='-0.86758' c2='0.000792012' c3='0.497297' c4='-26.1729'/>
+					<row3 c1='-0.351643' c2='-0.708083' c3='-0.612345' c4='74.7754'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 148' quality='0.289531' Creation='Simox - GraspStudio - GraspWrenchSpace'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.303952' c2='0.706089' c3='-0.639571' c4='47.1882'/>
+					<row2 c1='-0.902898' c2='-0.000684574' c3='-0.429853' c4='38.4898'/>
+					<row3 c1='-0.303952' c2='0.708123' c3='0.637319' c4='89.4195'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+	</GraspSet>
+
+</ManipulationObject>

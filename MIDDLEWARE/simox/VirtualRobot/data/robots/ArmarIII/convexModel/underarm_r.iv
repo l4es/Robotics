@@ -1,0 +1,19 @@
+#Inventor V2.1 ascii
+
+Separator {
+    Units {
+            units MILLIMETERS
+    }
+
+	Transform {
+		translation 0 0 -46.5
+	}
+	
+    Transform {
+		rotation 0 0 1 1.57
+	}
+
+   	File { 
+      		name "armar/right_arm/underarm_r_conv.wrl"
+    	}
+}

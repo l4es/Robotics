@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="iCub_Head" StandardName="iCub_Head" RootNode="Neck1">
+
+	<RobotNode name="Neck1">
+		<Transform>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!-- CenterOfArms is -143.3, the official DH_d value is -223.3(-> -80 here), but in the iCubGui the value is -193.3(-> -50 here), that looks better?! --> 
+			<!--DH a="0" d="-50.0" theta="-90" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-50" hi="50"/>
+		</Joint>
+		<Child name="Neck2"/>
+	</RobotNode>
+	
+
+	<RobotNode name="Neck2">
+		<Transform>
+			<DH a="0" d="-50.0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="9.5" d="0.0" theta="90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-50" hi="50"/>
+		</Joint>
+		<Child name="Neck3"/>
+	</RobotNode>
+
+	<RobotNode name="Neck3">
+		<Transform>
+			<DH a="9.5" d="0.0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0.0" theta="-90" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-50" hi="50"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/Head/head.iv</File>
+		</Visualization>
+                <CollisionModel>
+			<File type="Inventor">model/Head/headCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="5" unit="kg"/>
+		</Physics>
+		<Child name="EyesCenter"/>
+	</RobotNode>
+
+	<RobotNode name="EyesCenter">
+		<Transform>
+			<DH a="0" d="0.0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="-50.9" d="82.05" theta="90" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-30" hi="30"/>
+		</Joint>
+		<Child name="EyeLeft1"/>
+		<Child name="EyeRight1"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="EyeLeft1">
+		<Transform>
+			<DH a="-50.9" d="82.05" theta="0" alpha="-90" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="-34.0" theta="0" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-15" hi="15"/>
+		</Joint>
+		<Child name="EyeLeft2"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="EyeLeft2">
+		<Transform>
+			<DH a="0" d="-34.0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="-90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-30" hi="30"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/Head/eye.iv</File>
+		</Visualization>
+        <Child name="EyeLeftCam"/>
+	</RobotNode>
+
+	<RobotNode name="EyeLeftCam">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" units="degree"/>
+			<Translation x="0" y="0" z="15"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis  type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+		
+	<RobotNode name="EyeRight1">
+		<Transform>
+			<DH a="-50.9" d="82.05" theta="0" alpha="-90" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="34.0" theta="0" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-15" hi="15"/>
+		</Joint>
+		<Child name="EyeRight2"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="EyeRight2">
+		<Transform>
+			<DH a="0" d="34.0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="-90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-30" hi="30"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/Head/eye.iv</File>
+		</Visualization>
+        <Child name="EyeRightCam"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="EyeRightCam">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" units="degree"/>
+			<Translation x="0" y="0" z="15"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis  type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+
+	<RobotNodeSet name="Head" kinematicRoot="Neck1">
+		<Node name="Neck1"/>
+		<Node name="Neck2"/>
+		<Node name="Neck3"/>
+		<Node name="EyeLeft1"/>
+		<Node name="EyeLeft2"/>
+		<Node name="EyeRight1"/>
+		<Node name="EyeRight2"/>
+	</RobotNodeSet>
+	
+</Robot>
+	

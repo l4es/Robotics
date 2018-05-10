@@ -1,0 +1,9 @@
+##  Copyright (c) 2014, Nikolaus Vahrenkamp (Karlsruhe Institute of Technology)
+
+# set the parameters which are different for an in-source build
+
+set(Simox_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+set(Simox_DATA_PATH "@Simox_DATA_PATH@")
+
+set(Simox_MACROS_INCLUDE_DIR "@Simox_MACROS_INCLUDE_DIR@")

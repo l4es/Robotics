@@ -1,0 +1,22 @@
+#Inventor V2.0 ascii
+
+Separator {
+    
+    Units {
+            units MILLIMETERS
+    }
+    Material {
+        diffuseColor    1 1 1
+    }
+    Rotation {
+        rotation 1 0 0  1.57
+    }
+    Translation {
+        translation 0 150 0
+    }
+    Cylinder {
+        radius 50
+        height 300
+        parts (SIDES | TOP | BOTTOM)
+    }
+}

@@ -1,0 +1,19 @@
+#Inventor V2.0 ascii
+
+Separator {
+    
+    Units {
+            units MILLIMETERS
+    }
+    Material {
+        diffuseColor    1 1 1
+    }
+    Translation {
+        translation 0 0 -1500
+    }
+    Cube {
+        width 500
+        height 500
+        depth 3000
+    }
+}

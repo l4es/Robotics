@@ -1,0 +1,15 @@
+#Inventor V2.1 ascii
+
+Separator {
+    Units {
+            units MILLIMETERS
+    }
+	Transform {
+		translation 0 0 0
+		rotation 0 1 0 1.57
+	} 
+	Separator 
+	{
+		File {name armar/hands/handlink_red_conv.wrl }
+	}
+}

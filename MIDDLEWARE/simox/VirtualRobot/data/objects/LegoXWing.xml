@@ -1,0 +1,9 @@
+<ManipulationObject name='LegoGate'>
+	<Visualization>
+		<File type='inventor'>objects/iv/lego_xwing.iv</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>objects/iv/lego_xwing_col.iv</File>
+	</CollisionModel>
+
+</ManipulationObject>

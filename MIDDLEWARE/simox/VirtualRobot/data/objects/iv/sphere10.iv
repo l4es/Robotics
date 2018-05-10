@@ -1,0 +1,11 @@
+#Inventor V1.0 ascii
+
+Separator {
+    Units {
+            units MILLIMETERS
+    }
+
+    Sphere {
+        radius 10
+   }
+}

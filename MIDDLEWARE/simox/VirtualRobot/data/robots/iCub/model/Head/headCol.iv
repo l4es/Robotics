@@ -1,0 +1,18 @@
+#Inventor V2.1 ascii
+
+Separator {
+
+    Units {
+            units METERS
+    }
+
+	Transform {
+		translation 0 0.090 -0.025
+		rotation 1 0 0 1.57
+	}	
+
+	Separator 
+	{
+		File {name head_conv.wrl }
+	}
+}

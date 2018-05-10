@@ -1,0 +1,6 @@
+<ManipulationObject name='Vitalis'>
+	<Visualization>
+		<File type='inventor'>iv/vitalis.iv</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

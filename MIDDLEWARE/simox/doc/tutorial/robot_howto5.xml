@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="DemoRobot" RootNode="root">
+    
+	<RobotNode name="root">
+		<Child name="joint 1"/>
+	</RobotNode>
+    
+	<RobotNode name="joint 1">
+		<Joint type="revolute">
+			<Limits lo="0" hi="120" units="degree"/>
+		</Joint>
+		<Visualization>
+			<File type="Inventor">iv/joint2.iv</File>
+		</Visualization>
+		<Child name="node 1"/>
+	</RobotNode>
+        
+	<RobotNode name="node 1">
+		<Transform>
+			<DH a="0" d="500" alpha="-90" theta="0" units="degree"/>
+		</Transform>
+		<Visualization>
+			<File type="Inventor">iv/ball.iv</File>
+		</Visualization>
+		<Child name="joint 2"/>
+	</RobotNode>
+        
+	<RobotNode name="joint 2">
+		<Joint type="revolute">
+			<Limits lo="-45" hi="45" units="degree"/>
+		</Joint>
+		<Visualization>
+			<File type="Inventor">iv/joint2.iv</File>
+		</Visualization>
+		<Child name="node 2"/>
+	</RobotNode>
+        
+	<RobotNode name="node 2">
+		<Transform>
+			<DH a="0" d="500" alpha="90" theta="0" units="degree"/>
+		</Transform>
+	</RobotNode>
+
+</Robot>

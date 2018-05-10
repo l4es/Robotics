@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="robot1" RootNode="Joint1">
+	
+	<RobotNode name="Joint1">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="45"/>
+		</Joint>
+		<!-- Imports the kinematic structure form otherRobot.xml and adds otherRobot's rootnode as a child to this node -->
+		<ChildFromRobot>
+			<File importEEF="true">robot_howto7b.xml</File>
+		</ChildFromRobot>
+		<Child name="node2.1"/>
+	</RobotNode>
+
+	<RobotNode name="node2.1">
+		<Transform>
+			<DH a="0" d="500" theta="-30" alpha="0" units="degree"/>
+		</Transform>
+	</RobotNode>
+
+</Robot>

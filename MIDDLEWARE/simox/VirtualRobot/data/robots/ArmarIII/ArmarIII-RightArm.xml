@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>	
+
+<Robot Type="ArmarIII RightArm" RootNode="Right Arm Base">	
+
+    <RobotNode name="Right Arm Base">
+		<Transform>
+			<DH a="0" d="0" theta="-90" alpha="90" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		<Child name="Shoulder 1 R"/>
+	</RobotNode>
+	
+	<RobotNode name="Shoulder 1 R">
+		<Transform>
+			<DH a="0" d="0" theta="90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="90" alpha="90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-106.94" hi="80"/>
+      <!--41.67-->
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="3.65" units="kg" />
+        </Physics>
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/shoulder_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/shoulder_r.iv</File>
+		</CollisionModel>
+		<Child name="Shoulder 2 R"/>
+	</RobotNode>
+	
+	<RobotNode name="Shoulder 2 R">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="105" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="105" alpha="90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-13.85" hi="94.62"/>  <!-- ?! -->
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+        <Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="2.5" units="kg" />
+        </Physics>
+        <Visualization enable="true">
+			<File type="Inventor">fullmodel/shoulder2_r_rot.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/shoulder2_r_rot.iv</File>
+		</CollisionModel>
+		<Child name="Upperarm R"/>
+	</RobotNode>
+	
+	<RobotNode name="Upperarm R">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="-90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="20" d="-310" theta="-90" alpha="90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-108.11" hi="73.94"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1.55685000" units="kg" />
+            <IgnoreCollision name="Shoulder 1 R"/>
+        </Physics>
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/upperarm_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/upperarm_r.iv</File>
+		</CollisionModel>
+		<Child name="Elbow R"/>
+	</RobotNode>
+	
+	<RobotNode name="Elbow R">
+		<Transform>
+			<DH a="20" d="-310" theta="0" alpha="90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="7.5" theta="90" alpha="-90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-114.58" hi="55"/> <!-- 39.7 -->
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/elbow_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/elbow_r.iv</File>
+		</CollisionModel>
+		<Physics>
+            <CoM location="Joint"/>
+            <Mass value="1.15744000" units="kg" />
+        </Physics>
+		<Child name="Underarm R"/>
+	</RobotNode>
+	
+	<RobotNode name="Underarm R">
+		<Transform>
+			<DH a="0" d="7.5" theta="0" alpha="-90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="-240" theta="90" alpha="-90" unitsangle="degree" unitslength="mm"/-->
+			
+			<Limits unit="degree" lo="-69.65" hi="108.25"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/underarm_r.iv</File>
+		</Visualization>
+ 		<CollisionModel>
+			<File type="Inventor">convexModel/underarm_r.iv</File>
+		</CollisionModel>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="2.26566087" units="kg" />
+        </Physics>
+		<Child name="Wrist 1 R"/>
+	</RobotNode>
+	
+	<RobotNode name="Wrist 1 R">
+		<Transform>
+			<DH a="0" d="-240" theta="0" alpha="-90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="-90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="-90" alpha="-90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-29.18" hi="29.88"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1.29945309" units="kg" /><!--1.13047000-->
+        </Physics>
+   	    <Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/wrist1_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/wrist1_r.iv</File>
+		</CollisionModel>
+		<Child name="Wrist 2 R"/>
+	</RobotNode>
+	
+	<RobotNode name="Wrist 2 R">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="-90" unitsangle="degree" unitslength="mm"/>
+			<DH a="0" d="0" theta="-90" alpha="0" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="-90" alpha="90" unitsangle="degree" unitslength="mm"/-->
+			<Limits unit="degree" lo="-30.9" hi="50.87"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+
+    	<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/wrist2_r.iv</File>
+		</Visualization>
+        <!-- no collision model, since bullet does not like two models with fixed joints inbetween-->
+        <!--CollisionModel>
+			<File type="Inventor">convexModel/wrist2_r.iv</File>
+		</CollisionModel>
+		
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="2.59945309" units="kg" />
+            <IgnoreCollision name="Underarm R"/>
+        </Physics-->
+        <Sensor type="forcetorque"/>
+		<Child name="EndArmR"/>
+	</RobotNode>
+	
+	<RobotNode name="EndArmR">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+	    <ChildFromRobot>
+			<File importEEF="true">ArmarIII-RightHand.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+	<RobotNodeSet name="RightArm" kinematicRoot="Right Arm Base" tcp="TCP R">
+		<Node name="Shoulder 1 R"/>
+		<Node name="Shoulder 2 R"/>
+		<Node name="Upperarm R"/>
+		<Node name="Elbow R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 1 R"/>
+		<Node name="Wrist 2 R"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="RightArmColModel" kinematicRoot="Right Arm Base" tcp="TCP R">
+		<Node name="Upperarm R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 2 R"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="RightArmHandColModel" kinematicRoot="Right Arm Base" tcp="TCP R">
+		<Node name="Upperarm R"/>
+		<Node name="Underarm R"/>
+		<Node name="Hand Palm 1 R"/>
+		<Node name="Hand Palm 2 R"/>
+		<Node name="Thumb R J0"/>
+		<Node name="Thumb R J1"/>
+		<Node name="Index R J0"/>
+		<Node name="Index R J1"/>
+		<Node name="Middle R J0"/>
+		<Node name="Middle R J1"/>
+		<Node name="Ring R J0"/>
+		<Node name="Ring R J1"/>
+		<Node name="Pinky R J0"/>
+		<Node name="Pinky R J1"/>
+	</RobotNodeSet>
+	
+</Robot>

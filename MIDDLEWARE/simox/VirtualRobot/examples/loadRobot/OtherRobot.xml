@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="otherRob" StandardName="myName" RootNode="otherRob1">
+	
+	<RobotNode name="otherRob1">
+		<Visualization enable="true">
+			<File type="inventor">test.iv</File>
+			<CoordinateAxis type="Inventor" enable="true" scaling="1" text="Axis1"/>
+		</Visualization>
+		<CollisionModel>
+			<File type="inventor">test.iv</File>
+		</CollisionModel>
+		<Child name="otherRob2"/>
+	</RobotNode>
+	
+	<RobotNode name="otherRob2">
+		<Joint type="revolute" offset="0">
+			<Limits unit="degree" lo="-90" hi="45"/>
+			<DH a="0" d="100" theta="-30" alpha="15" units="degree"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="inventor">test.iv</File>
+			<CoordinateAxis type="Inventor" enable="true" scaling="1" text="Axis2"/>
+		</Visualization>
+		<CollisionModel>
+			<File boundingbox="true" type="inventor">test.iv</File>
+		</CollisionModel>
+	</RobotNode>
+</Robot>

@@ -1,0 +1,6 @@
+<ManipulationObject name='Wok'>
+	<Visualization>
+		<File type='inventor'>iv/wok_1484tr.iv</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="robot2" RootNode="node1">
+  
+  <RobotNode name="node1">
+    <Child name="node2"/>
+    <Child name="node3"/>
+  </RobotNode>
+  
+  <RobotNode name="node2">
+    <Transform>
+        <Translation x="0" y="500" z="0"/>
+    </Transform>
+    <Visualization enable="true">
+      <CoordinateAxis type="Inventor" enable="true" scaling="1" text="TCP1"/>
+    </Visualization>
+  </RobotNode>
+  
+  <RobotNode name="node3">
+    <Transform>
+        <Translation x="0" y="-500" z="0"/>
+    </Transform>
+    <Visualization enable="true">
+      <CoordinateAxis type="Inventor" enable="true" scaling="1" text="TCP2"/>
+    </Visualization>
+  </RobotNode>
+  
+</Robot>

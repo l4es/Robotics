@@ -1,0 +1,63 @@
+##  Copyright (c) 2014, Nikolaus Vahrenkamp (Karlsruhe Institute of Technology)
+
+
+# - Config file for the Simox package
+# It defines the following variables
+#  Simox_INCLUDE_DIRS       - include directories for Simox
+#  Simox_LIBRARIES          - libraries to link against
+#  Simox_EXECUTABLE         - the executables
+#  Simox_VISUALIZATION      - if visualization is enabled
+#  Simox_USE_COIN_VISUALIZATION   - if Coin3D visualization was selected
+
+if(Simox_FOUND)
+    return()
+endif()
+set(Simox_FOUND TRUE)
+
+# Compute paths
+get_filename_component(Simox_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET Simox AND NOT Simox_BINARY_DIR)
+  include("${Simox_CMAKE_DIR}/SimoxTargets.cmake")
+endif()
+# These are IMPORTED targets created by SimoxTargets.cmake
+set(Simox_LIBRARIES "@Simox_LIBRARIES@")
+set(Simox_EXECUTABLE "@Simox_EXECUTABLE@")
+
+
+if(EXISTS "${Simox_CMAKE_DIR}/CMakeCache.txt")
+    # In build tree
+    message(STATUS "Using Simox Source-Build from: ${Simox_CURRENT_CMAKE_DIR}")
+    include("${Simox_CMAKE_DIR}/SimoxBuildTreeSettings.cmake")
+else()
+    # Installed project
+    message(STATUS "Using Simox Binary Package from: ${Simox_CMAKE_DIR}")
+    set(Simox_INCLUDE_DIRS "")
+    foreach (INCLUDE_DIR @CONF_INCLUDE_DIRS@)
+        LIST(APPEND Simox_INCLUDE_DIRS "${Simox_CMAKE_DIR}/@RELATIVE_INSTALL_DIR@/${INCLUDE_DIR}")
+    endforeach ()
+
+    set(Simox_DATA_PATH "${Simox_CMAKE_DIR}/@RELATIVE_INSTALL_DIR@/@Simox_DATA_PATH@")
+    set(Simox_MACROS_INCLUDE_DIR "${Simox_CMAKE_DIR}")
+endif()
+
+SET(Simox_VISUALIZATION "@Simox_VISUALIZATION@")
+SET(Simox_USE_COIN_VISUALIZATION "@Simox_USE_COIN_VISUALIZATION@")
+SET(Simox_USE_OPENSCENEGRAPH_VISUALIZATION "@Simox_USE_OPENSCENEGRAPH_VISUALIZATION@")
+SET(Simox_USE_COLLADA "@Simox_USE_COLLADA@")
+SET(Simox_USE_RBDL "@Simox_USE_RBDL@")
+
+
+SET(Simox_EXTERNAL_INCLUDE_DIRS "@Simox_EXTERNAL_INCLUDE_DIRS@")
+SET(Simox_EXTERNAL_LIBRARY_FLAGS "@Simox_EXTERNAL_LIBRARY_FLAGS@")
+SET(Simox_EXTERNAL_LIBRARIES "@Simox_EXTERNAL_LIBRARIES@")
+SET(Simox_EXTERNAL_LIBRARY_DIRS "@Simox_EXTERNAL_LIBRARY_DIRS@")
+SET(Simox_EXTERNAL_CMAKE_INCLUDE "@Simox_EXTERNAL_CMAKE_INCLUDE@")
+
+
+
+if (NOT (Simox_FIND_QUIETLY OR VirtualRobot_FIND_QUIETLY))
+    MESSAGE(STATUS " * Including ${Simox_CMAKE_DIR}/SimoxMacros.cmake")
+endif()
+include(${Simox_MACROS_INCLUDE_DIR}/SimoxMacros.cmake)

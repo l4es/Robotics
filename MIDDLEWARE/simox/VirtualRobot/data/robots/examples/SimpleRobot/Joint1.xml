@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Simple3DoFRobot" RootNode="Joint1">
+
+	<RobotNode name="Joint1">
+		<Visualization enable="true">
+			 <File type="inventor">joint_rot2.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+		<Child name="Joint2a"/>
+	</RobotNode>
+	<RobotNode name="Joint2a">
+        <Child name="Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Joint2">
+		<Transform>
+            <translation x="0" y="0" z="3000"/>
+		</Transform>
+		<Joint type="revolute">
+		    <axis x="0" y="1" z="0"/>
+			<Limits unit="degree" lo="-90" hi="90"/>
+        </Joint>
+		<Visualization enable="true">
+			 <File type="inventor">joint_box.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+        <Child name="Joint3"/>
+	</RobotNode>
+
+	<!--RobotNode name="Joint3a">
+        <Child name="Joint3"/>
+	</RobotNode-->
+	
+	<RobotNode name="Joint3">
+		<Transform>
+            <translation x="3000" y="0" z="0"/>
+		</Transform>
+		
+		<Visualization enable="true">
+			 <File type="inventor">joint_box.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+	</RobotNode>
+
+</Robot>

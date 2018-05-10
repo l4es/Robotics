@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Simple3DoFRobot" RootNode="Start">
+	
+	<RobotNode name="Start">
+		<Visualization enable="true">
+			<File type="inventor">sphere_red.iv</File>
+		</Visualization>
+        <!--Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="0.01" units="kg" />
+        </Physics-->
+		<Child name="Joint1"/>
+	</RobotNode>
+
+	<RobotNode name="Joint1">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+            <!--DH a="300" d="0" theta="0" alpha="45" units="degree"/-->
+        </Joint>
+		<Visualization enable="true">
+			 <File type="inventor">joint_rot_sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+		<Child name="Joint2"/>
+	</RobotNode>
+
+	<RobotNode name="Joint2">
+		<Transform>
+			<DH a="300" d="0" theta="0" alpha="45" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-180" hi="45"/>
+            <!--DH a="300" d="0" theta="50" alpha="0" units="degree"/-->
+        </Joint>
+		<Visualization enable="true">
+			 <File type="inventor">joint_rot_sphere.iv</File>
+		</Visualization>
+		<CollisionModel>
+			 <File type="inventor" boundingbox="true">joint_rot_sphere.iv</File>
+		</CollisionModel>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+
+		<Child name="Joint3"/>
+	</RobotNode>
+
+	<RobotNode name="Joint3">
+		<Transform>
+			<DH a="300" d="0" theta="50" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+            <!--DH a="300" d="0" theta="0" alpha="0" units="degree"/-->
+        </Joint>
+		<Visualization enable="true">
+			 <File type="inventor">joint_rot_sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+		<Child name="EndPoint"/>
+	</RobotNode>
+
+	<RobotNode name="EndPoint">
+		<Transform>
+			<DH a="300" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Visualization enable="true">
+			 <File type="inventor">sphere.iv</File>
+			 <UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+	</RobotNode>
+
+	<RobotNodeSet name="AllJoints">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="CollisionModel">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+  	    <Node name="EndPoint"/>
+	</RobotNodeSet>
+
+</Robot>

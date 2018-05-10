@@ -1,0 +1,6 @@
+<ManipulationObject name='Sphere'>
+	<Visualization>
+		<File type='inventor'>iv/sphere10.iv</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

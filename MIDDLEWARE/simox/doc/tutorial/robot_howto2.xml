@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="DemoRobot" RootNode="root">
+    
+    <RobotNode name="root">
+        <Visualization>
+		    <File type="Inventor">iv/joint.iv</File>
+		</Visualization>
+    </RobotNode>
+    
+</Robot>

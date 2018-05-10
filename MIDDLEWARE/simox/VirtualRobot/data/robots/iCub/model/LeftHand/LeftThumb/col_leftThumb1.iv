@@ -1,0 +1,21 @@
+#Inventor V2.1 ascii
+
+Separator {
+
+
+	Transform {
+		translation 0 0 0
+		rotation 0 1 0 3.14
+	}
+
+	Transform {
+		translation 0 0 0
+		rotation 1 0 0 3.14
+	}
+
+
+	Separator 
+	{
+		File {name col_LeftThumbFinger1.wrl }
+	}
+}

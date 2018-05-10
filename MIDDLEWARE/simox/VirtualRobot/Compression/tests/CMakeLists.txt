@@ -1,0 +1,1 @@
+ADD_VR_TEST(CompressionBZip2Test)

@@ -1,0 +1,52 @@
+<ManipulationObject name='RiceBox'>
+	<Visualization>
+		<File type='inventor'>iv/ricefit.iv</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>iv/ricefit.iv</File>
+	</CollisionModel>
+
+	<GraspSet name='Left Hand' RobotType='iCub' EndEffector='Left Hand'>
+		<Grasp name='Grasp 0' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.744762' c2='0.00303594' c3='0.667324' c4='90.8132'/>
+					<row2 c1='0.0380269' c2='0.998551' c3='0.0378958' c4='22.7001'/>
+					<row3 c1='-0.666254' c2='0.0535989' c3='-0.743792' c4='76.5958'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 1' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.780083' c2='0.0509321' c3='-0.6236' c4='105.647'/>
+					<row2 c1='-0.0220341' c2='0.9983' c3='0.0539714' c4='-14.3939'/>
+					<row3 c1='0.625297' c2='-0.0283613' c3='0.779867' c4='62.2078'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999997'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 2' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.112476' c2='-0.805539' c3='-0.581765' c4='103.554'/>
+					<row2 c1='0.991126' c2='-0.13272' c3='-0.0078487' c4='-23.6959'/>
+					<row3 c1='-0.0708918' c2='-0.577489' c3='0.813305' c4='73.8865'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999998'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 3' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.0108137' c2='-0.767966' c3='-0.640395' c4='105.671'/>
+					<row2 c1='0.997637' c2='0.0352335' c3='-0.0590963' c4='49.6933'/>
+					<row3 c1='0.0679468' c2='-0.639525' c3='0.765755' c4='76.4711'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+	</GraspSet>
+
+</ManipulationObject>

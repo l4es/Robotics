@@ -1,0 +1,11 @@
+Source: simox
+Section: devel
+Priority: optional
+Maintainer: Nikolaus Vahrenkamp <vahrenkamp@kit.edu>
+Build-Depends: cmake (>= 2.6), build-essential, libboost-all-dev (>= 1.42), libqt4-dev (>= 4.6), libsoqt4-dev, libeigen3-dev
+Homepage: http://simox.sourceforge.net/
+
+Package: simox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev (>= 1.42), libqt4-dev (>= 4.6), libsoqt4-dev
+Description: Simox package

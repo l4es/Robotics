@@ -1,0 +1,72 @@
+<ManipulationObject name='Plate'>
+	<Visualization>
+		<File type='inventor'>iv/plate.iv</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>iv/plate.iv</File>
+	</CollisionModel>
+
+	<GraspSet name='GraspSet LeftHand' RobotType='Armar3' EndEffector='Hand L'>
+		<Grasp name='Left Grasp0' quality='1' Creation='Manual'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.168444' c2='0.466886' c3='-0.868125' c4='-98.7539'/>
+					<row2 c1='0.761223' c2='0.621129' c3='0.186347' c4='-38.5899'/>
+					<row3 c1='0.626217' c2='-0.629454' c3='-0.460033' c4='88.3823'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999999'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Left Grasp1' quality='1' Creation='Manual'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.417998' c2='-0.421863' c3='-0.804555' c4='-91.8524'/>
+					<row2 c1='-0.710354' c2='0.703845' c3='-1.04308e-007' c4='16.3282'/>
+					<row3 c1='0.566283' c2='0.571519' c3='-0.593878' c4='78.9597'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 2' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='-0.416969' c2='-0.0440223' c3='-0.907852' c4='-72.2457'/>
+					<row2 c1='-0.0998035' c2='0.995002' c3='-0.00240873' c4='-53.1061'/>
+					<row3 c1='0.903414' c2='0.0896029' c3='-0.419284' c4='73.2142'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999999'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 3' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.340236' c2='0.655171' c3='-0.674525' c4='-126.139'/>
+					<row2 c1='0.83721' c2='-0.537659' c3='-0.0999272' c4='-20.002'/>
+					<row3 c1='-0.428132' c2='-0.530724' c3='-0.731455' c4='82.4121'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999999'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 4' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.598762' c2='-0.0283892' c3='-0.800416' c4='-91.2146'/>
+					<row2 c1='-0.0621546' c2='-0.998002' c3='-0.0110989' c4='-2.41101'/>
+					<row3 c1='-0.798498' c2='0.0563967' c3='-0.599337' c4='97.8487'/>
+					<row4 c1='0' c2='0' c3='0' c4='0.999999'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+		<Grasp name='Grasp 5' quality='0' Creation='GraspEditor'>
+			<Transform>
+				<Matrix4x4>
+					<row1 c1='0.393401' c2='-0.257779' c3='-0.882484' c4='-88.562'/>
+					<row2 c1='-0.716326' c2='-0.687625' c3='-0.118474' c4='-21.8755'/>
+					<row3 c1='-0.576275' c2='0.678762' c3='-0.455171' c4='86.3606'/>
+					<row4 c1='0' c2='0' c3='0' c4='1'/>
+				</Matrix4x4>
+			</Transform>
+		</Grasp>
+	</GraspSet>
+
+</ManipulationObject>

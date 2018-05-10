@@ -1,0 +1,15 @@
+#Inventor V2.1 ascii
+Separator {
+    Units {
+        units MILLIMETERS
+    }
+    Transform {
+        rotation 0 0 1  1.57
+    }
+    Transform {
+        rotation 0 0 1 1.57  
+    }
+    File { 
+    	name "armar/left_arm/shoulder_link_l_conv.wrl"
+    }
+}

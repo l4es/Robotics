@@ -1,0 +1,10 @@
+<ManipulationObject name='Kitchen'>
+    
+	<Visualization>
+		<File type='inventor'>KIT_kitchen.wrl</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>KIT_kitchen.wrl</File>
+	</CollisionModel>
+
+</ManipulationObject>

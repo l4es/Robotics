@@ -1,0 +1,6 @@
+<ManipulationObject name='Box_1m'>
+	<Visualization>
+		<File type='inventor'>iv/box1000x1000.iv</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

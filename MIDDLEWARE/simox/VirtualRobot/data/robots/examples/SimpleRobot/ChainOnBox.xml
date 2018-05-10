@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Simple3DoFRobot" RootNode="Start">
+	
+	<RobotNode name="Start">
+		<Visualization enable="true">
+			<Primitives>
+				<Box width="1000" height="1000" depth="1000"/>
+			</Primitives>
+			<UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+			<IgnoreCollision name="Joint1"/>
+			<IgnoreCollision name="Joint2"/>
+			<IgnoreCollision name="Joint3"/>
+            <Mass value="10000" units="kg" />
+        </Physics>
+		<Child name="Joint1_Trafo"/>
+	</RobotNode>
+
+	<RobotNode name="Joint1_Trafo">
+    	<Transform>
+    			<Translation x="500" y="0" z="500"/>
+    			<rollpitchyaw roll="90" pitch="0" yaw="0" unitsAngle="degree"/>
+    	</Transform>
+		<Child name="Joint1"/>
+	</RobotNode>
+
+	<RobotNode name="Joint1">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+        </Joint>
+		<Child name="Body2"/>
+	</RobotNode>
+
+	<RobotNode name="Body2">
+		<Transform>
+			<Translation x="250" y="0" z="0"/>
+		</Transform>
+		<Visualization enable="true">
+			<Primitives>
+				<Box width="500" height="100" depth="100"/>
+			</Primitives>
+			<UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+		<Child name="Joint2"/>
+	</RobotNode>
+
+	<RobotNode name="Joint2">
+		<Transform>
+			<DH a="250" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-180" hi="45"/>
+        </Joint>
+		<Child name="Body3"/>
+	</RobotNode>
+
+	<RobotNode name="Body3">
+		<Transform>
+			<Translation x="250" y="0" z="0"/>
+		</Transform>
+		<Visualization enable="true">
+			<Primitives>
+				<Box width="500" height="100" depth="100"/>
+			</Primitives>
+			<UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+        </Physics>
+		<Child name="Joint3"/>
+	</RobotNode>
+
+	<RobotNode name="Joint3">
+		<Transform>
+			<DH a="250" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-90" hi="90"/>
+        </Joint>
+		<Child name="Body4"/>
+	</RobotNode>
+
+	<RobotNode name="Body4">
+		<Transform>
+			<Translation x="250" y="0" z="0"/>
+		</Transform>
+		<Visualization enable="true">
+			<Primitives>
+				<Box width="500" height="100" depth="100"/>
+			</Primitives>
+			<UseAsCollisionModel/>
+		</Visualization>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1" units="kg" />
+			<IgnoreCollision name="EndPoint"/>
+        </Physics>
+		<Child name="EndTransform"/>
+	</RobotNode>
+
+	<RobotNode name="EndTransform">
+		<Transform>
+			<Translation x="250" y="0" z="50"/>
+		</Transform>
+		<Child name="EndPoint"/>
+	</RobotNode>
+
+	<RobotNode name="EndPoint">
+		<Visualization enable="true">
+			<Primitives>
+				<Sphere radius="100"/>
+			</Primitives>
+			<UseAsCollisionModel/>
+		</Visualization>
+		<Transform>
+			<Translation x="50" y="100" z="-50"/>
+		</Transform>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="10" units="kg" />
+        </Physics>
+	</RobotNode>
+
+	<RobotNodeSet name="AllJoints">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="CollisionModel">
+		<Node name="Joint1"/>
+		<Node name="Joint2"/>
+		<Node name="Joint3"/>
+  	    <Node name="EndPoint"/>
+	</RobotNodeSet>
+</Robot>

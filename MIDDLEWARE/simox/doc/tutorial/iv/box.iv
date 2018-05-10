@@ -1,0 +1,16 @@
+#Inventor V2.1 ascii
+
+Separator {
+    Units {
+            units MILLIMETERS
+    }
+	Material {
+		diffuseColor    1 0.8 0.4
+	}
+	Cube
+	{
+		width 60
+		height 60
+		depth 60
+	}
+}

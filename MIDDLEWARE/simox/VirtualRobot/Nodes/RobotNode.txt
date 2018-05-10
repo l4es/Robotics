@@ -1,0 +1,17 @@
+RobotNode:
+
+	std::string name;                	// name of this node
+	std::list<std::string> children;	// list of all child names
+	std::string parent;          		// parent (empty for root)
+	
+	JointTransformation t;		// of type JointTransformationDH or JointTransformationAxis
+					// init value, offset, min, max
+	
+	3DModel; 				// filename, AbstractClass, VisualizationMode, show coordsystem, show text coordsystem, scle coord system
+	CollisionModel			// filename, BBoxes, enable
+
+	PhysicsModel			// mass, cog, inertia	
+
+	// sensor?
+	std::vector<CameraSensor> cameraSensors; // cameras located on this joint
+

@@ -1,0 +1,19 @@
+#Inventor V2.1 ascii
+
+Separator {
+    SoUnits
+    { 
+        units MILLIMETERS
+    }
+    Transform {
+		translation -35 0 -605
+	}
+    RotationXYZ{
+      axis Z
+      angle 3.14
+    }
+    
+    File { 
+      name "armar/head/head_base_conv.wrl"
+    }
+}

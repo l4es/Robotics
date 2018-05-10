@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="iCub_LeftArm" RootNode="Left Arm Base">
+
+
+	<!--RobotNode name="Left Arm Center">
+		<Joint type="revolute">
+			<DH a="23.3647" d="0" theta="105" alpha="-90" units="degree"/>
+			<Limits unit="degree" lo="-59" hi="59"/>
+		</Joint>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	<Child name="Left Arm Base"/>
+	</RobotNode-->
+
+	<!--RobotNode name="Left Arm Base">
+		<Joint type="fixed">
+			<DH a="0" d="107.74" theta="90" alpha="0" units="degree"/>
+		</Joint>
+	<Child name="Left Arm Shoulder1"/>
+	</RobotNode-->	
+	
+	<RobotNode name="Left Arm Base">
+	    <Child name="Left Arm Shoulder1"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Shoulder1">
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="0" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-95.5" hi="10"/><!--lo="-95" hi="5"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Child name="Left Arm Shoulder2"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Shoulder2">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="-90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="160.8"/>
+		</Joint>
+		<Child name="Left Arm Shoulder3"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Shoulder3">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="0" theta="75" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="15" d="152.28" theta="75" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="-37" hi="80"/><!--lo="-37" hi="100"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/Arms/leftUpperArm.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/Arms/leftUpperArmCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="2" unit="kg"/>
+		</Physics>
+		<Child name="Left Arm Elbow1"/>
+	</RobotNode>
+	
+
+	<RobotNode name="Left Arm Elbow1">
+		<Transform>
+			<DH a="15" d="152.28" theta="0" alpha="-90" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="-15" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="15" hi="105"/><!--lo="5.5" hi="106"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Child name="Left Arm Elbow2"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Elbow2">
+		<Transform>
+			<DH a="-15" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="137.3" theta="-90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-90" hi="90"/><!--lo="-50" hi="50"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/Arms/leftLowerArm.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/Arms/leftLowerArmCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="2" unit="kg"/>
+		</Physics>
+		<Child name="Left Arm Wrist1"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Wrist1">
+		<Transform>
+			<DH a="0" d="137.3" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="0" theta="90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-90" hi="0"/><!--lo="-65" hi="10"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Child name="Left Arm Wrist2"/>
+	</RobotNode>
+
+	<RobotNode name="Left Arm Wrist2">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="90" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-20" hi="40"/><!--lo="-25" hi="25"/>changed to values of ini files in main/app/robots/iCubGenova02-->
+		</Joint>
+		<Physics>
+			<Mass value="1" unit="kg"/>
+		</Physics>
+		<ChildFromRobot>
+			<File importEEF="true">iCub_LeftHand.xml</File>
+		</ChildFromRobot>
+		<!--Child name="Left Arm TCP"/-->
+	</RobotNode>
+	
+	<RobotNodeSet name="Left Arm" kinematicRoot="Left Arm Base" tcp="Left Arm TCP">
+		<Node name="Left Arm Shoulder1"/>
+		<Node name="Left Arm Shoulder2"/>
+		<Node name="Left Arm Shoulder3"/>
+		<Node name="Left Arm Elbow1"/>
+		<Node name="Left Arm Elbow2"/>
+		<Node name="Left Arm Wrist1"/>
+		<Node name="Left Arm Wrist2"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="Left HandArm ColModel" tcp="Left Arm TCP">
+		<!--Node name="Left Arm Shoulder3"/--><!-- reports self collisions with upper body-->
+		<Node name="Left Arm Elbow2"/>
+		<Node name="Left Hand Palm"/>
+		<Node name="Left Hand Thumb Joint1"/>
+		<Node name="Left Hand Thumb Joint2"/>
+		<Node name="Left Hand Thumb Joint3"/>
+		<Node name="Left Hand Thumb Joint4"/>
+		
+		<Node name="Left Hand Index Joint1"/>
+		<Node name="Left Hand Index Joint2"/>
+		<Node name="Left Hand Index Joint3"/>
+		<Node name="Left Hand Index Joint4"/>
+		
+		<Node name="Left Hand Middle Joint1"/>
+		<Node name="Left Hand Middle Joint2"/>
+		<Node name="Left Hand Middle Joint3"/>
+		<Node name="Left Hand Middle Joint4"/>
+		
+		<Node name="Left Hand Ring Joint1"/>
+		<Node name="Left Hand Ring Joint2"/>
+		<Node name="Left Hand Ring Joint3"/>
+		<Node name="Left Hand Ring Joint4"/>
+		
+		<Node name="Left Hand Pinky Joint1"/>
+		<Node name="Left Hand Pinky Joint2"/>
+		<Node name="Left Hand Pinky Joint3"/>
+		<Node name="Left Hand Pinky Joint4"/>
+	</RobotNodeSet>
+	
+	</Robot>

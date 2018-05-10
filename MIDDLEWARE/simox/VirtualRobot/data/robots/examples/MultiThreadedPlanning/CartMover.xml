@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="FreeFlyingRobot" RootNode="XYZ_Mover">
+	
+
+	<RobotNode name="XYZ_Mover">
+		<Child name="X"/>
+	</RobotNode>
+	
+	<RobotNode name="X">
+		<Transform>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="prismatic">
+			<Limits unit="mm" lo="-1000" hi="1000"/>
+			<TranslationDirection x="0" y="0" z="1"/>
+			<!--DH a="0" d="0" theta="90" alpha="-90" units="degree"/-->
+		</Joint>
+		<Child name="Y"/>
+	</RobotNode>
+	
+	<RobotNode name="Y">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="prismatic">
+			<Limits unit="mm" lo="-1000" hi="1000"/>
+			<TranslationDirection x="0" y="0" z="1"/>
+			<!--DH a="0" d="0" theta="90" alpha="-90" units="degree"/-->
+		</Joint>
+		<Child name="Z"/>
+	</RobotNode>
+	
+	<RobotNode name="Z">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="0" theta="90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="prismatic">
+			<Limits unit="mm" lo="-1000" hi="1000"/>
+			<TranslationDirection x="0" y="0" z="1"/>
+			<!--DH a="0" d="0" theta="90" alpha="-90" units="degree"/-->
+		</Joint>
+
+		<Child name="Visu"/>
+	</RobotNode>
+
+
+	<RobotNode name="Visu">
+		<Visualization enable="true">
+      <File type="Inventor">sphere40.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File boundingbox="false" type="Inventor">sphere40.iv</File>
+		</CollisionModel>
+	</RobotNode>
+
+	<RobotNodeSet name="All">
+		<Node name="X"/>
+		<Node name="Y"/>
+		<Node name="Z"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="colModel">
+		<Node name="Visu"/>
+	</RobotNodeSet>
+
+</Robot>
+

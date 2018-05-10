@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="DemoRobot" RootNode="root">
+    
+  <RobotNode name="root">
+    <Child name="Finger Joint1"/>
+  </RobotNode>
+  
+  <RobotNode name="Finger Joint1">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-25" hi="25"/>
+    </Joint>
+    <Visualization enable="true">
+      <File type="Inventor">iv/LeftIndexFinger/leftIndexFinger0.iv</File>
+    </Visualization>
+    <CollisionModel>
+      <File type="Inventor">iv/LeftIndexFinger/col_leftIndexFinger0.iv</File>
+    </CollisionModel>
+    <Child name="BaseToFinger"/>
+  </RobotNode>
+  
+  <RobotNode name="BaseToFinger">
+    <Transform>
+      <DH a="14.8" d="0" theta="0" alpha="90" units="degree"/>
+    </Transform>
+    <Child name="Finger Joint2"/>
+  </RobotNode>
+  
+  <RobotNode name="Finger Joint2">
+    <Transform>
+      <DH a="0" d="1.75" theta="0" alpha="0" units="degree"/>
+    </Transform>
+    <Joint type="revolute">
+      <Limits unit="degree" lo="0" hi="90"/>
+    </Joint>
+    <Visualization enable="true">
+      <File type="Inventor">iv/LeftIndexFinger/leftIndexFinger1.iv</File>
+    </Visualization>
+    <CollisionModel>
+      <File type="Inventor">iv/LeftIndexFinger/col_leftIndexFinger1.iv</File>
+    </CollisionModel>
+    <Child name="Finger Joint3"/>
+  </RobotNode>
+  
+  <RobotNode name="Finger Joint3">
+    <Transform>
+      <DH a="25.9" d="0" theta="0" alpha="0" units="degree"/>
+    </Transform>
+    <Joint type="revolute">
+      <Limits unit="degree" lo="0" hi="90"/>
+    </Joint>
+    <Visualization enable="true">
+      <File type="Inventor">iv/LeftIndexFinger/leftIndexFinger2.iv</File>
+    </Visualization>
+    <CollisionModel>
+      <File type="Inventor">iv/LeftIndexFinger/col_leftIndexFinger2.iv</File>
+    </CollisionModel>
+    <Child name="Finger Joint4"/>
+  </RobotNode>
+
+  <RobotNode name="Finger Joint4">
+    <Transform>
+      <DH a="22" d="0" theta="0" alpha="0" units="degree"/>
+    </Transform>
+    <Joint type="revolute">
+      <Limits unit="degree" lo="0" hi="90"/>
+    </Joint>
+    <Visualization enable="true">
+      <File type="Inventor">iv/LeftIndexFinger/leftIndexFingerTip.iv</File>
+    </Visualization>
+    <CollisionModel>
+      <File type="Inventor">iv/LeftIndexFinger/col_leftIndexFingerTip.iv</File>
+    </CollisionModel>
+  </RobotNode>
+  
+</Robot>

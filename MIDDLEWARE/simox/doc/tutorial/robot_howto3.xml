@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="DemoRobot" RootNode="root">
+    
+	<RobotNode name="root">
+		<Child name="joint 1"/>
+	</RobotNode>
+	
+	<RobotNode name="joint 1">
+		<Transform>
+			<Translation x="0" y="500" z="0"/>
+		</Transform>
+		<Joint type="revolute">
+			<Axis x="0" y="0" z="1"/>
+		</Joint>
+		<Visualization>
+			<File type="Inventor">iv/joint.iv</File>
+		</Visualization>
+	</RobotNode>
+	        
+</Robot>

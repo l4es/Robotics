@@ -1,0 +1,587 @@
+<Robot Type="SAHandRight" RootNode="Right Hand Start">
+
+<RobotNode name="Right Hand Start">
+
+      <Transform>
+	<rollpitchyaw roll="0" pitch="0" yaw="0" units="degree"/>
+      </Transform>
+
+  <Visualization enable="true">
+    <CoordinateAxis type="Inventor" enable="false" scaling="1" text="Right Hand Start"/>
+  </Visualization>
+  <Child name="Right Hand Init"/>
+</RobotNode>
+
+<RobotNode name="Right Hand Init">
+  <Child name="Right Hand Palm"/>
+  <Child name="Right Arm TCP"/>
+  <Child name="Right Arm GCP"/>
+</RobotNode>
+
+<RobotNode name="Right Arm TCP">
+
+      <Transform>
+	<Translation x="100" y="22" z="180"/>
+	<rollpitchyaw roll="0" pitch="30" yaw="0" units="degree"/>
+      </Transform>
+
+  <Visualization enable="true">
+    <CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+  </Visualization>
+</RobotNode>
+
+<RobotNode name="Right Arm GCP">
+
+      <Transform>
+	<Translation x="100" y="22" z="180"/>
+	<rollpitchyaw roll="0" pitch="30" yaw="0" units="degree"/>
+      </Transform>
+
+  <Visualization enable="true">
+    <CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+  </Visualization>
+</RobotNode>
+
+<RobotNode name="Right Hand Palm"> 
+
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+
+  <Visualization enable="true">
+    <File type="Inventor">model/palmRight2.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/palmRight2CD.wrl</File>
+  </CollisionModel>
+  <Child name="thumbPalmJoint"/>
+  <Child name="forefinger.baseJoint"/>
+  <Child name="middlefinger.baseJoint"/>
+  <Child name="ringfinger.baseJoint"/>
+</RobotNode>
+
+<RobotNode name="thumbPalmJoint">
+  <Transform>
+    <Translation x="-3" y="27.1" z="0"/>
+    <rollpitchyaw roll="-180" pitch="-0" yaw="180" unitsAngle="degree"/>
+  </Transform>
+  <Joint type="revolute">
+    <Axis x="0" y="0" z="1"/>
+    <Limits unit="degree" lo="90" hi="90"/>
+  </Joint>
+  <Child name="thumb.baseJoint"/>
+  <Child name="thumbBase"/>
+</RobotNode>
+
+<RobotNode name="thumb.baseJoint">
+      <Transform>
+        <Translation x="0" y="85.5" z="-102.82"/>
+        <rollpitchyaw roll="-179.3" pitch="35" yaw="90" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-15" hi="15"/>
+  </Joint>
+  <Child name="thumb.proximalJoint"/>
+  <Child name="thumb.fingerBase"/>
+</RobotNode>
+
+<RobotNode name="thumb.proximalJoint">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="90" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-4" hi="75"/>
+  </Joint>
+  <Child name="thumb.middleJoint"/>
+  <Child name="thumb.proximalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="thumb.middleJoint">
+      <Transform>
+        <Translation x="67.8" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+ <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="thumb.distalJoint"/>
+  <Child name="thumb.middlePhalanx"/>
+</RobotNode>
+
+<RobotNode name="thumb.distalJoint">
+      <Transform>
+        <Translation x="30" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="thumb.distalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="forefinger.baseJoint">
+     <Transform>
+        <Translation x="-3" y="40.25" z="155.84"/>
+        <rollpitchyaw roll="0" pitch="-90" yaw="-177.967" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-15" hi="15"/>
+  </Joint>
+  <Child name="forefinger.proximalJoint"/>
+  <Child name="forefinger.fingerBase"/>
+</RobotNode>
+
+<RobotNode name="forefinger.proximalJoint">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="90" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-4" hi="75"/>
+  </Joint>
+  <Child name="forefinger.middleJoint"/>
+  <Child name="forefinger.proximalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="forefinger.middleJoint">
+      <Transform>
+        <Translation x="67.8" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+ <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="forefinger.distalJoint"/>
+  <Child name="forefinger.middlePhalanx"/>
+</RobotNode>
+
+<RobotNode name="forefinger.distalJoint">
+      <Transform>
+        <Translation x="30" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="forefinger.distalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="middlefinger.baseJoint">
+      <Transform>
+        <Translation x="-3" y="0" z="160.56"/>
+        <rollpitchyaw roll="0" pitch="-90" yaw="-177.967" unitsAngle="degree"/>
+      </Transform>
+ <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-15" hi="15"/>
+  </Joint>
+  <Child name="middlefinger.proximalJoint"/>
+  <Child name="middlefinger.fingerBase"/>
+</RobotNode>
+
+<RobotNode name="middlefinger.proximalJoint">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="90" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-4" hi="75"/>
+  </Joint>
+  <Child name="middlefinger.middleJoint"/>
+  <Child name="middlefinger.proximalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="middlefinger.middleJoint">
+      <Transform>
+        <Translation x="67.8" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="middlefinger.distalJoint"/>
+  <Child name="middlefinger.middlePhalanx"/>
+</RobotNode>
+
+<RobotNode name="middlefinger.distalJoint">
+      <Transform>
+        <Translation x="30" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="middlefinger.distalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="ringfinger.baseJoint">
+     <Transform>
+        <Translation x="-3" y="-40.25" z="155.84"/>
+        <rollpitchyaw roll="0" pitch="-90" yaw="178.033" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-15" hi="15"/>
+  </Joint>
+  <Child name="ringfinger.proximalJoint"/>
+  <Child name="ringfinger.fingerBase"/>
+</RobotNode>
+
+<RobotNode name="ringfinger.proximalJoint">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="90" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="-4" hi="75"/>
+  </Joint>
+  <Child name="ringfinger.middleJoint"/>
+  <Child name="ringfinger.proximalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="ringfinger.middleJoint">
+     <Transform>
+        <Translation x="67.8" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="ringfinger.distalJoint"/>
+  <Child name="ringfinger.middlePhalanx"/>
+</RobotNode>
+
+<RobotNode name="ringfinger.distalJoint">
+      <Transform>
+        <Translation x="30" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Joint type="revolute">
+  <Axis x="0" y="0" z="1"/>
+  <Limits unit="degree" lo="4" hi="75"/>
+  </Joint>
+  <Child name="ringfinger.distalPhalanx"/>
+</RobotNode>
+
+<RobotNode name="thumbBase">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/thumbBaseRight.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/thumbBaseRightCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="thumb.fingerBase">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="180" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerBase.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerBaseCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="thumb.proximalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaProx.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaProxCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="thumb.middlePhalanx">
+       <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaMid.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaMidCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="thumb.distalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="1.25" yaw="0" unitsAngle="degree"/>
+      </Transform>
+   <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaDist.wrl</File>
+  </Visualization>
+  <CollisionModel> 
+    <File type="Inventor">model/fingerPhaDistCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="forefinger.fingerBase">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="180" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+   <Visualization enable="true">
+    <File type="Inventor">model/fingerBase.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerBaseCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="forefinger.proximalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaProx.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaProxCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="forefinger.middlePhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaMid.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaMidCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="forefinger.distalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="1.25" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaDist.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaDistCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="middlefinger.fingerBase">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="180" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+   <Visualization enable="true">
+    <File type="Inventor">model/fingerBase.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerBaseCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="middlefinger.proximalPhalanx">
+       <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaProx.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaProxCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="middlefinger.middlePhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaMid.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaMidCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="middlefinger.distalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="1.25" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaDist.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaDistCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="ringfinger.fingerBase">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="180" pitch="0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerBase.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerBaseCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="ringfinger.proximalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+   <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaProx.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaProxCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="ringfinger.middlePhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="-0" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaMid.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaMidCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<RobotNode name="ringfinger.distalPhalanx">
+      <Transform>
+        <Translation x="0" y="0" z="0"/>
+        <rollpitchyaw roll="0" pitch="1.25" yaw="0" unitsAngle="degree"/>
+      </Transform>
+  <Visualization enable="true">
+    <File type="Inventor">model/fingerPhaDist.wrl</File>
+  </Visualization>
+  <CollisionModel>
+    <File type="Inventor">model/fingerPhaDistCD.wrl</File>
+  </CollisionModel>
+</RobotNode>
+
+<!-- END EFFECTOR -->
+<Endeffector name="Right Hand" base="Right Hand Init" tcp="Right Arm TCP" gcp="Right Arm GCP">
+  <Preshape name="Grasp Preshape">
+    <Node name="thumbPalmJoint" unit="degree" value="90"/>   
+    <Node name="thumb.baseJoint" unit="radian" value="0"/>
+    <Node name="thumb.proximalJoint" unit="radian" value="0"/>
+    <Node name="thumb.middleJoint" unit="radian" value="0"/>
+    <Node name="thumb.distalJoint" unit="radian" value="0"/>
+
+    <Node name="forefinger.baseJoint" unit="radian" value="0"/>
+    <Node name="forefinger.proximalJoint" unit="radian" value="0"/>
+    <Node name="forefinger.middleJoint" unit="radian" value="0"/>
+    <Node name="forefinger.distalJoint" unit="radian" value="0"/>
+    
+    <Node name="middlefinger.baseJoint" unit="radian" value="0"/>
+    <Node name="middlefinger.proximalJoint" unit="radian" value="0"/>
+    <Node name="middlefinger.middleJoint" unit="radian" value="0"/>
+    <Node name="middlefinger.distalJoint" unit="radian" value="0"/>
+
+    <Node name="ringfinger.baseJoint" unit="radian" value="0"/>
+    <Node name="ringfinger.proximalJoint" unit="radian" value="0"/>
+    <Node name="ringfinger.middleJoint" unit="radian" value="0"/>
+    <Node name="ringfinger.distalJoint" unit="radian" value="0"/>
+  </Preshape>
+
+  <Static> 
+    <Node name="Right Hand Palm"/>
+    <Node name="thumbBase"/>
+    <Node name="thumb.fingerBase"/>
+  </Static>
+  <Actor name="Right Hand Thumb">
+    <Node name="thumb.proximalJoint" considerCollisions="None"/>
+    <Node name="thumb.middleJoint" considerCollisions="None"/>
+    <Node name="thumb.distalJoint" considerCollisions="None"/>
+    <Node name="thumb.proximalPhalanx" considerCollisions="Actors"/>
+    <Node name="thumb.middlePhalanx" considerCollisions="All"/>
+    <Node name="thumb.distalPhalanx" considerCollisions="All"/>
+  </Actor>
+  <Actor name="Right Hand Forefinger">
+    <Node name="forefinger.proximalJoint" considerCollisions="None"/>
+    <Node name="forefinger.middleJoint" considerCollisions="None"/>
+    <Node name="forefinger.distalJoint" considerCollisions="None"/>
+    <Node name="forefinger.proximalPhalanx" considerCollisions="Actors"/>
+    <Node name="forefinger.middlePhalanx" considerCollisions="All"/>
+    <Node name="forefinger.distalPhalanx" considerCollisions="All"/>
+  </Actor>
+  <Actor name="Right Hand Middle Finger">
+    <Node name="middlefinger.proximalJoint" considerCollisions="None"/>
+    <Node name="middlefinger.middleJoint" considerCollisions="None"/>
+    <Node name="middlefinger.distalJoint" considerCollisions="None"/>
+    <Node name="middlefinger.proximalPhalanx" considerCollisions="Actors"/>
+    <Node name="middlefinger.middlePhalanx" considerCollisions="All"/>
+    <Node name="middlefinger.distalPhalanx" considerCollisions="All"/>
+  </Actor> 
+  <Actor name="Right Hand Ring Finger">
+    <Node name="ringfinger.proximalJoint" considerCollisions="None"/>
+    <Node name="ringfinger.middleJoint" considerCollisions="None"/>
+    <Node name="ringfinger.distalJoint" considerCollisions="None"/>
+    <Node name="ringfinger.proximalPhalanx" considerCollisions="Actors"/>
+    <Node name="ringfinger.middlePhalanx" considerCollisions="All"/>
+    <Node name="ringfinger.distalPhalanx" considerCollisions="All"/>
+  </Actor>
+</Endeffector>
+
+<!-- Robot Node Sets -->
+<RobotNodeSet name="Right Hand Joints">
+  <Node name="thumbPalmJoint"/>
+  <Node name="thumb.baseJoint"/>
+  <Node name="thumb.proximalJoint"/>
+  <Node name="thumb.middleJoint"/>
+  <Node name="thumb.distalJoint"/>
+  <Node name="forefinger.baseJoint"/>
+  <Node name="forefinger.proximalJoint"/>
+  <Node name="forefinger.middleJoint"/>
+  <Node name="forefinger.distalJoint"/>
+  <Node name="middlefinger.baseJoint"/>
+  <Node name="middlefinger.proximalJoint"/>
+  <Node name="middlefinger.middleJoint"/>
+  <Node name="middlefinger.distalJoint"/>
+  <Node name="ringfinger.baseJoint"/>
+  <Node name="ringfinger.proximalJoint"/>
+  <Node name="ringfinger.middleJoint"/>
+  <Node name="ringfinger.distalJoint"/>
+</RobotNodeSet>
+
+</Robot>

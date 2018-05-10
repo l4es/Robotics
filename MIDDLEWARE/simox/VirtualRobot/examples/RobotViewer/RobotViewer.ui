@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowShowRobot</class>
+ <widget class="QMainWindow" name="MainWindowShowRobot">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1114</width>
+    <height>855</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simox - VirtualRobot - Show Robot</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frameViewer">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QPushButton" name="pushButtonReset">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>171</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>430</y>
+         <width>201</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Display options</string>
+       </property>
+       <widget class="QCheckBox" name="checkBoxColModel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>19</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Collision model</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxStructure">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>99</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Robot structure</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxRobotCoordSystems">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>129</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Coordinate systems</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxFullModel">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>69</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>IV Model</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>49</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Full model options</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxPhysicsCoM">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>189</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CoM</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxPhysicsInertia">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>189</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Inertia</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxRobotSensors">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>159</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sensors</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="pushButtonLoad">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>171</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Select Robot File</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>100</y>
+         <width>201</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Joints</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>130</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Joint Value</string>
+        </property>
+       </widget>
+       <widget class="QLCDNumber" name="lcdNumberJointValue">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>120</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>true</bool>
+        </property>
+        <property name="digitCount">
+         <number>5</number>
+        </property>
+        <property name="value" stdset="0">
+         <double>0.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QSlider" name="horizontalSliderPos">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="pageStep">
+         <number>50</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelMinPos">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>180</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1.57</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelMaxPos">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>180</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>1.57</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxJoint">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxShowCoordSystem">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>200</y>
+          <width>171</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>RobotNode's Coord System</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxRobotNodeSet">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Select RobotNodeSet</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Select RobotNode</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>340</y>
+         <width>201</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>End Effector</string>
+       </property>
+       <widget class="QComboBox" name="comboBoxEndEffector">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonClose">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Close</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonOpen">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>50</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Open</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>700</y>
+         <width>201</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Triangles</string>
+       </property>
+       <widget class="QLabel" name="labelInfo1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelInfo2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelInfo3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="ExportVRML20">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>660</y>
+         <width>81</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Export to single VRML file</string>
+       </property>
+       <property name="text">
+        <string>Export VRML</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ExportXML">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>660</y>
+         <width>81</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Export to simox XML format</string>
+       </property>
+       <property name="text">
+        <string>Export XML</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1114</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

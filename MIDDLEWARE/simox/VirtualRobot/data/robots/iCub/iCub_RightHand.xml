@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="iCub_RightHand" RootNode="Right Hand Start">
+
+	<RobotNode name="Right Hand Start">
+
+				<Transform>
+					<rollpitchyaw roll="0" pitch="0" yaw="0" units="degree"/>
+				</Transform>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+			<File type="Inventor">model/RightHand/rightPalm0.iv</File>
+		</Visualization>
+		<!--CollisionModel>
+			<File type="Inventor">model/RightHand/col_rightPalm0.iv</File>
+		</CollisionModel-->
+	    <Child name="Right Hand Init"/>
+	</RobotNode>
+	
+
+	<RobotNode name="Right Hand Init">	
+    	<Child name="Right Hand Palm"/>
+    	<Child name="Right Arm TCP"/>
+    	<Child name="Right Arm GCP"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Arm TCP">
+		<Transform>
+			<DH a="62.5" d="16" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+
+	<RobotNode name="Right Arm GCP">
+
+				<Transform>
+					<Translation x="60" y="-10" z="25"/>
+					<rollpitchyaw roll="0" pitch="45" yaw="0" units="degree"/>
+				</Transform>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+
+
+	<RobotNode name="Right Hand Palm">
+
+				<Transform>
+					<Translation x="0" y="0" z="12"/>
+				</Transform>
+
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/rightPalm.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/col_rightPalm.iv</File>
+		</CollisionModel>
+	<Child name="Right Hand Thumb Start1"/>
+	<Child name="Right Hand Index Start1"/>
+	<Child name="Right Hand Middle Start1"/>
+	<Child name="Right Hand Ring Start1"/>
+	<Child name="Right Hand Pinky Start1"/>
+	</RobotNode>
+	
+	
+	
+	
+	<!-- INDEX FINGER -->
+	<RobotNode name="Right Hand Index Start1">
+
+				<Transform>
+					<Translation x="64.25" y="-26.22" z="-6.7"/>
+				</Transform>
+		<Child name="Right Hand Index Start2"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="Right Hand Index Start2">
+
+				<Transform>
+					<rollpitchyaw roll="-5" pitch="0" yaw="-4.1" units="degree"/>
+				</Transform>
+
+		<Child name="Right Hand Index Joint1"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Index Joint1">
+		<Joint type="revolute">
+			<!--DH a="14.8" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-25" hi="25"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightIndex/rightIndex0.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightIndex/col_rightIndex0.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Index BaseToFinger"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Index BaseToFinger">
+	    <Transform>
+			<DH a="14.8" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="-1.75" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Child name="Right Hand Index Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Index Joint2">
+		<Joint type="revolute">
+			<!--DH a="25.9" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightIndex/rightIndex1.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightIndex/col_rightIndex1.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Index Joint3"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Index Joint3">
+	    <Transform>
+			<DH a="25.9" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="22" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightIndex/rightIndex2.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightIndex/col_rightIndex2.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Index Joint4"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Index Joint4">
+	    <Transform>
+			<DH a="22" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightIndex/rightIndex3.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightIndex/col_rightIndex3.iv</File>
+		</CollisionModel>
+        <Child name="Right Hand Index FingerTip"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Index FingerTip">
+
+				<Transform>
+					<Translation x="18" y="5" z="0"/>
+				</Transform>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+	
+	
+	
+	<!-- MIDDLE FINGER -->
+	<RobotNode name="Right Hand Middle Start1">
+
+				<Transform>
+					<Translation x="65" y="-9.77" z="-7.6"/>
+				</Transform>
+
+		<Child name="Right Hand Middle Start2"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="Right Hand Middle Start2">
+
+		<Child name="Right Hand Middle Joint1"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Middle Joint1">
+		<Joint type="revolute">
+			<!--DH a="15.3" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-25" hi="25"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightMiddle/rightMiddle0.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightMiddle/col_rightMiddle0.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Middle BaseToFinger"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Middle BaseToFinger">
+	    <Transform>
+			<DH a="15.3" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="-2.2" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Child name="Right Hand Middle Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Middle Joint2">
+		<Joint type="revolute">
+			<!--DH a="25.8" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightMiddle/rightMiddle1.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightMiddle/col_rightMiddle1.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Middle Joint3"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Middle Joint3">
+		<Transform>
+			<DH a="25.8" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+    	<Joint type="revolute">
+			<!--DH a="24" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightMiddle/rightMiddle2.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightMiddle/col_rightMiddle2.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Middle Joint4"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Middle Joint4">
+		<Transform>
+			<DH a="25.8" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightMiddle/rightMiddle3.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightMiddle/col_rightMiddle3.iv</File>
+		</CollisionModel>
+        <Child name="Right Hand Middle FingerTip"/>
+	</RobotNode>
+	
+    <RobotNode name="Right Hand Middle FingerTip">
+		<Transform>
+			<Translation x="18" y="5" z="0"/>
+		</Transform>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+	
+
+
+
+	<!-- RING FINGER -->
+	<RobotNode name="Right Hand Ring Start1">
+				<Transform>
+					<Translation x="64.13" y="5.65" z="-7"/>
+					<rollpitchyaw roll="0" pitch="0" yaw="0" units="degree"/>
+				</Transform>
+		<Child name="Right Hand Ring Start2"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="Right Hand Ring Start2">
+				<Transform>
+					<Translation x="0" y="0" z="0"/>
+					<rollpitchyaw roll="5" pitch="0" yaw="6.1" units="degree"/>
+				</Transform>
+		<Child name="Right Hand Ring Joint1"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring Joint1">
+		<Joint type="revolute">
+			<!--DH a="14.8" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-25" hi="25"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightRing/rightRing0.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightRing/col_rightRing0.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Ring BaseToFinger"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring BaseToFinger">
+		<Transform>
+			<DH a="14.8" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="-1.75" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Child name="Right Hand Ring Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring Joint2">
+		<Joint type="revolute">
+			<!--DH a="25.9" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightRing/rightRing1.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightRing/col_rightRing1.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Ring Joint3"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring Joint3">
+		<Transform>
+			<DH a="25.9" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="22" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightRing/rightRing2.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightRing/col_rightRing2.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Ring Joint4"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring Joint4">
+		<Transform>
+			<DH a="22" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightRing/rightRing3.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightRing/col_rightRing3.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Ring FingerTip"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Ring FingerTip">
+				<Transform>
+					<Translation x="18" y="5" z="0"/>
+				</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+
+
+	<!-- PINKY FINGER -->
+	<RobotNode name="Right Hand Pinky Start1">
+				<Transform>
+					<Translation x="62.11" y="24.54" z="-6"/>
+					<rollpitchyaw roll="0" pitch="0" yaw="0" units="degree"/>
+				</Transform>
+		<Child name="Right Hand Pinky Start2"/>
+	</RobotNode>
+	
+
+	<RobotNode name="Right Hand Pinky Start2">
+				<Transform>
+					<Translation x="0" y="0" z="0"/>
+					<rollpitchyaw roll="5" pitch="0" yaw="6.1" units="degree"/>
+				</Transform>
+		<Child name="Right Hand Pinky Joint1"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Pinky Joint1">
+		<Joint type="revolute">
+			<!--DH a="14.8" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-25" hi="25"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightPinky/rightPinky0.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightPinky/col_rightPinky0.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Pinky BaseToFinger"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Pinky BaseToFinger">
+		<Transform>
+			<DH a="14.8" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="1.75" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Child name="Right Hand Pinky Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Pinky Joint2">
+		<Joint type="revolute">
+			<!--DH a="21.9" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightPinky/rightPinky1.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightPinky/col_rightPinky1.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Pinky Joint3"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Pinky Joint3">
+		<Transform>
+			<DH a="21.9" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="19.0" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightPinky/rightPinky2.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightPinky/col_rightPinky2.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Pinky Joint4"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Pinky Joint4">
+		<Transform>
+			<DH a="19.0" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightPinky/rightPinky3.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightPinky/col_rightPinky3.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Pinky FingerTip"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Pinky FingerTip">
+				<Transform>
+					<Translation x="18" y="5" z="0"/>
+				</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+
+
+	<!-- THUMB -->
+	<RobotNode name="Right Hand Thumb Start1">
+				<Transform>
+					<Translation x="39" y="-12" z="2.5"/>
+					<rollpitchyaw roll="0" pitch="4.76364" yaw="29.04" units="degree"/>
+				</Transform>
+		<Child name="Right Hand Thumb Start2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Thumb Start2">
+				<Transform>
+					<Translation x="0" y="0" z="0"/>
+					<rollpitchyaw roll="90" pitch="0" yaw="-90" unit="degree"/>
+				</Transform>
+		<Child name="Right Hand Thumb Joint1"/>
+	</RobotNode>
+
+
+	<RobotNode name="Right Hand Thumb Joint1">
+		<Joint type="revolute">
+			<!--DH a="21.1" d="0" theta="0" alpha="-90" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="120"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightThumb/rightThumb0.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightThumb/col_rightThumb0.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Thumb BaseToFinger"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Thumb BaseToFinger">
+		<Transform>
+			<DH a="21.1" d="0" theta="0" alpha="-90" units="degree"/>
+			<DH a="0" d="4.9" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Child name="Right Hand Thumb Joint2"/>
+	</RobotNode>
+	
+	<RobotNode name="Right Hand Thumb Joint2">
+		<Joint type="revolute">
+			<!--DH a="26" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightThumb/rightThumb1.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor" boundingbox="false">model/RightHand/RightThumb/col_rightThumb1.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Thumb Joint3"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Thumb Joint3">
+		<Transform>
+			<DH a="26" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="22" d="0" theta="0" alpha="0" units="degree"/-->
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightThumb/rightThumb2.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightThumb/col_rightThumb2.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Thumb Joint4"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Thumb Joint4">
+		<Transform>
+			<DH a="22" d="0" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="90"/>
+		</Joint>
+		<Visualization enable="true">
+			<File type="Inventor">model/RightHand/RightThumb/rightThumb3.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/RightHand/RightThumb/col_rightThumb3.iv</File>
+		</CollisionModel>
+		<Child name="Right Hand Thumb FingerTip"/>
+	</RobotNode>
+
+	<RobotNode name="Right Hand Thumb FingerTip">
+				<Transform>
+					<Translation x="18" y="5" z="0"/>
+				</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	</RobotNode>
+	
+	<!-- END EFFECTOR -->
+	<Endeffector name="Right Hand" base="Right Hand Init" tcp="Right Arm TCP" gcp="Right Arm GCP">
+	    <Preshape name="Grasp Preshape">
+	        <Node name="Right Hand Thumb Joint1" unit="radian" value="1.3"/>
+	        <Node name="Right Hand Thumb Joint2" unit="radian" value="0"/>
+	        <Node name="Right Hand Thumb Joint3" unit="radian" value="0"/>
+	        <Node name="Right Hand Thumb Joint4" unit="radian" value="0"/>
+	        <Node name="Right Hand Index Joint1" unit="radian" value="0"/>
+	        <Node name="Right Hand Index Joint2" unit="radian" value="0"/>
+	        <Node name="Right Hand Index Joint3" unit="radian" value="0"/>
+	        <Node name="Right Hand Index Joint4" unit="radian" value="0"/>
+	        <Node name="Right Hand Middle Joint1" unit="radian" value="0"/>
+	        <Node name="Right Hand Middle Joint2" unit="radian" value="0"/>
+	        <Node name="Right Hand Middle Joint3" unit="radian" value="0"/>
+	        <Node name="Right Hand Middle Joint4" unit="radian" value="0"/>
+	        <Node name="Right Hand Ring Joint1" unit="radian" value="0"/>
+	        <Node name="Right Hand Ring Joint2" unit="radian" value="0"/>
+	        <Node name="Right Hand Ring Joint3" unit="radian" value="0"/>
+	        <Node name="Right Hand Ring Joint4" unit="radian" value="0"/>
+	        <Node name="Right Hand Pinky Joint1" unit="radian" value="0"/>
+	        <Node name="Right Hand Pinky Joint2" unit="radian" value="0"/>
+	        <Node name="Right Hand Pinky Joint3" unit="radian" value="0"/>
+	        <Node name="Right Hand Pinky Joint4" unit="radian" value="0"/>
+	    </Preshape>
+		<Static>
+			<Node name="Right Hand Palm"/>
+			<Node name="Right Hand Thumb Joint1"/>
+		</Static>
+		<Actor name="Right Hand Thumb">
+			<Node name="Right Hand Thumb Joint2" considerCollisions="Actors"/>
+			<Node name="Right Hand Thumb Joint3" considerCollisions="All"/>
+			<Node name="Right Hand Thumb Joint4" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Right Hand Index">
+			<Node name="Right Hand Index Joint2" considerCollisions="Actors"/>
+			<Node name="Right Hand Index Joint3" considerCollisions="All"/>
+			<Node name="Right Hand Index Joint4" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Right Hand Middle">
+			<Node name="Right Hand Middle Joint2" considerCollisions="Actors"/>
+			<Node name="Right Hand Middle Joint3" considerCollisions="All"/>
+			<Node name="Right Hand Middle Joint4" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Right Hand Ring">
+			<Node name="Right Hand Ring Joint2" considerCollisions="Actors"/>
+			<Node name="Right Hand Ring Joint3" considerCollisions="All"/>
+			<Node name="Right Hand Ring Joint4" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Right Hand Pinky">
+			<Node name="Right Hand Pinky Joint2" considerCollisions="Actors"/>
+			<Node name="Right Hand Pinky Joint3" considerCollisions="All"/>
+			<Node name="Right Hand Pinky Joint4" considerCollisions="All"/>
+		</Actor>
+	</Endeffector>
+
+    <!-- ROBOT NODE SETS -->
+	<RobotNodeSet name="Right Hand" kinematicRoot="Right Hand Start"  tcp="Right Arm TCP">
+		<Node name="Right Hand Thumb Joint1"/>
+		<Node name="Right Hand Thumb Joint2"/>
+		<Node name="Right Hand Thumb Joint3"/>
+		<Node name="Right Hand Thumb Joint4"/>
+		
+		<Node name="Right Hand Index Joint1"/>
+		<Node name="Right Hand Index Joint2"/>
+		<Node name="Right Hand Index Joint3"/>
+		<Node name="Right Hand Index Joint4"/>
+		
+		<Node name="Right Hand Middle Joint1"/>
+		<Node name="Right Hand Middle Joint2"/>
+		<Node name="Right Hand Middle Joint3"/>
+		<Node name="Right Hand Middle Joint4"/>
+		
+		<Node name="Right Hand Ring Joint1"/>
+		<Node name="Right Hand Ring Joint2"/>
+		<Node name="Right Hand Ring Joint3"/>
+		<Node name="Right Hand Ring Joint4"/>
+		
+		<Node name="Right Hand Pinky Joint1"/>
+		<Node name="Right Hand Pinky Joint2"/>
+		<Node name="Right Hand Pinky Joint3"/>
+		<Node name="Right Hand Pinky Joint4"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="Right Hand Col Model" kinematicRoot="Right Hand Start"  tcp="Right Arm TCP">
+		<Node name="Right Hand Palm"/>
+		<Node name="Right Hand Thumb Joint1"/>
+		<Node name="Right Hand Thumb Joint2"/>
+		<Node name="Right Hand Thumb Joint3"/>
+		<Node name="Right Hand Thumb Joint4"/>
+		
+		<Node name="Right Hand Index Joint1"/>
+		<Node name="Right Hand Index Joint2"/>
+		<Node name="Right Hand Index Joint3"/>
+		<Node name="Right Hand Index Joint4"/>
+		
+		<Node name="Right Hand Middle Joint1"/>
+		<Node name="Right Hand Middle Joint2"/>
+		<Node name="Right Hand Middle Joint3"/>
+		<Node name="Right Hand Middle Joint4"/>
+		
+		<Node name="Right Hand Ring Joint1"/>
+		<Node name="Right Hand Ring Joint2"/>
+		<Node name="Right Hand Ring Joint3"/>
+		<Node name="Right Hand Ring Joint4"/>
+		
+		<Node name="Right Hand Pinky Joint1"/>
+		<Node name="Right Hand Pinky Joint2"/>
+		<Node name="Right Hand Pinky Joint3"/>
+		<Node name="Right Hand Pinky Joint4"/>
+	</RobotNodeSet>
+	
+</Robot>

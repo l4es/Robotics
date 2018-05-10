@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Armar3" RootNode="Armar3_Base">
+	
+	<RobotNode name="Armar3_Base">
+		<Visualization enable="true">
+			<CoordinateAxis  type="Inventor" enable="false" scaling="20"/>
+		</Visualization>
+		<Child name="Dummy_Platform"/>
+		<!--Child name="Platform"/-->
+	</RobotNode>
+	
+	<RobotNode name="Dummy_Platform">
+		<Transform>
+			<DH a="0" d="0" theta="0" alpha="-90" unitsangle="degree" unitslength="mm"/>
+		</Transform>
+		<Child name="X_Platform"/>
+	</RobotNode>
+	
+	<RobotNode name="X_Platform">
+		<Transform>
+			<DH a="0" d="0" theta="90" alpha="-90" unitsangle="degree" unitslength="mm"/>
+            <!--Limits unit="mm" lo="-10000" hi="10000"/-->
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		<Child name="Y_Platform"/>
+	</RobotNode>
+	
+	<RobotNode name="Y_Platform">
+		<Transform>
+			<DH a="0" d="0" theta="-90" alpha="90" unitsangle="degree" unitslength="mm"/>
+            <!--Limits unit="mm" lo="-10000" hi="10000"/-->
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		<Child name="Yaw_Platform"/>
+	</RobotNode>
+	
+	<RobotNode name="Yaw_Platform">
+	    <Transform>
+			<DH a="0" d="0" theta="-90" alpha="0" unitsangle="degree" unitslength="mm"/>
+            <!--Limits unit="mm" lo="-10000" hi="10000"/-->
+		</Transform>
+		<Joint type="revolute">
+			<axis x="0" y="0" z="1"/>
+			<Limits unit="degree" lo="-360" hi="360"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		<Child name="Platform"/>
+	</RobotNode>
+	
+	<RobotNode name="Platform">  <!-- visualization via 3D-model at the very end of the kinematic chain-->
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/platform.iv</File>
+		</Visualization>
+		<Physics>
+            <CoM location="Joint" x="0" y="0" z="200"/>
+            <Mass value="100" units="kg" />
+        </Physics>
+		<CollisionModel>
+			<File type="Inventor">convexModel/platform.iv</File>
+		</CollisionModel>
+		<Child name="Hip Pitch"/>
+	</RobotNode>
+
+	<RobotNode name="Hip Pitch">
+			<Transform>
+				<Translation x="0" y="158" z="890" units='mm'/>
+			</Transform>
+			<Joint type="revolute">
+			<Axis x="1" y="0" z="0"/>
+			<Limits unit="degree" lo="-45" hi="45"/>
+                <MaxVelocity unit="radian" value="1"/>
+                <MaxAcceleration value="10"/>
+            </Joint>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/platform_pitch_link.iv</File>
+		</Visualization>
+		<Physics>
+            <Mass value="10" units="kg" />
+        </Physics>
+		<CollisionModel>
+			<File type="Inventor">convexModel/platform_pitch_link.iv</File>
+		</CollisionModel>
+		<Child name="Hip Roll"/>
+	</RobotNode>
+	
+	<RobotNode name="Hip Roll">
+		<Joint type="revolute">
+			<Axis x="0" y="1" z="0"/>
+			<Limits unit="degree" lo="-45" hi="45"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/platform_roll_link.iv</File>
+		</Visualization>
+		<Physics>
+            <Mass value="10" units="kg" />
+            <IgnoreCollision name="Platform"/>
+        </Physics>
+		<CollisionModel>
+			<File type="Inventor">convexModel/platform_roll_link.iv</File>
+		</CollisionModel>
+		<Child name="Hip Yaw"/>
+	</RobotNode>
+	
+	<RobotNode name="Hip Yaw">
+		<Joint type="revolute">
+			<Axis x="0" y="0" z="1"/>
+			<Limits unit="degree" lo="-45" hi="45"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="15.415" units="kg" />
+            <IgnoreCollision name="Hip Pitch"/>
+            <IgnoreCollision name="Platform"/>
+        </Physics>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">fullmodel/torso.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">convexModel/torso.iv</File>
+		</CollisionModel>
+		<Child name="Center of Arms"/>
+	</RobotNode>
+	
+	<RobotNode name="Center of Arms">
+		<Transform>
+			<Translation x="0" y="-35" z="485" units='mm'/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		
+		<Child name="TrafoToHead"/>
+		<Child name="TrafoToLeftArm"/>
+		<Child name="TrafoToRightArm"/>
+	</RobotNode>
+	
+	<RobotNode name="TrafoToHead">
+		<Transform>
+			<Translation x="0" y="0" z="118" units='mm'/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		
+		<ChildFromRobot>
+			<File importEEF="true">ArmarIII-Head.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+	<RobotNode name="TrafoToLeftArm">
+		<Transform>
+			<Translation x="-232" y="0" z="0" units='mm'/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		
+		<ChildFromRobot>
+			<File importEEF="true">ArmarIII-LeftArm.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+	<RobotNode name="TrafoToRightArm">
+		<Transform>
+			<Translation x="232" y="0" z="0" units='mm'/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+		</Visualization>
+		
+		<ChildFromRobot>
+			<File importEEF="true">ArmarIII-RightArm.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+	<RobotNodeSet name="Torso" kinematicRoot="Platform">
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="TorsoHeadColModel">
+		<Node name="Hip Yaw"/>
+		<Node name="Head_Tilt"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="PlatformTorsoColModel">
+		<Node name="Platform"/>
+		<Node name="Hip Yaw"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="PlatformTorsoHeadColModel">
+		<Node name="Platform"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Head_Tilt"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="TorsoLeftArm" kinematicRoot="Platform" tcp="TCP L">
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 L"/>
+		<Node name="Shoulder 2 L"/>
+		<Node name="Upperarm L"/>
+		<Node name="Elbow L"/>
+		<Node name="Underarm L"/>
+		<Node name="Wrist 1 L"/>
+		<Node name="Wrist 2 L"/>
+	</RobotNodeSet>	
+	
+	<RobotNodeSet name="TorsoRightArm" kinematicRoot="Platform" tcp="TCP R">
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 R"/>
+		<Node name="Shoulder 2 R"/>
+		<Node name="Upperarm R"/>
+		<Node name="Elbow R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 1 R"/>
+		<Node name="Wrist 2 R"/>
+	</RobotNodeSet>
+	
+	
+	<RobotNodeSet name="TorsoBothArms" kinematicRoot="Platform">
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 L"/>
+		<Node name="Shoulder 2 L"/>
+		<Node name="Upperarm L"/>
+		<Node name="Elbow L"/>
+		<Node name="Underarm L"/>
+		<Node name="Wrist 1 L"/>
+		<Node name="Wrist 2 L"/>
+		<Node name="Shoulder 1 R"/>
+		<Node name="Shoulder 2 R"/>
+		<Node name="Upperarm R"/>
+		<Node name="Elbow R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 1 R"/>
+		<Node name="Wrist 2 R"/>
+	</RobotNodeSet>	
+	
+	<RobotNodeSet name="Robot" kinematicRoot="Platform">
+		<Node name="Neck_1_Pitch"/>
+		<Node name="Neck_2_Roll"/>
+		<Node name="Neck_3_Yaw"/>
+		<Node name="Head_Tilt"/>
+		<Node name="Cameras"/>
+		<Node name="Eye_Left"/>
+		<Node name="Eye_Right"/>
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 L"/>
+		<Node name="Shoulder 2 L"/>
+		<Node name="Upperarm L"/>
+		<Node name="Elbow L"/>
+		<Node name="Underarm L"/>
+		<Node name="Wrist 1 L"/>
+		<Node name="Wrist 2 L"/>
+		<Node name="Shoulder 1 R"/>
+		<Node name="Shoulder 2 R"/>
+		<Node name="Upperarm R"/>
+		<Node name="Elbow R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 1 R"/>
+		<Node name="Wrist 2 R"/>
+		<Node name="Hand Palm 1 L"/>
+		<Node name="Hand Palm 2 L"/>
+		<Node name="Thumb L J0"/>
+		<Node name="Thumb L J1"/>
+		<Node name="Index L J0"/>
+		<Node name="Index L J1"/>
+		<Node name="Middle L J0"/>
+		<Node name="Middle L J1"/>
+		<Node name="Ring L J0"/>
+		<Node name="Ring L J1"/>
+		<Node name="Pinky L J0"/>
+		<Node name="Pinky L J1"/>
+		<Node name="Hand Palm 1 R"/>
+		<Node name="Hand Palm 2 R"/>
+		<Node name="Thumb R J0"/>
+		<Node name="Thumb R J1"/>
+		<Node name="Index R J0"/>
+		<Node name="Index R J1"/>
+		<Node name="Middle R J0"/>
+		<Node name="Middle R J1"/>
+		<Node name="Ring R J0"/>
+		<Node name="Ring R J1"/>
+		<Node name="Pinky R J0"/>
+		<Node name="Pinky R J1"/>
+	</RobotNodeSet>	
+
+	<RobotNodeSet name="PlatformYawTorsoLeftArm" kinematicRoot="Armar3_Base" tcp="TCP L">
+	    <Node name="Yaw_Platform"/>
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 L"/>
+		<Node name="Shoulder 2 L"/>
+		<Node name="Upperarm L"/>
+		<Node name="Elbow L"/>
+		<Node name="Underarm L"/>
+		<Node name="Wrist 1 L"/>
+		<Node name="Wrist 2 L"/>
+	</RobotNodeSet>	
+
+	<RobotNodeSet name="PlatformYawTorsoRightArm" kinematicRoot="Armar3_Base" tcp="TCP R">
+		<Node name="Yaw_Platform"/>
+		<Node name="Hip Pitch"/>
+		<Node name="Hip Roll"/>
+		<Node name="Hip Yaw"/>
+		<Node name="Shoulder 1 R"/>
+		<Node name="Shoulder 2 R"/>
+		<Node name="Upperarm R"/>
+		<Node name="Elbow R"/>
+		<Node name="Underarm R"/>
+		<Node name="Wrist 1 R"/>
+		<Node name="Wrist 2 R"/>
+	</RobotNodeSet>
+	
+
+</Robot>

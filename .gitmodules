@@ -232,3 +232,15 @@
 [submodule "ComputerVision/Frameworks/slam-SDVL"]
 	path = ComputerVision/Frameworks/JdeRobot/slam-SDVL
 	url = https://github.com/JdeRobot/slam-SDVL.git
+[submodule "MIDDLEWARE/OMPL/ompl"]
+	path = MIDDLEWARE/OMPL/ompl
+	url = https://github.com/ompl/ompl.git
+[submodule "MIDDLEWARE/OMPL/omplapp"]
+	path = MIDDLEWARE/OMPL/omplapp
+	url = https://github.com/ompl/omplapp.git
+[submodule "MIDDLEWARE/flann"]
+	path = MIDDLEWARE/flann
+	url = https://github.com/mariusmuja/flann.git
+[submodule "MIDDLEWARE/MTF"]
+	path = MIDDLEWARE/MTF
+	url = https://github.com/abhineet123/MTF.git

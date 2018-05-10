@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="iCubScene">
+
+	<Robot name="iCub" initConfig="init">
+		<File>/robots/iCub/iCub.xml</File>
+		<Configuration name="init">
+		    <Node name="Left Arm Shoulder2" unit="radian" value="0.6"/>
+			<Node name="Left Arm Elbow1" unit="radian" value="1.8"/>
+			<Node name="Left Arm Elbow2" unit="radian" value="-0.5"/>
+			<Node name="Left Hand Thumb Joint1" unit="radian" value="0.8"/>
+			<Node name="Left Hand Thumb Joint2" unit="radian" value="-0.2"/>
+			<Node name="Right Arm Shoulder2" unit="radian" value="0.6"/>
+			<Node name="Right Arm Elbow1" unit="radian" value="1.8"/>
+			<Node name="Right Arm Elbow2" unit="radian" value="-0.5"/>
+			<Node name="Right Hand Thumb Joint1" unit="radian" value="0.8"/>
+			<Node name="Right Hand Thumb Joint2" unit="radian" value="-0.2"/>
+		</Configuration>
+		
+		<Configuration name="start">
+    		<Node name="Torso1" unit="radian" value="0.0"/>
+    		<Node name="Torso2" unit="radian" value="0.0"/>
+    		<Node name="Torso3" unit="radian" value="-0.75"/>
+    		<Node name="Left Arm Shoulder1" unit="radian" value="-1.6"/>
+			<Node name="Left Arm Shoulder2" unit="radian" value="1.8"/>
+			<Node name="Left Arm Shoulder3" unit="radian" value="0"/>
+			<Node name="Left Arm Elbow1" unit="radian" value="0"/>
+			<Node name="Left Arm Elbow2" unit="radian" value="0"/>
+			<Node name="Left Arm Wrist1" unit="radian" value="0"/>
+			<Node name="Left Arm Wrist2" unit="radian" value="0"/>
+		</Configuration>
+		
+		<Configuration name="goal">
+    		<Node name="Torso1" unit="radian" value="0.6"/>
+    		<Node name="Torso2" unit="radian" value="-0.4"/>
+    		<Node name="Torso3" unit="radian" value="0.45"/>
+    		<Node name="Left Arm Shoulder1" unit="radian" value="-0.7"/>
+			<Node name="Left Arm Shoulder2" unit="radian" value="0.15"/>
+			<Node name="Left Arm Shoulder3" unit="radian" value="0"/>
+			<Node name="Left Arm Elbow1" unit="radian" value="1"/>
+			<Node name="Left Arm Elbow2" unit="radian" value="0"/>
+			<Node name="Left Arm Wrist1" unit="radian" value="0"/>
+			<Node name="Left Arm Wrist2" unit="radian" value="0"/>
+		</Configuration>
+		
+		<!-- These joints are considered for motion planning-->
+		<RobotNodeSet name="Planning" kinematicRoot="iCubRoot" tcp="Left Arm TCP">
+    		<Node name="Torso1"/>
+    		<Node name="Torso2"/>
+    		<Node name="Torso3"/>
+    		<Node name="Left Arm Shoulder1"/>
+    		<Node name="Left Arm Shoulder2"/>
+    		<Node name="Left Arm Shoulder3"/>
+    		<Node name="Left Arm Elbow1"/>
+    		<Node name="Left Arm Elbow2"/>
+    		<Node name="Left Arm Wrist1"/>
+    		<Node name="Left Arm Wrist2"/>
+    	</RobotNodeSet>
+    	
+    	<!-- The first collision model (arm and hand) -->
+        <RobotNodeSet name="ColModel Robot Moving">
+    		<Node name="Left Arm Shoulder3"/>
+    		<Node name="Left Arm Elbow2"/>
+    		<Node name="Left Hand Palm"/>
+    		<Node name="Left Hand Thumb Joint1"/>
+    		<Node name="Left Hand Thumb Joint2"/>
+    		<Node name="Left Hand Thumb Joint3"/>
+    		<Node name="Left Hand Thumb Joint4"/>
+    		
+    		<Node name="Left Hand Index Joint1"/>
+    		<Node name="Left Hand Index Joint2"/>
+    		<Node name="Left Hand Index Joint3"/>
+    		<Node name="Left Hand Index Joint4"/>
+    		
+    		<Node name="Left Hand Middle Joint1"/>
+    		<Node name="Left Hand Middle Joint2"/>
+    		<Node name="Left Hand Middle Joint3"/>
+    		<Node name="Left Hand Middle Joint4"/>
+    		
+    		<Node name="Left Hand Ring Joint1"/>
+    		<Node name="Left Hand Ring Joint2"/>
+    		<Node name="Left Hand Ring Joint3"/>
+    		<Node name="Left Hand Ring Joint4"/>
+    		
+    		<Node name="Left Hand Pinky Joint1"/>
+    		<Node name="Left Hand Pinky Joint2"/>
+    		<Node name="Left Hand Pinky Joint3"/>
+    		<Node name="Left Hand Pinky Joint4"/>
+    	</RobotNodeSet>
+    	
+    	<!-- The second collision model (torso, head and legs)-->
+    	<RobotNodeSet name="ColModel Robot Body">
+    		<!--Node name="UpperBodyModel"/--><!-- reports self collisions with shoulder3-->
+    		<Node name="LowerBody"/>
+    		<Node name="Neck3"/>
+    		<Node name="Left Leg Waist3"/>
+    		<Node name="Left Leg Knee"/>
+    		<Node name="Right Leg Waist3"/>
+    		<Node name="Right Leg Knee"/>
+    	</RobotNodeSet>
+
+	</Robot>
+	
+	
+	<ManipulationObject name="RiceBox">
+	    <File type="Inventor">objects/riceBox_iCub_gr0.25.xml</File>
+		    
+		<GlobalPose>
+			<Transform>
+				<Translation x="-200" y="-200" z="650"/>
+				<rollpitchyaw units="degree" roll="90" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</ManipulationObject>
+ 	
+ 	<SceneObjectSet name="ColModel Obstacles">
+ 	    <SceneObject name="RiceBox"/>
+ 	</SceneObjectSet>
+
+</Scene>

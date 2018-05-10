@@ -1,0 +1,16 @@
+#Inventor V2.1 ascii
+Separator { #Model
+
+    SoUnits
+    { 
+        units MILLIMETERS
+    }
+    RotationXYZ{
+      axis Z
+      angle 1.57
+    }
+    
+    File { 
+      name "armar/torso/hd_torso2.wrl"
+    }
+} #Model

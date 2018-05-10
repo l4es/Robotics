@@ -1,0 +1,6 @@
+<ManipulationObject name='RiceBox'>
+	<Visualization>
+		<File type='inventor'>iv/ricefit.iv</File>
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>

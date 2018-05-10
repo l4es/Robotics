@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="Armar3Scene">
+
+	<Robot name="Armar3" initConfig="start">
+		<File>robots/ArmarIII/ArmarIII.xml</File>
+    <Configuration name="start">
+      <Node name="Shoulder 1 L" unit="radian" value="-0.85"/>
+      <Node name="Shoulder 2 L" unit="radian" value="-0.8"/>
+      <Node name="Upperarm L" unit="radian" value="-0.85"/>
+      <Node name="Shoulder 1 R" unit="radian" value="-0.85"/>
+      <Node name="Shoulder 2 R" unit="radian" value="0.8"/>
+      <Node name="Upperarm R" unit="radian" value="0.85"/>
+    </Configuration>
+    <Configuration name="other config">
+      <Node name="Shoulder 1 L" unit="radian" value="0.5"/>
+      <Node name="Shoulder 2 L" unit="radian" value="0.5"/>
+      <Node name="Upperarm L" unit="radian" value="0.5"/>
+      <Node name="Shoulder 1 R" unit="radian" value="0.5"/>
+      <Node name="Shoulder 2 R" unit="radian" value="-0.5"/>
+      <Node name="Upperarm R" unit="radian" value="-0.5"/>
+    </Configuration>
+    <GlobalPose>
+			<Transform>
+				<Translation x="1000" y="0" z="0"/>
+			</Transform>
+		</GlobalPose>
+	</Robot>
+	
+	<Robot name="iCub" initConfig="start icub">
+		<File>robots/iCub/iCub.xml</File>
+    <Configuration name="start icub">
+      <Node name='Torso1' unit='radian' value='0'/>
+      <Node name='Torso2' unit='radian' value='0'/>
+      <Node name='Torso3' unit='radian' value='0'/>
+      <Node name='Left Arm Elbow1' unit='radian' value='0.872679'/>
+      <Node name='Left Arm Elbow2' unit='radian' value='-4.55131e-011'/>
+      <Node name='Left Arm Shoulder1' unit='radian' value='2.56871e-010'/>
+      <Node name='Left Arm Shoulder2' unit='radian' value='1.39629'/>
+      <Node name='Left Arm Shoulder3' unit='radian' value='0.261799'/>
+      <Node name='Left Arm Wrist1' unit='radian' value='0'/>
+      <Node name='Left Arm Wrist2' unit='radian' value='1.79815e-011'/>
+      <Node name='Right Arm Elbow1' unit='radian' value='1.3439'/>
+      <Node name='Right Arm Elbow2' unit='radian' value='-1.22173'/>
+      <Node name='Right Arm Shoulder1' unit='radian' value='-0.174533'/>
+      <Node name='Right Arm Shoulder2' unit='radian' value='1.0472'/>
+      <Node name='Right Arm Shoulder3' unit='radian' value='0.226893'/>
+      <Node name='Right Arm Wrist1' unit='radian' value='-0.383972'/>
+      <Node name='Right Arm Wrist2' unit='radian' value='5.8571e-011'/>
+      <Node name='Right Hand Thumb Joint1' unit='radian' value='1.3'/>
+    </Configuration>
+	</Robot>
+
+  <ManipulationObject name='LegoGate'>
+    <File>objects/iCub/LegoGate_Grasps_RightHand_200.xml</File>
+    <GlobalPose>
+      <Transform>
+        <Matrix4x4>
+          <row1 c1='-0.150358' c2='-0.988632' c3='0' c4='-343.08'/>
+          <row2 c1='0.988632' c2='-0.150358' c3='0' c4='-31.3975'/>
+          <row3 c1='0' c2='0' c3='1' c4='545.873'/>
+          <row4 c1='0' c2='0' c3='0' c4='1'/>
+        </Matrix4x4>
+      </Transform>
+    </GlobalPose>
+  </ManipulationObject>
+
+  <ManipulationObject name='Table'>
+    <File>objects/box1000x1000.xml</File>
+    <GlobalPose>
+      <Transform>
+        <Matrix4x4>
+          <row1 c1='-0.150358' c2='-0.988632' c3='0' c4='-337.813'/>
+          <row2 c1='0.988632' c2='-0.150358' c3='0' c4='-29.9237'/>
+          <row3 c1='0' c2='0' c3='1' c4='420.873'/>
+          <row4 c1='0' c2='0' c3='0' c4='1'/>
+        </Matrix4x4>
+      </Transform>
+    </GlobalPose>
+  </ManipulationObject>
+
+  <Trajectory Robot='iCub' RobotNodeSet='Hip Right Arm' name='GraspingMotion' dim='10'>
+    <Point id='0'>
+      <c value='0'/>
+      <c value='-0.000191794'/>
+      <c value='0.000767178'/>
+      <c value='-0.174341'/>
+      <c value='1.04739'/>
+      <c value='0.226597'/>
+      <c value='1.34371'/>
+      <c value='-1.22174'/>
+      <c value='-0.383967'/>
+      <c value='-1.427e-06'/>
+    </Point>
+    <Point id='1'>
+      <c value='0.0197053'/>
+      <c value='-0.00705973'/>
+      <c value='-0.0218005'/>
+      <c value='-0.172398'/>
+      <c value='1.04712'/>
+      <c value='0.236561'/>
+      <c value='1.34386'/>
+      <c value='-1.20351'/>
+      <c value='-0.383776'/>
+      <c value='-0.0148194'/>
+    </Point>
+    <Point id='2'>
+      <c value='0.0394106'/>
+      <c value='-0.0139277'/>
+      <c value='-0.0443682'/>
+      <c value='-0.170454'/>
+      <c value='1.04685'/>
+      <c value='0.246525'/>
+      <c value='1.34401'/>
+      <c value='-1.18527'/>
+      <c value='-0.383586'/>
+      <c value='-0.0296373'/>
+    </Point>
+    <Point id='3'>
+      <c value='0.0591159'/>
+      <c value='-0.0207956'/>
+      <c value='-0.0669359'/>
+      <c value='-0.168511'/>
+      <c value='1.04659'/>
+      <c value='0.256489'/>
+      <c value='1.34415'/>
+      <c value='-1.16704'/>
+      <c value='-0.383396'/>
+      <c value='-0.0444553'/>
+    </Point>
+    <Point id='4'>
+      <c value='0.0788212'/>
+      <c value='-0.0276635'/>
+      <c value='-0.0895036'/>
+      <c value='-0.166567'/>
+      <c value='1.04632'/>
+      <c value='0.266453'/>
+      <c value='1.3443'/>
+      <c value='-1.14881'/>
+      <c value='-0.383206'/>
+      <c value='-0.0592732'/>
+    </Point>
+    <Point id='5'>
+      <c value='0.0985265'/>
+      <c value='-0.0345315'/>
+      <c value='-0.112071'/>
+      <c value='-0.164624'/>
+      <c value='1.04605'/>
+      <c value='0.276417'/>
+      <c value='1.34445'/>
+      <c value='-1.13057'/>
+      <c value='-0.383015'/>
+      <c value='-0.0740911'/>
+    </Point>
+    <Point id='6'>
+      <c value='0.0985265'/>
+      <c value='-0.0345315'/>
+      <c value='-0.112071'/>
+      <c value='-0.164624'/>
+      <c value='1.04605'/>
+      <c value='0.276417'/>
+      <c value='1.34445'/>
+      <c value='-1.13057'/>
+      <c value='-0.383015'/>
+      <c value='-0.0740911'/>
+    </Point>
+    <Point id='7'>
+      <c value='0.118232'/>
+      <c value='-0.0413994'/>
+      <c value='-0.134639'/>
+      <c value='-0.16268'/>
+      <c value='1.04578'/>
+      <c value='0.286381'/>
+      <c value='1.34459'/>
+      <c value='-1.11234'/>
+      <c value='-0.382825'/>
+      <c value='-0.0889091'/>
+    </Point>
+    <Point id='8'>
+      <c value='0.137937'/>
+      <c value='-0.0482673'/>
+      <c value='-0.157207'/>
+      <c value='-0.160737'/>
+      <c value='1.04552'/>
+      <c value='0.296345'/>
+      <c value='1.34474'/>
+      <c value='-1.0941'/>
+      <c value='-0.382635'/>
+      <c value='-0.103727'/>
+    </Point>
+    <Point id='9'>
+      <c value='0.157642'/>
+      <c value='-0.0551353'/>
+      <c value='-0.179774'/>
+      <c value='-0.158793'/>
+      <c value='1.04525'/>
+      <c value='0.306309'/>
+      <c value='1.34489'/>
+      <c value='-1.07587'/>
+      <c value='-0.382445'/>
+      <c value='-0.118545'/>
+    </Point>
+    <Point id='10'>
+      <c value='0.177348'/>
+      <c value='-0.0620032'/>
+      <c value='-0.202342'/>
+      <c value='-0.15685'/>
+      <c value='1.04498'/>
+      <c value='0.316273'/>
+      <c value='1.34503'/>
+      <c value='-1.05764'/>
+      <c value='-0.382255'/>
+      <c value='-0.133363'/>
+    </Point>
+    <Point id='11'>
+      <c value='0.197053'/>
+      <c value='-0.0688712'/>
+      <c value='-0.22491'/>
+      <c value='-0.154906'/>
+      <c value='1.04471'/>
+      <c value='0.326237'/>
+      <c value='1.34518'/>
+      <c value='-1.0394'/>
+      <c value='-0.382064'/>
+      <c value='-0.148181'/>
+    </Point>
+    <Point id='12'>
+      <c value='0.197053'/>
+      <c value='-0.0688712'/>
+      <c value='-0.22491'/>
+      <c value='-0.154906'/>
+      <c value='1.04471'/>
+      <c value='0.326237'/>
+      <c value='1.34518'/>
+      <c value='-1.0394'/>
+      <c value='-0.382064'/>
+      <c value='-0.148181'/>
+    </Point>
+    <Point id='13'>
+      <c value='0.219484'/>
+      <c value='-0.0789011'/>
+      <c value='-0.25414'/>
+      <c value='-0.151437'/>
+      <c value='1.04322'/>
+      <c value='0.335485'/>
+      <c value='1.34703'/>
+      <c value='-1.01525'/>
+      <c value='-0.382555'/>
+      <c value='-0.167023'/>
+    </Point>
+    <Point id='14'>
+      <c value='0.241915'/>
+      <c value='-0.0889311'/>
+      <c value='-0.28337'/>
+      <c value='-0.147968'/>
+      <c value='1.04172'/>
+      <c value='0.344732'/>
+      <c value='1.34888'/>
+      <c value='-0.991095'/>
+      <c value='-0.383047'/>
+      <c value='-0.185865'/>
+    </Point>
+    <Point id='15'>
+      <c value='0.264346'/>
+      <c value='-0.0989611'/>
+      <c value='-0.3126'/>
+      <c value='-0.144498'/>
+      <c value='1.04022'/>
+      <c value='0.353979'/>
+      <c value='1.35073'/>
+      <c value='-0.966942'/>
+      <c value='-0.383538'/>
+      <c value='-0.204707'/>
+    </Point>
+    <Point id='16'>
+      <c value='0.286777'/>
+      <c value='-0.108991'/>
+      <c value='-0.34183'/>
+      <c value='-0.141029'/>
+      <c value='1.03872'/>
+      <c value='0.363226'/>
+      <c value='1.35257'/>
+      <c value='-0.942789'/>
+      <c value='-0.384029'/>
+      <c value='-0.223549'/>
+    </Point>
+    <Point id='17'>
+      <c value='0.286777'/>
+      <c value='-0.108991'/>
+      <c value='-0.34183'/>
+      <c value='-0.141029'/>
+      <c value='1.03872'/>
+      <c value='0.363226'/>
+      <c value='1.35257'/>
+      <c value='-0.942789'/>
+      <c value='-0.384029'/>
+      <c value='-0.223549'/>
+    </Point>
+    <Point id='18'>
+      <c value='0.304722'/>
+      <c value='-0.117015'/>
+      <c value='-0.365214'/>
+      <c value='-0.138253'/>
+      <c value='1.03753'/>
+      <c value='0.370624'/>
+      <c value='1.35405'/>
+      <c value='-0.923466'/>
+      <c value='-0.384422'/>
+      <c value='-0.238623'/>
+    </Point>
+    <Point id='19'>
+      <c value='0.322667'/>
+      <c value='-0.125039'/>
+      <c value='-0.388598'/>
+      <c value='-0.135478'/>
+      <c value='1.03633'/>
+      <c value='0.378022'/>
+      <c value='1.35553'/>
+      <c value='-0.904143'/>
+      <c value='-0.384815'/>
+      <c value='-0.253696'/>
+    </Point>
+    <Point id='20'>
+      <c value='0.340612'/>
+      <c value='-0.133063'/>
+      <c value='-0.411982'/>
+      <c value='-0.132703'/>
+      <c value='1.03513'/>
+      <c value='0.385419'/>
+      <c value='1.35701'/>
+      <c value='-0.884821'/>
+      <c value='-0.385208'/>
+      <c value='-0.26877'/>
+    </Point>
+    <Point id='21'>
+      <c value='0.358557'/>
+      <c value='-0.141087'/>
+      <c value='-0.435366'/>
+      <c value='-0.129927'/>
+      <c value='1.03393'/>
+      <c value='0.392817'/>
+      <c value='1.35849'/>
+      <c value='-0.865498'/>
+      <c value='-0.385601'/>
+      <c value='-0.283843'/>
+    </Point>
+    <Point id='22'>
+      <c value='0.376502'/>
+      <c value='-0.149111'/>
+      <c value='-0.45875'/>
+      <c value='-0.127152'/>
+      <c value='1.03273'/>
+      <c value='0.400215'/>
+      <c value='1.35997'/>
+      <c value='-0.846175'/>
+      <c value='-0.385994'/>
+      <c value='-0.298917'/>
+    </Point>
+    <Point id='23'>
+      <c value='0.376502'/>
+      <c value='-0.149111'/>
+      <c value='-0.45875'/>
+      <c value='-0.127152'/>
+      <c value='1.03273'/>
+      <c value='0.400215'/>
+      <c value='1.35997'/>
+      <c value='-0.846175'/>
+      <c value='-0.385994'/>
+      <c value='-0.298917'/>
+    </Point>
+    <Point id='24'>
+      <c value='0.396401'/>
+      <c value='-0.158009'/>
+      <c value='-0.484681'/>
+      <c value='-0.124074'/>
+      <c value='1.03141'/>
+      <c value='0.408418'/>
+      <c value='1.36161'/>
+      <c value='-0.824749'/>
+      <c value='-0.38643'/>
+      <c value='-0.315632'/>
+    </Point>
+    <Point id='25'>
+      <c value='0.4163'/>
+      <c value='-0.166906'/>
+      <c value='-0.510611'/>
+      <c value='-0.120996'/>
+      <c value='1.03008'/>
+      <c value='0.416621'/>
+      <c value='1.36325'/>
+      <c value='-0.803322'/>
+      <c value='-0.386866'/>
+      <c value='-0.332347'/>
+    </Point>
+    <Point id='26'>
+      <c value='0.436199'/>
+      <c value='-0.175804'/>
+      <c value='-0.536541'/>
+      <c value='-0.117919'/>
+      <c value='1.02875'/>
+      <c value='0.424825'/>
+      <c value='1.36489'/>
+      <c value='-0.781895'/>
+      <c value='-0.387301'/>
+      <c value='-0.349062'/>
+    </Point>
+  </Trajectory>
+
+</Scene>

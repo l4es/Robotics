@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="iCubScene">
+
+	<Robot name="iCub" initConfig="start">
+		<File>/robots/iCub/iCub.xml</File>
+		<Configuration name="start">
+			<Node name="Left Arm Shoulder2" unit="radian" value="0.2"/>
+			<Node name="Left Arm Elbow1" unit="radian" value="0.45"/>
+			<Node name="Left Arm Elbow2" unit="radian" value="-0.5"/>
+			<Node name="Left Hand Thumb Joint1" unit="radian" value="0.8"/>
+			<Node name="Left Hand Thumb Joint2" unit="radian" value="-0.2"/>
+		
+			<Node name="Right Arm Shoulder2" unit="radian" value="0.2"/>
+			<Node name="Right Arm Elbow1" unit="radian" value="0.45"/>
+			<Node name="Right Arm Elbow2" unit="radian" value="-0.5"/>
+			<Node name="Right Hand Thumb Joint1" unit="radian" value="0.8"/>
+			<Node name="Right Hand Thumb Joint2" unit="radian" value="-0.2"/>
+		</Configuration>
+		
+
+		<!--GlobalPose>
+			<Transform>
+				<Translation x="0" y="0" z="0"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="180"/>
+			</Transform>
+		</GlobalPose-->
+	</Robot>
+	
+	
+	<ManipulationObject name="LegoGate">
+	    <File type="Inventor">objects/iCub/LegoGate_Grasps_RightHand_200.xml</File>
+		    
+		<GlobalPose>
+			<Transform>
+				<Translation x="-250" y="0" z="600"/>
+				<rollpitchyaw units="degree" roll="90" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</ManipulationObject>
+
+</Scene>

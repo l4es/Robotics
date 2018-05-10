@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="Armar3Scene">
+
+	<Robot name="Armar3" initConfig="start">
+		<File>robots/ArmarIII/ArmarIII.xml</File>
+		<Configuration name="start">
+			<Node name="Shoulder 1 L" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 2 L" unit="radian" value="-0.8"/>
+			<Node name="Upperarm L" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 1 R" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 2 R" unit="radian" value="0.8"/>
+			<Node name="Upperarm R" unit="radian" value="0.85"/>
+		</Configuration>
+		<GlobalPose>
+			<Transform>
+				<Translation x="1000" y="0" z="0"/>
+			</Transform>
+		</GlobalPose>
+	</Robot>
+	
+	<Robot name="Armar3b">
+		<File>robots/ArmarIII/ArmarIII.xml</File>			
+	</Robot>
+	
+	<Obstacle name="Box">
+	    <Visualization>
+		    <File type="Inventor">objects/iv/box1000x500x300.iv</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+		<GlobalPose>
+			<Transform>
+				<Translation x="0" y="1000" z="150"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</Obstacle>
+	
+	<ManipulationObject name="Plate">
+	    <File>objects/plate.xml</File>
+		    
+		<GlobalPose>
+			<Transform>
+				<Translation x="500" y="800" z="800"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</ManipulationObject>
+
+</Scene>

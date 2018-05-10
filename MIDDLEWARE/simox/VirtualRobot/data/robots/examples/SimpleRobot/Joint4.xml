@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="Simple3DoFRobot" RootNode="Start">
+    <RobotNode name="Start">
+		<Visualization enable="true">
+			<File type="inventor">sphere_red.iv</File>
+		</Visualization>
+		<Child name="Shoulder 1 R"/>
+	</RobotNode>
+	<RobotNode name="Shoulder 1 R">
+
+		<Joint type="revolute">
+            <axis x="0" y="0" z="1"/>
+			<Limits unit="degree" lo="-45" hi="45"/>
+		</Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="3.65" units="kg" />
+        </Physics>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">shoulder_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">shoulder_r.iv</File>
+		</CollisionModel>
+		<Child name="Shoulder 2 R"/>
+	</RobotNode>
+	
+	<RobotNode name="Shoulder 2 R">
+		<Transform>
+            <rollpitchyaw roll="0" pitch="90" yaw="0" unitsAngle="degree"/>
+		</Transform>
+		<Joint type="revolute">
+            <axis x="0" y="0" z="1"/>
+			<Limits unit="degree" lo="-10" hi="10"/> 
+		</Joint>
+		<CollisionModel>
+			<File type="Inventor">upperarm_r.iv</File>
+		</CollisionModel>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1.55685000" units="kg" />
+        </Physics>
+		<!--Child name="Upperarm R"/-->
+	</RobotNode>
+	
+	<!--RobotNode name="Upperarm R">
+		<Joint type="revolute">
+			<DH a="20" d="-310" theta="-90" alpha="90" units="degree"/>
+			<Limits unit="degree" lo="-108.11" hi="73.94"/>
+		</Joint>
+		<Physics>
+            <CoM location="VisualizationBBoxCenter"/>
+            <Mass value="1.55685000" units="kg" />
+        </Physics>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="8"/>
+			<File type="Inventor">upperarm_r.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">upperarm_r.iv</File>
+		</CollisionModel>
+	</RobotNode-->
+
+</Robot>

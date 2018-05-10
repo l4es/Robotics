@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="ArmarIII RightHand" RootNode="Hand R Base">
+
+    <RobotNode name="Hand R Base">
+		<Child name="TCP R"/>
+		<Child name="GCP R"/>
+		<Child name="Hand Palm 1 R"/>
+	</RobotNode>
+	
+	<RobotNode name="TCP R">
+		<Transform>
+			<Translation x="0" y="0" z="130" units='mm'/>
+		</Transform>
+	</RobotNode>
+	
+	<RobotNode name="GCP R">
+		<Transform>
+			<Translation X="-40" Y="20" Z="90" units='mm'/>
+			<rollpitchyaw roll="0" pitch="-45" yaw="0" units="degree"/>
+		</Transform>
+	</RobotNode>
+	
+	<RobotNode name="Hand Palm 1 R">
+
+		<Transform>
+			<Translation x="0" y="0" z="36" units='mm'/>
+		</Transform>
+
+        <Visualization enable="true">
+			<File type="Inventor">fullmodel/palm1_r.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/palm1_r.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="800" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>	
+			
+		<Child name="Hand Palm 2 R"/>
+		<Child name="Thumb R"/>
+	</RobotNode>
+	
+	<RobotNode name="Hand Palm 2 R">
+		<Transform>
+			<Translation x="-8.7" y="-13.5" z="29.25" units='mm'/>
+		</Transform>
+		<Joint type="revolute">
+			<Axis x="0" y="-1" z="0"/>
+			<Limits unit="degree" lo="-90" hi="90"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/palm2_r.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/palm2_r.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="800" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>		
+		
+		<Child name="Pinky R"/>
+		<Child name="Ring R"/>
+		<Child name="Middle R"/>
+		<Child name="Index R"/>
+	</RobotNode>
+	
+	<RobotNode name="Thumb R">
+		<Transform>
+			<Translation x="-48.9" y="0" z="29.25" units='mm'/>
+		</Transform>
+		<Child name="Thumb R J0"/>
+	</RobotNode>
+	
+	<RobotNode name="Thumb R J0">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/thumb_r1.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/thumb_r1.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+		
+		<Child name="Thumb R J1"/>
+	</RobotNode>
+	
+	<RobotNode name="Thumb R J1">
+        <Transform>
+			<Translation x="-40.2" y="0" z="0" units='mm'/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/thumb_r2.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/thumb_r2.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+	</RobotNode>
+	
+	<RobotNode name="Pinky R">
+		<Transform>
+			<Translation x="0" y="73" z="40.4" units='mm'/>
+		</Transform>
+		
+		<Child name="Pinky R J0"/>
+	</RobotNode>
+	
+	<RobotNode name="Pinky R J0">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/pinky_r1.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/pinky_r1.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+		
+		<Child name="Pinky R J1"/>
+	</RobotNode>
+	
+	<RobotNode name="Pinky R J1">
+		<Transform>
+			<Translation x="0" y="0" z="40.2" units='mm'/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+
+        <Visualization enable="true">
+            <File type="Inventor">fullmodel/pinky_r2.iv</File>
+        </Visualization>
+
+        <CollisionModel>
+            <File type="Inventor">convexModel/pinky_r2.iv</File>
+        </CollisionModel>
+
+        <Physics>
+            <Mass value="500" unit="g"/>
+            <CoM location="VisualizationBBoxCenter"/>
+        </Physics>
+    </RobotNode>
+
+    <RobotNode name="Ring R">
+
+        <Transform>
+            <Translation x="0" y="51" z="40.4" units='mm'/>
+        </Transform>
+
+        <Child name="Ring R J0"/>
+    </RobotNode>
+
+    <RobotNode name="Ring R J0">
+        <Joint type="revolute">
+            <Limits unit="degree" lo="0" hi="180"/>
+            <Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/ring_r1.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/ring_r1.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+		
+		<Child name="Ring R J1"/>
+	</RobotNode>
+	
+	<RobotNode name="Ring R J1">
+    	<Transform>
+    		<Translation x="0" y="0" z="40.2" units='mm'/>
+    	</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/ring_r2.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/ring_r2.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+	</RobotNode>
+	
+	<RobotNode name="Middle R">
+		<Transform>
+			<Translation x="0" y="27" z="40.4" units='mm'/>
+		</Transform>
+
+		<Child name="Middle R J0"/>
+	</RobotNode>
+	
+	<RobotNode name="Middle R J0">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/middle_r1.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/middle_r1.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+		
+		<Child name="Middle R J1"/>
+	</RobotNode>
+	
+	<RobotNode name="Middle R J1">
+		<Transform>
+			<Translation x="0" y="0" z="40.2" units='mm'/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/middle_r2.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/middle_r2.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+	</RobotNode>
+	
+	<RobotNode name="Index R">
+		<Transform>
+			<Translation x="0" y="0" z="40.2" units='mm'/>
+		</Transform>
+		
+		<Child name="Index R J0"/>
+	</RobotNode>
+	
+	<RobotNode name="Index R J0">
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/index_r1.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/index_r1.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+		
+		<Child name="Index R J1"/>
+	</RobotNode>
+	
+	<RobotNode name="Index R J1">
+		<Transform>
+			<Translation x="0" y="0" z="40.2" units='mm'/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="0" hi="180"/>
+			<Axis x="0" y="-1" z="0"/>
+            <MaxVelocity unit="radian" value="1"/>
+            <MaxAcceleration value="10"/>
+        </Joint>
+		
+		<Visualization enable="true">
+			<File type="Inventor">fullmodel/index_r2.iv</File>
+		</Visualization>
+		
+		<CollisionModel>
+			<File type="Inventor">convexModel/index_r2.iv</File>
+		</CollisionModel>
+		
+	    <Physics>
+			<Mass value="500" unit="g"/>
+			<CoM location="VisualizationBBoxCenter"/>
+		</Physics>
+	</RobotNode>
+	
+	<RobotNodeSet name="RightHandColModel" kinematicRoot="Hand R Base" tcp="TCP R">
+		<Node name="Hand Palm 1 R"/>
+		<Node name="Hand Palm 2 R"/>
+		<Node name="Thumb R J0"/>
+		<Node name="Thumb R J1"/>
+		<Node name="Index R J0"/>
+		<Node name="Index R J1"/>
+		<Node name="Middle R J0"/>
+		<Node name="Middle R J1"/>
+		<Node name="Ring R J0"/>
+		<Node name="Ring R J1"/>
+		<Node name="Pinky R J0"/>
+		<Node name="Pinky R J1"/>
+	</RobotNodeSet>
+
+	<Endeffector name="Hand R" base="Hand R Base" tcp="TCP R" gcp="GCP R">
+	    <Preshape name="Grasp Preshape">
+	        <Node name="Thumb R J0" unit="radian" value="0"/>
+	        <Node name="Thumb R J1" unit="radian" value="0"/>
+	        <Node name="Index R J0" unit="radian" value="0"/>
+	        <Node name="Index R J1" unit="radian" value="0"/>
+	        <Node name="Middle R J0" unit="radian" value="0"/>
+	        <Node name="Middle R J1" unit="radian" value="0"/>
+	        <Node name="Ring R J0" unit="radian" value="0"/>
+	        <Node name="Ring R J1" unit="radian" value="0"/>
+	        <Node name="Pinky R J0" unit="radian" value="0"/>
+	        <Node name="Pinky R J1" unit="radian" value="0"/>
+	    </Preshape>
+	    
+	    
+		<Static>
+			<Node name="Hand Palm 1 R"/>
+			<Node name="Hand Palm 2 R"/>
+		</Static>
+		<Actor name="Thumb Right">
+			<Node name="Thumb R J0" considerCollisions="Actors"/>
+			<Node name="Thumb R J1" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Index Right">
+			<Node name="Index R J0" considerCollisions="Actors"/>
+			<Node name="Index R J1" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Middle Right">
+			<Node name="Middle R J0" considerCollisions="Actors"/>
+			<Node name="Middle R J1" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Ring Right">
+			<Node name="Ring R J0" considerCollisions="Actors"/>
+			<Node name="Ring R J1" considerCollisions="All"/>
+		</Actor>
+		<Actor name="Pinky Right">
+			<Node name="Pinky R J0" considerCollisions="Actors"/>
+			<Node name="Pinky R J1" considerCollisions="All"/>
+		</Actor>
+	</Endeffector>
+
+</Robot>

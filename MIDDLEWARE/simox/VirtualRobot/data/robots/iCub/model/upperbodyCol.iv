@@ -1,0 +1,17 @@
+#Inventor V2.1 ascii
+
+Separator {
+   Units {
+            units METERS
+    }
+	Transform {
+		#translation 0 10 -40 
+		translation 0 0.010 -0.183 
+		rotation 0 0 1 3.14
+	}
+
+	Separator 
+	{
+		File {name upperbody_conv.wrl }
+	}
+}

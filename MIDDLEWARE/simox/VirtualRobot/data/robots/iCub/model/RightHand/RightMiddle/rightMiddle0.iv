@@ -1,0 +1,14 @@
+#Inventor V2.1 ascii
+
+Separator {
+
+	Transform {
+		translation 0 0 0.0035
+		rotation 0 0 1 0
+	}
+
+	Separator 
+	{
+		File {name full_RightMiddle0.wrl }
+	}
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Scene name="iCubScene">
+
+	<Robot name="iCub">
+		<File>robots/iCub/iCub.xml</File>
+		<!--Configuration name="start">
+			<Node name="Shoulder 1 L" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 2 L" unit="radian" value="-0.8"/>
+			<Node name="Upperarm L" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 1 R" unit="radian" value="-0.85"/>
+			<Node name="Shoulder 2 R" unit="radian" value="0.8"/>
+			<Node name="Upperarm R" unit="radian" value="0.85"/>
+		</Configuration-->
+		<GlobalPose>
+			<Transform>
+				<Translation x="9000" y="1500" z="500"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="180"/>
+			</Transform>
+		</GlobalPose>
+	</Robot>
+	
+	
+	<!--Obstacle name="Kitchen">
+	    <Visualization>
+		    <File type="Inventor" path="relative">../environment/KIT_kitchen.wrl</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+ 	</Obstacle-->
+   
+	
+	<Obstacle name="Box">
+	    <Visualization>
+		    <File type="Inventor" path="relative">../objects/iv/box1000x500x300.iv</File>
+		    <UseAsCollisionModel/>
+		</Visualization>
+		<GlobalPose>
+			<Transform>
+				<Translation x="9000" y="1500" z="150"/>
+				<rollpitchyaw units="degree" roll="0" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</Obstacle>
+ 	
+	<ManipulationObject name="RiceFit">
+	    <File>../objects/riceBox_iCub.xml</File>
+	    <GlobalPose>
+			<Transform>
+				<Translation x="9350" y="1500" z="1015"/>
+				<rollpitchyaw units="degree" roll="90" pitch="0" yaw="90"/>
+			</Transform>
+		</GlobalPose>
+ 	</ManipulationObject>
+   
+
+</Scene>

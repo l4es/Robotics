@@ -1,0 +1,9 @@
+#Inventor V2.1 ascii
+
+Separator {
+
+	Separator 
+	{
+		File {name col_LeftHandPalm_red.wrl }
+	}
+}

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Robot Type="iCub" RootNode="iCubRoot">
+	
+	<RobotNode name="iCubRoot">
+		<Transform>
+			<Translation x="0" y="0" z="598"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis  type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+		<Child name="UpperBody"/>
+		<Child name="LowerBody"/>
+	</RobotNode>
+	
+	<RobotNode name="UpperBody">
+
+		<Transform>
+			<matrix4x4>
+				<row1 c1="0" c2="-1" c3="0"  c4="0"/>
+				<row2 c1="0" c2="0"  c3="-1" c4="0"/>
+				<row3 c1="1" c2="0"  c3="0"  c4="0"/>
+				<row4 c1="0" c2="0"  c3="0"  c4="1"/>
+			</matrix4x4>
+		</Transform>
+
+		<Child name="Torso1"/>
+	</RobotNode>
+
+	
+	<RobotNode name="Torso1"><!-- PITCH -->
+		<Joint type="revolute">
+			<!--DH a="32" d="0" theta="0" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-10" hi="70"/> <!--lo="-22" hi="84"/> changed to values of ini files in main/app/robots/iCubGenova02 (hip:reverse order!)-->
+		</Joint>
+		<Child name="Torso2"/>
+	</RobotNode>
+	
+	<RobotNode name="Torso2"><!-- ROLL -->
+		<Transform>
+			<DH a="32" d="0" theta="0" alpha="90" units="degree"/>
+			<DH a="0" d="0" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<!--DH a="0" d="-5.5" theta="-90" alpha="90" units="degree"/-->
+			<Limits unit="degree" lo="-30" hi="30"/> <!--lo="-39" hi="39"/>changed to values of ini files in main/app/robots/iCubGenova02 (hip:reverse order!)-->
+		</Joint>
+		<Child name="Torso3"/>
+	</RobotNode>
+
+	
+	<RobotNode name="Torso3"><!-- YAW -->
+		<Transform>
+			<DH  a="0" d="-5.5" theta="0" alpha="90" units="degree"/>
+		</Transform>
+		<Joint type="revolute">
+			<Limits unit="degree" lo="-50" hi="50"/><!--lo="-59" hi="59"/>changed to values of ini files in main/app/robots/iCubGenova02 (hip:reverse order!)-->
+		</Joint>
+		<Child name="CenterArms"/>
+	</RobotNode>
+	
+	
+	<RobotNode name="CenterArms">
+
+	
+		<!--Child name="UpperBodyModel"/-->
+		<Visualization enable="true">
+			<File type="Inventor">model/upperbody.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/upperbodyCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="8" unit="kg"/>
+		</Physics>
+		<Child name="CenterArms2"/>
+	</RobotNode>
+	
+	<RobotNode name="CenterArms2">
+		
+		<Transform>
+			<DH a="0" d="-143.3" theta="0" alpha="0" units="degree"/>
+		</Transform>
+		<ChildFromRobot>
+			<File>iCub_Head.xml</File>
+		</ChildFromRobot>
+		<Child name="LeftArmTrafo"/>
+		<Child name="RightArmTrafo"/>
+	</RobotNode>
+		
+	<RobotNode name="LeftArmTrafo">
+		<Transform>
+			<DH a="23.3647" d="0" theta="105" alpha="-90" units="degree"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	    <Child name="LeftArmTrafo2"/>
+	</RobotNode>
+	
+	<RobotNode name="LeftArmTrafo2">
+		<Transform>
+			<DH a="0" d="107.74" theta="90" alpha="0" units="degree"/>
+		</Transform>
+	    <ChildFromRobot>
+			<File importEEF="true">iCub_LeftArm.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+	
+	
+	<RobotNode name="RightArmTrafo">
+		<Transform>
+			<DH a="-23.3647" d="0" theta="-105" alpha="90" units="degree"/>
+		</Transform>
+		<Visualization enable="true">
+			<CoordinateAxis type="Inventor" enable="false" scaling="1"/>
+		</Visualization>
+	    <Child name="RightArmTrafo2"/>
+	</RobotNode>
+	
+	<RobotNode name="RightArmTrafo2">
+		<Transform>
+			<DH a="0" d="-107.74" theta="-90" alpha="0" units="degree"/>
+		</Transform>
+	    <ChildFromRobot>
+			<File importEEF="true">iCub_RightArm.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+	
+
+		
+	<!--RobotNode name="UpperBodyModel">
+		<Visualization enable="true">
+			<File type="Inventor">model/upperbody.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/upperbodyCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="8" unit="kg"/>
+		</Physics>
+	</RobotNode-->
+
+
+
+	<RobotNode name="LowerBody">
+		<Transform>
+			<matrix4x4>
+				<row1 c1="1" c2="0"  c3="0" c4="0"/>
+				<row2 c1="0" c2="0"  c3="1" c4="0"/>
+				<row3 c1="0" c2="-1" c3="0" c4="-119.9"/>
+				<row4 c1="0" c2="0"  c3="0" c4="1"/>
+			</matrix4x4>
+		</Transform>		
+		<Visualization enable="true">
+			<File type="Inventor">model/hip.iv</File>
+		</Visualization>
+		<CollisionModel>
+			<File type="Inventor">model/hipCol.iv</File>
+		</CollisionModel>
+		<Physics>
+			<Mass value="10" unit="kg"/>
+		</Physics>
+
+		<ChildFromRobot>
+			<File>iCub_LeftLeg.xml</File>
+		</ChildFromRobot>		
+		<ChildFromRobot>
+			<File>iCub_RightLeg.xml</File>
+		</ChildFromRobot>
+	</RobotNode>
+
+	
+	<RobotNodeSet name="UpperbodyHeadColModel">
+		<Node name="CenterArms"/>
+		<Node name="Neck3"/>
+	</RobotNodeSet>
+	
+	<RobotNodeSet name="BodyHeadLegsColModel">
+		<Node name="CenterArms"/>
+		<Node name="LowerBody"/>
+		<Node name="Neck3"/>
+		<Node name="Left Leg Waist3"/>
+		<Node name="Left Leg Knee"/>
+		<Node name="Right Leg Waist3"/>
+		<Node name="Right Leg Knee"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="Hip" kinematicRoot="iCubRoot">
+		<Node name="Torso1"/>
+		<Node name="Torso2"/>
+		<Node name="Torso3"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="Hip Left Arm" kinematicRoot="iCubRoot" tcp="Left Arm TCP">
+		<Node name="Torso1"/>
+		<Node name="Torso2"/>
+		<Node name="Torso3"/>
+		<Node name="Left Arm Shoulder1"/>
+		<Node name="Left Arm Shoulder2"/>
+		<Node name="Left Arm Shoulder3"/>
+		<Node name="Left Arm Elbow1"/>
+		<Node name="Left Arm Elbow2"/>
+		<Node name="Left Arm Wrist1"/>
+		<Node name="Left Arm Wrist2"/>
+	</RobotNodeSet>
+	
+		
+	<RobotNodeSet name="Hip Left Arm Masses" kinematicRoot="iCubRoot" tcp="Left Arm TCP">
+		<Node name="Torso1"/>
+		<Node name="Torso2"/>
+		<Node name="Torso3"/>
+		<Node name="CenterArms"/>
+		<Node name="Left Arm Shoulder1"/>
+		<Node name="Left Arm Shoulder2"/>
+		<Node name="Left Arm Shoulder3"/>
+		<Node name="Left Arm Elbow1"/>
+		<Node name="Left Arm Elbow2"/>
+		<Node name="Left Arm Wrist1"/>
+		<Node name="Left Arm Wrist2"/>
+	</RobotNodeSet>
+		
+	<RobotNodeSet name="Hip Right Arm" kinematicRoot="iCubRoot" tcp="Right Arm TCP">
+		<Node name="Torso1"/>
+		<Node name="Torso2"/>
+		<Node name="Torso3"/>
+		<Node name="Right Arm Shoulder1"/>
+		<Node name="Right Arm Shoulder2"/>
+		<Node name="Right Arm Shoulder3"/>
+		<Node name="Right Arm Elbow1"/>
+		<Node name="Right Arm Elbow2"/>
+		<Node name="Right Arm Wrist1"/>
+		<Node name="Right Arm Wrist2"/>
+	</RobotNodeSet>
+
+	<RobotNodeSet name="Hip Right Arm Masses" kinematicRoot="iCubRoot" tcp="Right Arm TCP">
+		<Node name="Torso1"/>
+		<Node name="Torso2"/>
+		<Node name="Torso3"/>
+		<Node name="CenterArms"/>
+		<Node name="Right Arm Shoulder1"/>
+		<Node name="Right Arm Shoulder2"/>
+		<Node name="Right Arm Shoulder3"/>
+		<Node name="Right Arm Elbow1"/>
+		<Node name="Right Arm Elbow2"/>
+		<Node name="Right Arm Wrist1"/>
+		<Node name="Right Arm Wrist2"/>
+	</RobotNodeSet>
+
+
+</Robot>

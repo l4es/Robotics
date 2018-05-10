@@ -1,0 +1,12 @@
+#Inventor V2.1 ascii
+
+Separator { 
+
+	Transform {
+		rotation 0 1 0 1.57
+	}
+
+	File { 
+		name "armar/head/head.iv"
+	}
+} 

@@ -1,0 +1,17 @@
+#Inventor V2.1 ascii
+
+Separator {
+    Units {
+            units MILLIMETERS
+    }
+
+	Transform {
+		translation 0 0 3.8
+		rotation 0 1 0 0
+	}
+
+	Separator 
+	{
+		File {name col_RightPinky0.wrl }
+	}
+}

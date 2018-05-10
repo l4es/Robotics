@@ -1,0 +1,10 @@
+<ManipulationObject name='Lego2x2'>
+	<Visualization>
+		<File type='inventor'>iv/duplo_2x2.wrl</File>
+	</Visualization>
+	<CollisionModel>
+		<File type='inventor'>iv/duplo_2x2.wrl</File>
+	</CollisionModel>
+
+
+</ManipulationObject>

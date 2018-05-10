@@ -1,0 +1,22 @@
+<ManipulationObject name='Vitalis'>
+	<Visualization>
+		<!-- only file OR primitives is allowed -->
+		<Primitives>
+			<Box width="136" height="190" depth="40"/> <!-- primitive-specific parameters, default unit is mm -->
+			<Sphere radius="0.15" unitslength="m">
+				<Transform> <!-- transform is relative to previous primitive -->
+					<Translation x="0" y="170" z="0"/>
+				</Transform>
+			</Sphere>
+			<Box width="136" height="190" depth="40">
+				<Transform> <!-- transform is relative to previous primitive -->
+					<Translation x="0" y="-355" z="0"/>
+					<rpy roll="0" pitch="1.41" yaw="0" unitsAngle="radian"/>
+				</Transform>
+			</Box>
+			<!-- other primitives -->
+		</Primitives>
+		<!--File type='inventor'>iv/vitalis.iv</File-->
+		<UseAsCollisionModel/>
+	</Visualization>
+</ManipulationObject>
