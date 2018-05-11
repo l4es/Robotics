@@ -262,3 +262,6 @@
 [submodule "RobotPy/robotpy-wpilib-utilities"]
 	path = RobotPy/robotpy-wpilib-utilities
 	url = https://github.com/robotpy/robotpy-wpilib-utilities.git
+[submodule "Simulators/morse"]
+	path = Simulators/morse
+	url = https://github.com/morse-simulator/morse.git
