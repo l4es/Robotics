@@ -199,9 +199,6 @@
 [submodule "BotBakery/frc_cpputest_examples"]
 	path = BotBakery/frc_cpputest_examples
 	url = https://github.com/althebaker43/frc_cpputest_examples.git
-[submodule "MIDDLEWARE/roboticslibrary"]
-	path = MIDDLEWARE/roboticslibrary
-	url = https://github.com/roboticslibrary/rl.git
 [submodule "MIDDLEWARE/mrpt"]
 	path = Libraries/Dynamics-Simulation/mrpt
 	url = https://github.com/MRPT/mrpt.git
@@ -247,9 +244,6 @@
 [submodule "VikingRobotics4121/2015-Robot"]
 	path = VikingRobotics4121/2015-Robot
 	url = https://github.com/FRC-4121/2015-Robot.git
-[submodule "MIDDLEWARE/rl"]
-	path = MIDDLEWARE/rl
-	url = https://github.com/roboticslibrary/rl.git
 [submodule "RobotPy/robotpy-wpilib"]
 	path = RobotPy/robotpy-wpilib
 	url = https://github.com/robotpy/robotpy-wpilib.git
