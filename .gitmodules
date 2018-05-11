@@ -244,3 +244,21 @@
 [submodule "MIDDLEWARE/MTF"]
 	path = MIDDLEWARE/MTF
 	url = https://github.com/abhineet123/MTF.git
+[submodule "VikingRobotics4121/2015-Robot"]
+	path = VikingRobotics4121/2015-Robot
+	url = https://github.com/FRC-4121/2015-Robot.git
+[submodule "MIDDLEWARE/rl"]
+	path = MIDDLEWARE/rl
+	url = https://github.com/roboticslibrary/rl.git
+[submodule "RobotPy/robotpy-wpilib"]
+	path = RobotPy/robotpy-wpilib
+	url = https://github.com/robotpy/robotpy-wpilib.git
+[submodule "RobotPy/examples"]
+	path = RobotPy/examples
+	url = https://github.com/robotpy/examples.git
+[submodule "RobotPy/pynetworktables"]
+	path = RobotPy/pynetworktables
+	url = https://github.com/robotpy/pynetworktables.git
+[submodule "RobotPy/robotpy-wpilib-utilities"]
+	path = RobotPy/robotpy-wpilib-utilities
+	url = https://github.com/robotpy/robotpy-wpilib-utilities.git
