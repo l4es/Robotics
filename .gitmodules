@@ -203,13 +203,13 @@
 	path = MIDDLEWARE/roboticslibrary
 	url = https://github.com/roboticslibrary/rl.git
 [submodule "MIDDLEWARE/mrpt"]
-	path = MIDDLEWARE/mrpt
+	path = Libraries/Dynamics-Simulation/mrpt
 	url = https://github.com/MRPT/mrpt.git
 [submodule "HebiRobotics/hebi-cpp-examples"]
 	path = HebiRobotics/hebi-cpp-examples
 	url = https://github.com/HebiRobotics/hebi-cpp-examples.git
 [submodule "MIDDLEWARE/trajopt"]
-	path = MIDDLEWARE/trajopt
+	path = Libraries/Motion-Planning-and-Control/trajopt
 	url = https://github.com/joschu/trajopt.git
 [submodule "Purdue-ACM-SIGBots/pros"]
 	path = Purdue-ACM-SIGBots/pros
@@ -233,13 +233,13 @@
 	path = ComputerVision/Frameworks/JdeRobot/slam-SDVL
 	url = https://github.com/JdeRobot/slam-SDVL.git
 [submodule "MIDDLEWARE/OMPL/ompl"]
-	path = MIDDLEWARE/OMPL/ompl
+	path = Libraries/Motion-Planning-and-Control/OMPL/ompl
 	url = https://github.com/ompl/ompl.git
 [submodule "MIDDLEWARE/OMPL/omplapp"]
-	path = MIDDLEWARE/OMPL/omplapp
+	path = Libraries/Motion-Planning-and-Control/OMPL/omplapp
 	url = https://github.com/ompl/omplapp.git
 [submodule "MIDDLEWARE/flann"]
-	path = MIDDLEWARE/flann
+	path = Libraries/Motion-Planning-and-Control/flann
 	url = https://github.com/mariusmuja/flann.git
 [submodule "MIDDLEWARE/MTF"]
 	path = MIDDLEWARE/MTF
