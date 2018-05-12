@@ -1,0 +1,53 @@
+
+# Desc: Stage demo with lots of models. Works with everything.cfg.
+# CVS: $Id: everything.world,v 1.85 2006/03/29 05:11:00 rtv Exp $
+
+# the size of a pixel in Stage's underlying raytrace model in meters
+resolution     0.02
+
+interval_sim 100  # milliseconds per update step
+interval_real 100 # real-time milliseconds per update step
+
+# defines Pioneer-like robots
+include "../common/pioneer.inc"
+
+
+
+# defines 'map' object used for floorplans
+include "../common/map.inc"
+
+
+
+# defines the laser model `sick_laser' configured like a Sick LMS-200
+include "../common/sick.inc"
+
+
+
+size [40 20 ]
+
+gui_disable 0
+gui_interval 100
+gui_menu_interval 20
+
+window( 
+  size [ 733.000 529.000 ] 
+  center [0.126 0.025] 
+  scale 0.022 
+)
+
+map( 
+  bitmap "hospital.png" 
+  map_resolution 0.02
+  size [40 20] 
+  name "hospital"
+)
+
+# create a robot
+pioneer2dx
+(
+  name "robot1"
+  color "red"
+  pose [ -6 0 0.000]
+  sick_laser()
+)
+

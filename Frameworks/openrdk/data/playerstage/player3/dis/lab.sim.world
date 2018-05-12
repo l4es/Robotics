@@ -1,0 +1,77 @@
+# defines Pioneer-like robots
+include "pioneer+camera.inc"
+include "../common/map.inc"
+# defines sick laser
+include "../common/sick.inc"
+# deploy some landmarks
+include "../common/beacons.inc"
+
+# the size of a pixel in Stage's underlying raytrace model in meters
+resolution     0.02
+
+window
+(
+	size [727.000 624.000 ] 
+	center [-0.067 -0.713] 
+	rotate [0 0]
+	scale 11.235
+
+	show_data 1
+)
+
+floorplan
+(
+	bitmap "a-01-basement.sim.png" 
+	map_resolution 0.02
+	size [61.000 48.410 0.500]
+	name "laboratory"
+	color "gray50"
+	gui_grid 1
+	gui_outline 0
+)
+
+# deploy some robots
+erraticcam
+(
+	pose [-17.597 8.816 0 275.609]
+	name "robot01"
+	color "red"
+)
+erraticomnicam
+(
+	pose [-18.630 2.618 0 240.364]
+	name "robot02"
+	color "blue"
+)
+erraticcam
+(
+	pose [17.238 13.597 0 -127.181]
+	name "robot03"
+	color "green"
+)
+erraticcam
+(
+	pose [21.374 -12.378 0 -175.216]
+	name "robot04"
+	color "magenta"
+)
+erraticcam
+(
+	pose [-16.596 -18.338 0 102.596]
+	name "robot05"
+	color "orange"
+)
+erraticcam
+(
+	pose [3.167 -7.384 0 -19.029]
+	name "robot06"
+	color "yellow"
+)
+erraticcam
+(
+	pose [-13.132 12.471 0 -483.087]
+	name "robot07"
+	color "cyan"
+)
+
+

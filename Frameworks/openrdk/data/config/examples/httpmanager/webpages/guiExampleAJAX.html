@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Example of a GUI based on HTTP requests to an OpenRDK agent</title>
+<script type="text/javascript">
+var http = false;
+
+if(navigator.appName == "Microsoft Internet Explorer") {
+  http = new ActiveXObject("Microsoft.XMLHTTP");
+} else {
+  http = new XMLHttpRequest();
+}
+
+var count = 0;
+
+function refresh() {
+	http.abort();
+	http.open("GET", "http://127.0.0.1:8080/repository/imageTest/stats/activityCounter", true);
+	http.onreadystatechange = function() {
+		if (http.readyState == 4) {
+			document.getElementById('activityCounter').innerHTML = http.responseText;
+		}
+	}
+	http.send(null);
+	setTimeout("refresh()", 1000);
+	count = count + 1;
+	document.getElementById("image").src = "http://127.0.0.1:8080/repository/imageTest/out/image?" + count;
+}
+
+setTimeout("refresh()", 1000)
+</script>
+</head>
+<body>
+<h1>OpenRDK HTML GUI Example</h1>
+<p>This is an example GUI built as an HTML file. Click on the "Update now" button to refresh the properties. In this case, AJAX requests update the page, without the need to refresh it.</p>
+
+<center>
+
+<table border="1" style="padding:20px;"><tr><td style="padding:20px"><center>
+This is the current value of the <tt>/imageTest/stats/activityCounter</tt> property:<br/>
+<b><span id="activityCounter">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><br/><br/>
+
+This is the current image from the <tt>imageTest</tt> module: <br/><br/>
+<img style="border:2px solid blue" id="image" src="http://127.0.0.1:8080/repository/imageTest/out/image"/>
+</center></td></tr></table>
+
+</body>
+</html>

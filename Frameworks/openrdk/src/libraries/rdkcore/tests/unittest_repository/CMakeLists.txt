@@ -1,0 +1,1 @@
+RDK_ADD_TEST(unittest_repository_property_copies)

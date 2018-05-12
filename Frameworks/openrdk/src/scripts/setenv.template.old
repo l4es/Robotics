@@ -1,0 +1,48 @@
+#!/bin/sh
+
+RDK_ROOT="@OpenRDK_ROOT@"
+RDK_BUILD_DIR="@OpenRDK_OUTPUT_TREE@"
+
+# adding OpenRDK library directory to LD_LIBRARY_PATH (or DYLD_LIBRARY_PATH if we are on a Mac OS X)
+LIBDIR=$RDK_BUILD_DIR/lib
+if [ "`uname`" == "Darwin" ]; then
+	echo "Adding $LIBDIR{,ext} to your library path (DYLD_LIBRARY_PATH)..."
+	DYLD_LIBRARY_PATH=`echo $DYLD_LIBRARY_PATH | sed -e 's@[^:]*SPQR-RDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+	DYLD_LIBRARY_PATH=`echo $DYLD_LIBRARY_PATH | sed -e 's@[^:]*OpenRDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+	export DYLD_LIBRARY_PATH=$(echo "$DYLD_LIBRARY_PATH:$LIBDIR:${LIBDIR}ext" | sed -e 's/^://')
+else
+	echo "Adding $LIBDIR{,ext} to your library path (LD_LIBRARY_PATH)..."
+	LD_LIBRARY_PATH=`echo $LD_LIBRARY_PATH | sed -e 's@[^:]*SPQR-RDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+	LD_LIBRARY_PATH=`echo $LD_LIBRARY_PATH | sed -e 's@[^:]*OpenRDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+	export LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH:$LIBDIR:${LIBDIR}ext" | sed -e 's/^://')
+fi
+
+# exported RDK environment variables
+export RDK_LOG=debug
+export RDK_LOG_COLOR=1
+export RDK_ROOT
+export RDK_BUILD_DIR
+
+# PATH stuff
+PATH=`echo $PATH | sed -e 's@[^:]*SPQR-RDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+PATH=`echo $PATH | sed -e 's@[^:]*OpenRDK[^:]*@@g' -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+export PATH=$PATH:$RDK_BUILD_DIR/bin:$RDK_BUILD_DIR/binext
+
+# Damned Windows, Cygwin and the rest
+if [ "x$WINDIR" != "x" ]; then
+	export PATH=$PATH:$LD_LIBRARY_PATH
+fi
+
+# Subversion stuff
+if ! test -d ~/.subversion; then
+  mkdir -p ~/.subversion
+fi
+SVNCFG=$RDK_ROOT/docs/subversion-config
+if test $SVNCFG -nt ~/.subversion/config; then
+  echo "Changing per-user subversion config"
+  if ! test -f ~/.subversion/config.pre-rdk.orig; then
+    cp -f ~/.subversion/config ~/.subversion/config.pre-rdk.orig
+  fi
+  cp -f $SVNCFG ~/.subversion/config
+fi
+

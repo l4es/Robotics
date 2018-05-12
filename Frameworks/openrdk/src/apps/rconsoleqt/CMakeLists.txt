@@ -1,0 +1,3 @@
+IF(COMPILE_RCONSOLE)
+	SUBDIRS(main rqcommon modules)
+ENDIF(COMPILE_RCONSOLE)

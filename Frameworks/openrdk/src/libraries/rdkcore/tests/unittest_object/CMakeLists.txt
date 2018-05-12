@@ -1,0 +1,3 @@
+IF(CPPUNIT_FOUND)
+	RDK_ADD_TEST(unittest_reflection)
+ENDIF(CPPUNIT_FOUND)

@@ -1,0 +1,8 @@
+#define PROPERTY_OUT_JOINTS "out/joints"
+#define PROPERTY_OUT_SENSORS      "out/sensors"
+#define PROPERTY_OUT_BATTERY      "out/batteryCharge"
+#define PROPERTY_OUT_SENSORS_TIMESTAMP	  "out/sensorsTimestamp"
+#define PROPERTY_OUT_ALLDATA	  "out/alldata"
+#define PROPERTY_OUT_POSE	  "out/pose"
+#define PROPERTY_PARAMS_PERIOD "params/period"
+#define PROPERTY_DEBUG_ENABLED "dbg/enabled"

@@ -1,0 +1,138 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  rdk-config
+# 
+#         USAGE:  rdk-config
+# 
+#   DESCRIPTION:  Script version of rdk-config. Used to set OpenRDK variables
+# 
+#        AUTHOR:  Luca Marchetti (), ximilian@gmail.com
+#       COMPANY:  OpenRDK Developers Team
+#       VERSION:  1.0
+#       CREATED:  12/18/2008 04:28:06 PM CET
+#      REVISION:  2.0
+#===============================================================================
+
+OpenRDK_VERSION="@OpenRDK_VERSION@"
+OpenRDK_ARCH="@OpenRDK_ARCH@"
+OpenRDK_ROOT="@OpenRDK_ROOT@"
+OpenRDK_OUTPUT_TREE="@OpenRDK_OUTPUT_TREE@"
+RDKCORE_INCLUDE_DIR="@RDKCORE_INCLUDE_DIR@"
+RDKCORE_DEFINITIONS="@RDKCORE_DEFINITIONS@"
+RDKCORE_CFLAGS="@RDKCORE_CPPFLAGS@ @RDKCORE_CXXFLAGS@"
+RDKCORE_LIBRARIES="@RDKCORE_LIBRARIES@"
+RDKCORE_LINK_DIRECTORIES="@RDKCORE_LINK_DIRECTORIES@"
+RDKCORE_LIBS="@RDKCORE_LDFLAGS@"
+OpenRDK_FINDOPENRDK_CMAKE="@OpenRDK_FINDOPENRDK_CMAKE@"
+
+
+v="version"
+a="arch"
+root="root"
+output="output"
+cflags="cflags"
+libs="libs"
+include_dir="include-dir"
+libraries="libraries"
+link_directories="link-directories"
+definitions="definitions"
+cmake="cmakeinclude"
+
+pad=20
+function usage ()
+{
+	printf \
+		"Usage:
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s
+\t--%-${pad}s -> %s\n" \
+"${v}" "${OpenRDK_VERSION}" \
+"${a}" "${OpenRDK_ARCH}" \
+"${root}" "${OpenRDK_ROOT}" \
+"${output}" "${OpenRDK_OUTPUT_TREE}" \
+"${cflags}" "${RDKCORE_CFLAGS}" \
+"${libs}" "${RDKCORE_LIBS}" \
+"${include_dir}" "${RDKCORE_INCLUDE_DIR}" \
+"${definitions}" "${RDKCORE_DEFINITIONS}" \
+"${libraries}" "${RDKCORE_LIBRARIES}" \
+"${link_directories}" "${RDKCORE_LINK_DIRECTORIES}" \
+"${cmake}" "${OpenRDK_FINDOPENRDK_CMAKE}"
+}    # ----------  end of function usage  ----------
+
+if test $# == 0
+then
+	usage
+	exit 0
+fi
+
+TEMP=`getopt --long ${v},${a},${root},${output},${cflags},${libs},${include_dir},${libraries},${definitions},${link_directories},${cmake} -n 'rdk-config' -- "$@"`
+
+if test $? != 0
+then
+	echo "Terminating..." >&2
+	exit 1
+fi
+
+while true
+do
+	case "$1" in
+		--${v})
+			echo "${OpenRDK_VERSION}"
+			exit 0
+			;;
+		--${a})
+			echo "${OpenRDK_ARCH}"
+			exit 0
+			;;
+		--${root})
+			echo "${OpenRDK_ROOT}"
+			exit 0
+			;;
+		--${output})
+			echo "${OpenRDK_OUTPUT_TREE}"
+			exit 0
+			;;
+		--${cflags})
+			echo "${RDKCORE_CFLAGS}"
+			exit 0
+			;;
+		--${libs})
+			echo "${RDKCORE_LIBS}"
+			exit 0
+			;;
+		--${include_dir})
+			echo "${RDKCORE_INCLUDE_DIR}"
+			exit 0
+			;;
+		--${definitions})
+			echo "${RDKCORE_DEFINITIONS}"
+			exit 0
+			;;
+		--${libraries})
+			echo "${RDKCORE_LIBRARIES}"
+			exit 0
+			;;
+		--${link_directories})
+			echo "${RDKCORE_LINK_DIRECTORIES}"
+			exit 0
+			;;
+		--${cmake})
+			echo "${OpenRDK_FINDOPENRDK_CMAKE}"
+			exit 0
+			;;
+		*)
+			usage
+			exit 0
+			;;
+	esac
+done
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# OpenRDK environment variables
+export RDK_ROOT="@OpenRDK_ROOT@"
+export RDK_BUILD_DIR="@OpenRDK_OUTPUT_TREE@"
+export RDK_LOG=debug
+export RDK_LOG_COLOR=1
+
+# adding OpenRDK library directories to LD_LIBRARY_PATH (or DYLD_LIBRARY_PATH if we are on a Mac OS X)
+LIB_DIR=$RDK_BUILD_DIR/lib
+LIBEXT_DIR=$RDK_BUILD_DIR/libext
+BIN_DIR=$RDK_BUILD_DIR/bin
+BINEXT_DIR=$RDK_BUILD_DIR/binext
+
+if [ "`uname`" == "Darwin" ]; then
+	export DYLD_LIBRARY_PATH=`echo "$DYLD_LIBRARY_PATH:$LIB_DIR:$LIBEXT_DIR" | sed -e 's/^://'`
+else
+	export LD_LIBRARY_PATH=`echo "$LD_LIBRARY_PATH:$LIB_DIR:$LIBEXT_DIR" | sed -e 's/^://'`
+fi
+
+# adding OpenRDK binary directories to PATH
+export PATH=$PATH:$BIN_DIR:$BINEXT_DIR
+
+# adding libraries also to PATH (for Windows, Cygwin and whatever else)
+if [ "x$WINDIR" != "x" ]; then
+	export PATH=$PATH:$LIB_DIR:$LIBEXT_DIR
+fi
+

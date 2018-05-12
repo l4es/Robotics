@@ -1,0 +1,7 @@
+Shared Memory
+=================
+- it should be a pure and simple shared memory
+- it should use template for type to handle
+- REMOVE: reference to Nao
+- MOVE: sensordata and motion to nao stuff
+- OPTIONAL: use boost::shared memory

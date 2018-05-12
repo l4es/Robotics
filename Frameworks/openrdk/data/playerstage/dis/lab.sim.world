@@ -1,0 +1,287 @@
+interval_sim 100  # milliseconds per update step
+interval_real 100 # real-time milliseconds per update step
+gui_interval    100
+gui_disable 0
+gui_menu_interval 20
+# the size of a pixel in Stage's underlying raytrace model in meters
+resolution     0.02
+size [61 48.4098] #window size
+
+window
+(
+	size [831.000 711.000 ] 
+	center [0.802 0.336] 
+	scale 0.079
+)
+
+# defines 'map' object used for floorplans
+include "../common/map.inc"
+
+
+
+
+
+
+
+
+
+
+map
+(
+	#bitmap "a-01-basement.png" 
+	bitmap "a-01-basement.sim.png" 
+	map_resolution 0.05
+	size [61 48.4098]
+	name "laboratory"
+	boundary 0
+	polygon[0].fill 0
+)
+
+# defines Pioneer-like robots
+include "pioneer+camera.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# deploy some robots
+erraticcam
+(
+	pose [-17.597 8.816 275.609]
+	name "robot01"
+	color "red"
+)
+erraticomnicam
+(
+	pose [-18.630 2.618 240.364]
+	name "robot02"
+	color "blue"
+)
+erraticcam
+(
+	pose [17.238 13.597 -127.181]
+	name "robot03"
+	color "green"
+)
+erraticcam
+(
+	pose [21.374 -12.378 -175.216]
+	name "robot04"
+	color "magenta"
+)
+erraticcam
+(
+	pose [-16.596 -18.338 102.596]
+	name "robot05"
+	color "orange"
+)
+erraticcam
+(
+	pose [3.167 -7.384 -19.029]
+	name "robot06"
+	color "yellow"
+)
+erraticcam
+(
+	pose [-13.132 12.471 -483.087]
+	name "robot07"
+	color "cyan"
+)
+
+
+
+
+
+#define some targets
+define target erraticcam
+(
+	size [ 0.3 0.6 ]
+	bitmap "../common/robot.png"
+	polygons 0
+	gui_outline 0
+	sick_laser
+	(
+		blob_return 0
+		gui_outline 0
+		polygons 0
+	)
+)
+
+# deploy some target
+target ( name "targetA" color "pink" pose [6.746 -18.433  150.027] )
+target ( name "targetB" color "violet" pose [7.123 -16.350  249.997] )
+target ( name "targetC" color "yellow" pose [2.713 -16.270  -187.312] )
+target ( name "targetD" color "gold" pose [4.640 -16.194  303.982] )
+target ( name "targetE" color "lime green" pose [2.473 -18.801  21.040] )
+target ( name "targetF" color "lawn green" pose [4.572 -18.551  -98.381] )
+
+# deploy some fixedcamera
+fixedwidecamera ( name "cam01" pose [-20.141 -14.067 44.537] )
+fixedcamera ( name "cam02" pose [27.300 -12.171 -182.184])
+fixedcamera ( name "cam03" pose [-18.716 19.618 271.502])
+fixedcamera ( name "cam04" pose [-17.191 -8.330 229.510])
+
+
+# deploy some landmarks
+include "../common/beacon.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define beaconA1 beacon ( color "pink" name "landmarkA1" )
+define beaconA2 beacon ( color "violet" name "landmarkA2" )
+define beaconB1 beacon ( color "yellow" name "landmarkB1" )
+define beaconB2 beacon ( color "gold" name "landmarkB2" )
+define beaconC1 beacon ( color "lime green" name "landmarkC1" )
+define beaconC2 beacon ( color "lawn green" name "landmarkC2" )
+
+#beaconA1 ( pose [ -23.345 -13.510 0.000 ])
+#beaconA1 ( pose [ -23.707 -9.214 0.000 ])
+#beaconA1 ( pose [ -23.725 7.849 0.000 ])
+#beaconA1 ( pose [ -17.359 -12.855 0.000 ])
+#beaconA1 ( pose [ -23.705 19.908 0.000 ])
+#beaconA1 ( pose [ -23.718 11.427 0.000 ])
+#beaconA1 ( pose [ -23.700 -0.714 0.000 ])
+#beaconA1 ( pose [ 17.941 -12.868 0.000 ])
+#beaconA1 ( pose [ 13.552 -12.858 0.000 ])
+#beaconA1 ( pose [ 8.577 -12.871 0.000 ])
+#beaconA1 ( pose [ -0.050 -12.853 0.000 ])
+#beaconA1 ( pose [ -0.690 -13.627 0.000 ])
+#beaconA1 ( pose [ -3.695 19.643 0.000 ])
+#beaconA1 ( pose [ -10.043 19.433 0.000 ])
+#beaconA1 ( pose [ -17.354 19.921 0.000 ])
+#beaconA1 ( pose [ -13.498 18.396 0.000 ])
+#beaconA1 ( pose [ -12.158 7.209 0.000 ])
+#beaconA1 ( pose [ 17.946 -0.705 0.000 ])
+
+#beaconA2 ( pose [ -18.101 19.916 0.000 ])
+#beaconA2 ( pose [ -9.005 -13.681 0.000 ])
+#beaconA2 ( pose [ -18.087 11.403 0.000 ])
+#beaconA2 ( pose [ -18.093 -0.707 0.000 ])
+#beaconA2 ( pose [ -18.075 -12.780 0.000 ])
+#beaconA2 ( pose [ -18.092 7.863 0.000 ])
+#beaconA2 ( pose [ -18.075 -9.220 0.000 ])
+#beaconA2 ( pose [ -10.637 18.683 0.000 ])
+#beaconA2 ( pose [ 13.285 -12.864 0.000 ])
+#beaconA2 ( pose [ -14.469 19.921 0.000 ])
+#beaconA2 ( pose [ 23.474 -0.706 0.000 ])
+#beaconA2 ( pose [ 23.486 -9.078 0.000 ])
+#beaconA2 ( pose [ 23.472 -12.864 0.000 ])
+#beaconA2 ( pose [ 17.130 -12.860 0.000 ])
+#beaconA2 ( pose [ 7.915 -12.846 0.000 ])
+#beaconA2 ( pose [ -5.779 8.019 0.000 ])
+#beaconA2 ( pose [ -1.012 19.892 0.000 ])
+
+#beaconB1 ( pose [ -17.355 -18.421 0.000 ])
+#beaconB1 ( pose [ -23.711 12.091 0.000 ])
+#beaconB1 ( pose [ -23.357 9.302 0.000 ])
+#beaconB1 ( pose [ -23.347 -17.624 0.000 ])
+#beaconB1 ( pose [ -23.694 -12.101 0.000 ])
+#beaconB1 ( pose [ -23.723 -8.531 0.000 ])
+#beaconB1 ( pose [ -23.705 -0.037 0.000 ])
+#beaconB1 ( pose [ -13.494 15.956 0.000 ])
+#beaconB1 ( pose [ -17.338 17.187 0.000 ])
+#beaconB1 ( pose [ -2.880 15.105 0.000 ])
+#beaconB1 ( pose [ 17.944 -8.384 0.000 ])
+#beaconB1 ( pose [ 17.943 -18.400 0.000 ])
+#beaconB1 ( pose [ 13.266 -18.421 0.000 ])
+#beaconB1 ( pose [ 8.586 -14.451 0.000 ])
+#beaconB1 ( pose [ -0.676 -17.613 0.000 ])
+#beaconB1 ( pose [ -0.053 -18.409 0.000 ])
+#beaconB1 ( pose [ -12.167 5.378 0.000 ])
+
+#beaconB2 ( pose [ -18.100 -18.392 0.000 ])
+#beaconB2 ( pose [ -8.984 -17.585 0.000 ])
+#beaconB2 ( pose [ -18.082 -12.098 0.000 ])
+#beaconB2 ( pose [ -18.100 12.108 0.000 ])
+#beaconB2 ( pose [ -18.112 8.525 0.000 ])
+#beaconB2 ( pose [ -18.081 -8.562 0.000 ])
+#beaconB2 ( pose [ -18.087 -0.049 0.000 ])
+#beaconB2 ( pose [ -14.526 17.039 0.000 ])
+#beaconB2 ( pose [ -1.012 13.850 0.000 ])
+#beaconB2 ( pose [ -10.743 15.846 0.000 ])
+#beaconB2 ( pose [ 23.474 -8.397 0.000 ])
+#beaconB2 ( pose [ 23.481 -18.411 0.000 ])
+#beaconB2 ( pose [ 23.481 -12.111 0.000 ])
+#beaconB2 ( pose [ 17.127 -18.401 0.000 ])
+#beaconB2 ( pose [ -5.774 4.580 0.000 ])
+#beaconB2 ( pose [ 7.917 -18.404 0.000 ])
+#beaconB2 ( pose [ 13.269 -14.466 0.000 ])
+
+#beaconC1 ( pose [ -18.043 -11.084 0.000 ])
+#beaconC1 ( pose [ -15.260 -12.616 0.000 ])
+#beaconC1 ( pose [ -21.545 -12.145 0.000 ])
+#beaconC1 ( pose [ -18.041 9.972 0.000 ])
+#beaconC1 ( pose [ -17.381 -7.219 0.000 ])
+#beaconC1 ( pose [ -18.071 -1.686 0.000 ])
+#beaconC1 ( pose [ -17.395 4.711 0.000 ])
+#beaconC1 ( pose [ 21.255 -12.133 0.000 ])
+#beaconC1 ( pose [ -7.415 19.684 0.000 ])
+#beaconC1 ( pose [ -7.389 14.797 0.000 ])
+#beaconC1 ( pose [ -13.629 14.131 0.000 ])
+#beaconC1 ( pose [ -17.395 15.389 0.000 ])
+#beaconC1 ( pose [ 15.269 -12.165 0.000 ])
+#beaconC1 ( pose [ 10.956 -12.820 0.000 ])
+#beaconC1 ( pose [ 2.295 -12.170 0.000 ])
+#beaconC1 ( pose [ -1.949 -12.149 0.000 ])
+#beaconC1 ( pose [ -6.243 -12.157 0.000 ])
+#beaconC1 ( pose [ -10.568 -12.152 0.000 ])
+#beaconC1 ( pose [ -4.300 -9.463 0.000 ])
+#beaconC1 ( pose [ 4.226 -9.458 0.000 ])
+#beaconC1 ( pose [ 21.340 -8.451 0.000 ])
+#beaconC1 ( pose [ -10.711 -9.181 0.000 ])
+#beaconC1 ( pose [ 17.897 -9.479 0.000 ])
+#beaconC1 ( pose [ -13.520 5.681 0.000 ])
+#beaconC1 ( pose [ -14.460 -9.188 0.000 ])
+
+
+
+#beaconC2 ( pose [ -16.356 -12.555 0.000 ])
+#beaconC2 ( pose [ -17.387 -6.002 0.000 ])
+#beaconC2 ( pose [ -20.317 -12.740 0.000 ])
+#beaconC2 ( pose [ -17.399 -9.937 0.000 ])
+#beaconC2 ( pose [ -17.398 11.164 0.000 ])
+#beaconC2 ( pose [ -17.396 -2.890 0.000 ])
+#beaconC2 ( pose [ -18.054 5.842 0.000 ])
+#beaconC2 ( pose [ -1.270 17.876 0.000 ])
+#beaconC2 ( pose [ 20.113 -12.827 0.000 ])
+#beaconC2 ( pose [ -5.362 -9.463 0.000 ])
+#beaconC2 ( pose [ 17.175 -11.625 0.000 ])
+#beaconC2 ( pose [ -10.642 14.963 0.000 ])
+#beaconC2 ( pose [ 3.192 -9.450 0.000 ])
+#beaconC2 ( pose [ -14.727 4.599 0.000 ])
+#beaconC2 ( pose [ 20.178 -9.017 0.000 ])
+#beaconC2 ( pose [ -11.799 -9.160 0.000 ])
+#beaconC2 ( pose [ 9.830 -12.156 0.000 ])
+#beaconC2 ( pose [ 1.130 -12.822 0.000 ])
+#beaconC2 ( pose [ -14.417 6.847 0.000 ])
+#beaconC2 ( pose [ -14.430 15.248 0.000 ])
+#beaconC2 ( pose [ -18.048 16.557 0.000 ])
+#beaconC2 ( pose [ -3.113 -12.813 0.000 ])
+#beaconC2 ( pose [ -7.420 -12.797 0.000 ])
+#beaconC2 ( pose [ -11.719 -12.826 0.000 ])
+#beaconC2 ( pose [ -17.399 2.577 0.000 ])
+

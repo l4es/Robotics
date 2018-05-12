@@ -1,0 +1,103 @@
+#include <string>
+
+#define CMDS_PREFIX "cmds"
+#define PROPERTY_CMD_CHANGE_CAMERA_PARAMS CMDS_PREFIX"/reloadCameraParams"
+#define PROPERTY_CMD_FORCE_CHANGE CMDS_PREFIX"/forceReload"
+#define PROPERTY_CMD_SWITCH_CAMERA CMDS_PREFIX"/switchCamera"
+
+#define CAMERA_TOP_PREFIX "params/cameraTop"
+#define CAMERA_BOTTOM_PREFIX "params/cameraBottom"
+
+#define PROPERTY_SUFFIX_Brightness "Brightness"
+#define PROPERTY_SUFFIX_Contrast "Contrast"
+#define PROPERTY_SUFFIX_Saturation "Saturation"
+#define PROPERTY_SUFFIX_Hue "Hue"
+#define PROPERTY_SUFFIX_RedChroma "RedChroma"
+#define PROPERTY_SUFFIX_BlueChroma "BlueChroma"
+#define PROPERTY_SUFFIX_Gain "Gain"
+#define PROPERTY_SUFFIX_HFlip "HFlip"
+#define PROPERTY_SUFFIX_VFlip "VFlip"
+#define PROPERTY_SUFFIX_LensX "LensX"
+#define PROPERTY_SUFFIX_LensY "LensY"
+#define PROPERTY_SUFFIX_AutoExposition "AutoExposition"
+#define PROPERTY_SUFFIX_AutoWhiteBalance "AutoWhiteBalance"
+#define PROPERTY_SUFFIX_AutoGain "AutoGain"
+#define PROPERTY_SUFFIX_Exposure "Exposure"
+#define PROPERTY_SUFFIX_ExposureCorrection "ExposureCorrection"
+
+
+#define PROPERTY_PARAMS_CAMERA_TOP_Brightness  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Brightness
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Brightness  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Brightness
+#define PROPERTY_PARAMS_CAMERA_TOP_Contrast  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Contrast
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Contrast  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Contrast
+#define PROPERTY_PARAMS_CAMERA_TOP_Saturation  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Saturation
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Saturation  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Saturation
+#define PROPERTY_PARAMS_CAMERA_TOP_Hue  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Hue
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Hue  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Hue
+#define PROPERTY_PARAMS_CAMERA_TOP_RedChroma  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_RedChroma
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_RedChroma  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_RedChroma
+#define PROPERTY_PARAMS_CAMERA_TOP_BlueChroma  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_BlueChroma
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_BlueChroma  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_BlueChroma
+#define PROPERTY_PARAMS_CAMERA_TOP_Gain  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Gain
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Gain  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Gain
+#define PROPERTY_PARAMS_CAMERA_TOP_HFlip  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_HFlip
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_HFlip  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_HFlip
+#define PROPERTY_PARAMS_CAMERA_TOP_VFlip  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_VFlip
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_VFlip  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_VFlip
+#define PROPERTY_PARAMS_CAMERA_TOP_LensX  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_LensX
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_LensX  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_LensX
+#define PROPERTY_PARAMS_CAMERA_TOP_LensY  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_LensY
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_LensY  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_LensY
+#define PROPERTY_PARAMS_CAMERA_TOP_AutoExposition  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_AutoExposition
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_AutoExposition  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_AutoExposition
+#define PROPERTY_PARAMS_CAMERA_TOP_AutoWhiteBalance  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_AutoWhiteBalance
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_AutoWhiteBalance  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_AutoWhiteBalance
+#define PROPERTY_PARAMS_CAMERA_TOP_AutoGain  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_AutoGain
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_AutoGain  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_AutoGain
+#define PROPERTY_PARAMS_CAMERA_TOP_Exposure  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_Exposure
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_Exposure  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_Exposure
+#define PROPERTY_PARAMS_CAMERA_TOP_ExposureCorrection  CAMERA_TOP_PREFIX"/"PROPERTY_SUFFIX_ExposureCorrection
+#define PROPERTY_PARAMS_CAMERA_BOTTOM_ExposureCorrection  CAMERA_BOTTOM_PREFIX"/"PROPERTY_SUFFIX_ExposureCorrection
+
+#define PROPERTY_PARAMS_Resolution "params/resolution"
+#define PROPERTY_PARAMS_Colorspace "params/colorspace"
+#define PROPERTY_PARAMS_FrameRate "params/framerate"
+#define PROPERTY_PARAMS_CAMERA_Select "params/cameraSelect"
+#define PROPERTY_PARAMS_LINK_PARAMS "params/linkParameters"
+
+#define PROPERTY_IN_CURRENT_BUFFER_IN_USE "in/currentBufferInUse"
+#define PROPERTY_OUT_IMAGE1 "out/bufferImage1"
+#define PROPERTY_OUT_JOINTS1 "out/bufferJoints1"
+#define PROPERTY_OUT_SENSORS1 "out/bufferSensors1"
+#define PROPERTY_OUT_IMAGE2 "out/bufferImage2"
+#define PROPERTY_OUT_JOINTS2 "out/bufferJoints2"
+#define PROPERTY_OUT_SENSORS2 "out/bufferSensors2"
+#define PROPERTY_OUT_CAMERA_IN_USE "out/cameraInUse"
+#define PROPERTY_TIME_FPS "timing/fps"
+#define PROPERTY_TIME_LAST_IMAGE_READING "timing/lastImageReading"
+#define PROPERTY_TIME_LAST_SENSOR_READING "timing/lastSensorReading"
+#define PROPERTY_TIME_LAST_CALL "timing/lastExecTime"
+
+#define PROPERTY_PARAMS_USE_DOUBLE_BUFFER "params/useDoubleBuffer"
+
+#define PROPERTY_DBG_ENABLED "dbg/enabled"
+#define PROPERTY_DBG_IMAGE "dbg/smallImage"
+
+#define PROPERTY_OUT_BATTERY      "out/batteryCharge"
+#define PROPERTY_OUT_ALLDATA	  "out/alldata"
+#define PROPERTY_OUT_POSE	  "out/pose"
+
+#define PROPERTY_PARAM_DEFAULT_PENALIZE_TIME "params/defaultPenalizeTime"
+#define PROPERTY_OUT_TTS_TEXT             "out/TTSText"				
+
+#define PROPERTY_OUT_MOTION_TASK_FROM_NMM "out/motionTask"
+#define PROPERTY_OUT_IS_HEAD_MOVING       "out/isHeadMoving"
+#define PROPERTY_OUT_ODOMETRY_POSE        "out/odometryPose"
+#define PROPERTY_IN_GAMESTATE             "in/gameState"
+#define PROPERTY_IN_TEAMCOLOR             "in/teamColor"
+#define PROPERTY_IN_PENALTY               "in/penalty"
+#define PROPERTY_OUT_FINAL_GAMESTATE      "out/finalgamestate"
+#define PROPERTY_OUT_FINAL_PENALIZE       "out/finalpenalized"
+#define PROPERTY_OUT_FINAL_TEAMCOLOR      "out/finalteamcolor"
+#define PROPERTY_IN_UNIFORM_NUMBER        "in/myuniformnumber"
+

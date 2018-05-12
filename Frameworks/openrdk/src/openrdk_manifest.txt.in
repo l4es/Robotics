@@ -1,0 +1,5 @@
+Package: ${PROJECT_NAME}
+Version: ${OpenRDK_VERSION}
+Arch: ${OpenRDK_ARCH}
+BuildDir: ${OpenRDK_OUTPUT_TREE}
+RootDir: ${OpenRDK_ROOT}

@@ -1,0 +1,83 @@
+# defines Pioneer-like robots
+include "pioneer+camera.inc"
+# defines 'map' object used for floorplans
+include "../common/map.inc"
+# defines sick laser
+include "../common/sick.inc"
+# deploy some landmarks
+include "../common/beacons.inc"
+
+# the size of a pixel in Stage's underlying raytrace model in meters
+resolution     0.02
+
+window
+(
+	size [727.000 624.000 ] 
+	center [-0.067 -0.713] 
+	rotate [0 0]
+	scale 11.235
+
+	show_data 1
+)
+
+floorplan
+(
+	bitmap "a-01-basement.real.png" 
+	map_resolution 0.02
+	size [61.000 48.410 0.500]
+	name "laboratory"
+	color "gray50"
+	gui_grid 1
+	gui_outline 0
+)
+
+# deploy some robots
+erraticcam
+(
+	pose [-18.702 15.746 0 -88.471]
+	name "robot1"
+	color "red"
+)
+erraticomnicam
+(
+	pose [23.025 -12.740 0 -178.094]
+	name "robot2"
+	color "blue"
+)
+
+#define some targets
+define target erraticcam
+(
+	size [ 0.300 0.600 0.300 ]
+	bitmap "../common/robot.png"
+	gui_outline 0
+	sicklaser
+	(
+		blob_return 0
+		gui_outline 0
+		color "yellow"
+	)
+)
+
+# deploy some target
+target ( name "targetA" color "pink" pose [-18.469 -15.847 0 150.027] )
+target ( name "targetB" color "violet" pose [21.500 -2.072 0 -110.003] )
+target ( name "targetC" color "yellow" pose [-15.618 5.589 0 172.688] )
+target ( name "targetD" color "gold" pose [-21.467 6.509 0 -56.018] )
+target ( name "targetE" color "lime green" pose [-9.103 -15.947 0 21.040] )
+target ( name "targetF" color "lawn green" pose [-16.287 18.975 0 -98.381] )
+
+# deploy some fixedcamera
+fixedwidecamera ( name "cam01" pose [-20.341 -13.939 2.000 44.537] )
+fixedcamera ( name "cam02" pose [26.536 -12.797 2.000 177.816])
+fixedcamera ( name "cam03" pose [-18.848 19.628 2.000 -88.498])
+fixedcamera ( name "cam04" pose [-17.571 -7.482 2.000 -130.490])
+
+define beaconA1 beacon ( color "pink" name "landmarkA1" )
+define beaconA2 beacon ( color "violet" name "landmarkA2" )
+define beaconB1 beacon ( color "yellow" name "landmarkB1" )
+define beaconB2 beacon ( color "gold" name "landmarkB2" )
+define beaconC1 beacon ( color "lime green" name "landmarkC1" )
+define beaconC2 beacon ( color "lawn green" name "landmarkC2" )
+
+

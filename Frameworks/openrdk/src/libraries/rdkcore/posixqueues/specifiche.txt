@@ -1,0 +1,37 @@
+
+Specifiche per RObjectQueue
+---------------------------
+- RObjectQueue contiene degli RObject*. Alcuni metodi avranno dei casi
+speciali se l'RObject è un RMessage, ma vogliamo usare RObjectQueue
+anche in altri contesti.
+- E' possibile inserire un RObject* in RObjectQueue in modo thread-safe.
+- Al momento dell'inserimento la proprietà del puntatore passa a
+RObjectQueue.
+- Il caso tipico di inserimento avviene quando RObjectQueue si trova
+dentro una RProperty (RObjectQueue è un RObject).
+- Per poter leggere dalla coda, un consumatore si deve "registrare"
+prima con un ID.
+- Un oggetto inserito in RObjectQueue è disponibile in modo indipendente
+a tutti i consumatori. Un consumatore non modifica quindi la coda di un
+altro consumatore.
+- I consumatori possono accedere agli oggetti in ordine di inserimento.
+Possono scorrere tutta la coda in entrambi i versi.
+- I consumatori accedono agli oggetti in modo const. La proprietà dei
+puntatori rimane della coda e non passa mai ai consumatori.
+- Un consumatore "consuma" la coda dicendo che non è più interessato a
+particolari oggetti (in ordine arbitrario).
+- Quando nessun consumatore è più interessato ad un particolare oggetto,
+questo viene distrutto.
+- E' auspicabile che non si clonino gli RObject presenti.
+- E' necessario implementare metodi di attesa passiva per i consumatori.
+In particolare un thread consumatore deve potersi addormentare su un
+semaforo ed essere risvegliato quando un nuovo oggetto entra nella coda.
+- E' necessario implementare una modalità di attesa specifica per gli
+RMessage. In particolare un consumatore deve poter dire "svegliami solo
+se arriva un RMessage che ha PROPRIETA'". PROPRIETA' = è udp | è tcp | è
+del tipo X | true.
+- Più thread potranno accedere alla coda usando lo stesso ID di
+identificazione.
+- Tutte le operazioni sono thread-safe. Se si usano strategie di
+locking, la lettura da parte di più consumatori non deve lockarsi a vicenda.
+- Non si devono usare thread specifici per gestire RObjectQueue.

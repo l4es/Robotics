@@ -1,0 +1,230 @@
+interval_sim 100  # milliseconds per update step
+interval_real 100 # real-time milliseconds per update step
+gui_interval    100
+gui_disable 0
+gui_menu_interval 20
+# the size of a pixel in Stage's underlying raytrace model in meters
+resolution     0.02
+size [8 6] #window size
+
+window
+(
+	size [777.000 640.000 ]
+	center [-0.027 -0.037] 
+	scale 0.010
+)
+
+include "../common/map.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+map
+(
+	size [ 7.45 5.45 ]
+	bitmap "field.png"
+	map_resolution 0.01
+	name "map"
+	boundary 1
+	color "gray"
+	blob_return 0
+	laser_return 0
+	obstacle_return 0
+)
+
+# since we are using the map as texture, we use obstacle to define the boundaries
+define map_boundaries model
+(
+	name ["map_boundaries"]
+	pose [0 0 0.000]
+	size [0.01 0.01]
+	origin [0 0 0]
+	velocity [0 0 0]
+
+	color "black"
+
+	# determine how the model appears in various sensors
+
+	obstacle_return 1
+	laser_return 1
+	ranger_return 0
+	blob_return 0
+	fiducial_return 0
+	gripper_return 0
+
+	# GUI properties
+	gui_nose 0
+	gui_grid 0
+	gui_movemask 0
+	gui_outline 0
+)
+
+map_boundaries( pose [  0.000 -2.720 ] size [ 7.45 0.01 ])
+map_boundaries( pose [  0.000  2.720 ] size [ 7.45 0.01 ])
+map_boundaries( pose [ -3.721  0.000 ] size [ 0.01 5.45 ])
+map_boundaries( pose [  3.721  -0.000 ] size [ 0.01 5.45 ])
+
+
+include "../common/line.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+# sideline
+#line ( pose [ 0.000 -2.000 0.000 ] size [ 6.05 0.05 ] )
+#line ( pose [ 0.000  2.000 0.000 ] size [ 6.05 0.05 ] )
+#line ( pose [ 0.000  0.000 0.000 ] size [ 0.05 4.05 ] )
+#line ( pose [ -3.000 0.000 0.000 ] size [ 0.05 4.05 ] )
+#line ( pose [  3.000 0.000 0.000 ] size [ 0.05 4.05 ] )
+# goal line
+#line ( pose [ -2.400 0.000 0.000 ] size [ 0.05 3.05 ] )
+#line ( pose [  2.400 0.000 0.000 ] size [ 0.05 3.05 ] )
+#line ( pose [ -2.700  1.500 0.000 ] size [ 0.65 0.05 ] )
+#line ( pose [ -2.700 -1.500 0.000 ] size [ 0.65 0.05 ] )
+#line ( pose [  2.700  1.500 0.000 ] size [ 0.65 0.05 ] )
+#line ( pose [  2.700 -1.500 0.000 ] size [ 0.65 0.05 ] )
+
+# sideline
+corner ( pose [ -3.000  2.000 0.000 ] )
+corner ( pose [ -3.000 -2.000 0.000 ] )
+corner ( pose [  3.000  2.000 0.000 ] )
+corner ( pose [  3.000 -2.000 0.000 ] )
+corner ( pose [  0.000  2.000 0.000 ] )
+corner ( pose [  0.000 -2.000 0.000 ] )
+# goal line
+corner ( pose [ -3.000    1.100 0.000 ] )
+corner ( pose [ -3.000   -1.100 0.000 ] )
+corner ( pose [ -2.400  1.100 0.000 ] )
+corner ( pose [ -2.400 -1.100 0.000 ] )
+corner ( pose [  3.000    1.100 0.000 ] )
+corner ( pose [  3.000   -1.100 0.000 ] )
+corner ( pose [  2.400  1.100 0.000 ] )
+corner ( pose [  2.400 -1.100 0.000 ] )
+# virtual corner
+corner ( pose [ -2.400  2.000 0.000 ] )
+corner ( pose [ -2.400 -2.000 0.000 ] )
+corner ( pose [  2.400  2.000 0.000 ] )
+corner ( pose [  2.400 -2.000 0.000 ] )
+
+include "../common/beacon.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+beacon( pose [ -3.000 -0.700 0.000] color "blue" )
+beacon( pose [ -3.000  0.700 0.000] color "blue" )
+beacon( pose [  3.000 -0.700 0.000] color "yellow" )
+beacon( pose [  3.000  0.700 0.000] color "yellow" )
+
+
+include "nao.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+nao
+(
+	name "agent_spartaco"
+	color "red"
+	pose [ -0.331 -1.569 355.056 ]
+)
+
+nao
+(
+	name "agent_pancrazio"
+	color "red"
+	pose [ -0.652 -0.762 0.000 ]
+)
+
+nao
+(
+	name "agent_quintiliano"
+	color "red"
+	pose [ -0.650 0.768 0.000 ]
+)
+
+nao
+(
+	name "agent_romolo"
+	color "red"
+	pose [ -0.392 1.433 0.000 ]
+)
+
+nao
+(
+	name "agent_kicker"
+	color "red"
+	pose [ -0.484 -0.066 -2880.690 ]
+	corner (
+		size [ 0.05 0.05 ]
+		pose [ -0.008 0.217 0.000 ]
+		color "pink"
+	)
+	corner (
+		size [ 0.05 0.05 ]
+		pose [ -0.008 -0.217 0.000 ]
+		color "cyan"
+	)
+)
+
+
+include "../common/ball.inc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+ball
+(
+	name "ball"
+	pose [ 1.353 -0.011 0.000 ]
+	urg_laser(
+		size [0.05 0.05]
+		gui_outline 0
+		color "orange"
+	)
+)
+

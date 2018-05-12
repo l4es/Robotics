@@ -1,0 +1,79 @@
+/*
+ *    OpenRDK : OpenSource Robot Development Kit
+ *    Copyright (C) 2007, 2008  Daniele Calisi, Andrea Censi, Alberto Ingenito (<first_name>.<last_name>@dis.uniroma1.it)
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#ifndef NETWORK_SOCKETADDRESS_H
+#define NETWORK_SOCKETADDRESS_H
+
+#include <sys/socket.h>
+
+#include <rdkcore/network/netexception.h>
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *   INTERNET STRUCTURES MEMO
+ *   struct sockaddr {
+ *       unsigned short    sa_family;    // address family, AF_xxx
+ *       char              sa_data[14];  // 14 bytes of protocol address
+ *   }; 
+ *
+ *   struct sockaddr_in {
+ *       short int          sin_family;  // Address family
+ *       unsigned short int sin_port;    // Port number
+ *       struct in_addr     sin_addr;    // Internet address
+ *       unsigned char      sin_zero[8]; // Same size as struct sockaddr
+ *   }; 
+ *
+ *  // Internet address (a structure for historical reasons)
+ *   struct in_addr {
+ *       unsigned long s_addr; // that's a 32-bit long, or 4 bytes
+ *   }; 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+namespace Network {
+
+class SocketAddress {
+	// Constructors
+	public:
+		/// Create a non usefull address ( all 0 )
+		SocketAddress() throw();
+		
+		/// Create an address from a struct sockaddr
+		inline SocketAddress( const struct sockaddr& address ) throw() : address(address) {};
+
+	// Getters interface
+	public:
+		/// Get the family of the address
+		inline short getFamily() const throw() { return address.sa_family; }
+		
+		/// Get the struct sockaddr ( const version )
+		inline const struct sockaddr& getAddress() const throw() { return address; }
+		
+		/// Get the struct sockaddr
+		inline struct sockaddr& getAddress() throw() { return address; }
+
+	// Setters interface
+	public:
+		inline short setFamily() const throw() { return address.sa_family; }
+		
+	protected:
+		struct sockaddr address;
+};
+
+}
+
+#endif

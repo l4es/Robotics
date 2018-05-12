@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Example of a GUI based on HTTP requests to an OpenRDK agent</title>
+</head>
+<body>
+<h1>OpenRDK HTML GUI Example</h1>
+<p>This is an example GUI built as an HTML file. Click on the "Update" button to refresh the page, and thus the image.</p>
+
+<center>
+
+<input type="button" value="Update" onClick="location.reload(true)"/>
+
+<br/><br/>
+
+<table border="1" style="padding:20px"><tr><td style="padding:20px"><center>
+This is the current image from the <tt>imageTest</tt> module: <br/><br/>
+<img style="border:2px solid blue" id="image" src="http://127.0.0.1:8080/repository/imageTest/out/image"/>
+</center></td></tr></table>
+
+</center>
+
+</body>
+</html>

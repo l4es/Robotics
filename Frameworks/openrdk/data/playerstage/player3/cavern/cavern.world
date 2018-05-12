@@ -1,0 +1,45 @@
+# defines Pioneer-like robots
+include "../common/pioneer.inc"
+# defines 'map' object used for floorplans
+include "../common/map.inc"
+# defines sick laser
+include "../common/sick.inc"
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+# configure the GUI window
+window
+(
+	size [ 344.000 667.000 ] 
+	center [0.045 -0.565]
+	rotate [0 0]
+	scale 34.004 
+
+	show_data 1
+)
+
+# load an environment bitmap
+floorplan
+(
+	bitmap "cavern.png"
+	map_resolution 0.02
+	size [8.000 16.000 0.500]
+	name "cavern"
+	color "gray50"
+	gui_grid 1
+	gui_outline 1
+)
+
+# create a robot
+pioneer2dx
+(
+	name "robot1"
+	color "red"
+	pose [0 0 0 0]
+	sicklaser()
+	#ctrl "wander"
+
+	localization "gps"
+	localization_origin [0 0 0 0]
+)

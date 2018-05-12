@@ -1,0 +1,44 @@
+
+BASH VARIABLES:
+   RDK_ROOT          the root of the OpenRDK directory (contains initially src/ and data/), set by setenv
+   RDK_LOG_COLOR     whether write console messages with colors (RDK_LOG_COLOR=1) or not, set by setenv
+   RDK_LOG           level of logging to console, can be "info", "debug", "trace", set by setenv
+   RDK_BUILD_DIR     the directory where the OpenRDK is compiled, i.e., the one that contains lib/, bin/, libext/ and binext/,
+                     set by setenv
+
+CMAKE AUTOMATIC VARIABLES:
+   PROJECT_BINARY_DIR
+   OpenRDK_BINARY_DIR
+                     full path to build directory of the project
+
+   PROJECT_NAME      project name
+   PROJECT_SOURCE_DIR
+   OpenRDK_SOURCE_DIR
+   CMAKE_SOURCE_DIR
+                     top level source directory of the project
+
+CMAKE VARIABLES:
+   OpenRDK_CMAKE_MODULE_PATH
+                     the directory where the OpenRDK cmake modules reside, i.e., $RDK_ROOT/src/build_tools/cmake,
+                     it is set by $RDK_ROOT/src/CMakeLists.txt
+   OpenRDK_VERSION   the current version in dotted form (e.g., 2.1.2), set by $RDK_ROOT/src/CMakeLists.txt
+   OpenRDK_ROOT      same as RDK_ROOT bash variable, set by $RDK_ROOT/src/CMakeLists.txt
+   OpenRDK_OUTPUT_TREE
+                     same as RDK_BUILD_DIR bash variable, set by $RDK_ROOT/src/CMakeLists.txt
+   OpenRDK_ARCH
+                     architecture (if not cross-compiling, it is "generic", otherwise it contains a string specifying the
+                     cross-compiling architecture); set by $RDK_ROOT/src/CMakeLists.txt
+   RDKCORE_LIBRARIES the rdkcore library, that can be linked by using TARGET_LINK_LIBRARIES, set by $RDK_ROOT/src/CMakeLists.txt
+   RDKCORE_INCLUDE_DIR
+                     the include directory with rdkcore includes (that should be included with #include<rdkcore/whatever.h>), this can be specified using INCLUDE_DIRECTORIES, it is set by $RDK_ROOT/src/CMakeLists.txt
+   RDKCORE_DEFINITIONS
+                     the definitions used to compile rdkcore
+   RDKCORE_LINK_DIRECTORIES
+                     the directory where librdkcore.so (or .dylib) resides, set by $RDK_ROOT/src/CMakeLists.txt
+   RDKCORE_LDFLAGS
+                     flags used to compile using rdkcore, it is a combination of *_LINK_DIRECTORIES and *_LIBRARIES, for software compiled using standard Makefile; set by $RDK_ROOT/src/CMakeLists.txt
+   RDKCORE_CPPFLAGS
+                     flags used to compile using rdkcore, it is used as combination of *_INCLUDE_DIR and *_DEFINITIONS, for software compiled using standard Makefile; set by $RDK_ROOT/src/CMakeLists.txt
+   OpenRDK_FINDOPENRDK_CMAKE
+                     full path to the include cmake file for external projects; set by $RDK_ROOT/src/CMakeLists.txt
+   RDK_INSIDE        it is 1 if we are inside the OpenRDK build dir, otherwise it means we are compiling an external project

@@ -1,0 +1,4 @@
+SET(COMPILE_FILES AUTO)
+SET(MOC_FILES remoteconnectormodule.h)
+RCONSOLE_QT_MODULE()
+

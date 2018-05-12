@@ -1,11 +1,11 @@
 [submodule "hFramework"]
-	path = HusarionCORE2/hFramework
+	path = Frameworks/HusarionCORE2/hFramework
 	url = https://github.com/husarion/hFramework.git
 [submodule "HusarionCORE2/hSensors"]
-	path = HusarionCORE2/hSensors
+	path = Frameworks/HusarionCORE2/hSensors
 	url = https://github.com/husarion/hSensors.git
 [submodule "HusarionCORE2/modules"]
-	path = HusarionCORE2/modules
+	path = Frameworks/HusarionCORE2/modules
 	url = https://github.com/husarion/modules.git
 [submodule "UAV/Emlid/Navio2"]
 	path = UAV/Emlid/Navio2

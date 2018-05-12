@@ -1,0 +1,8 @@
+#define PROPERTY_GAME_CONTROLLER "in/gameController"
+#define PROPERTY_PENALIZED "in/penalized"
+#define PROPERTY_KICK_OFF "in/kickOff"
+#define PROPERTY_BALL_SEEN "in/ballSeen"
+#define PROPERTY_COORDINATE_BALL_FIELD "in/coordinateBallField"
+#define PROPERTY_TEAM_COLOR "in/teamColor"
+#define PROPERTY_BALL_NEAR "out/ballNear"
+#define PROPERTY_BALL_MIDDLE_DISTANCE "out/ballMiddleDistance"

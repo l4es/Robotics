@@ -1,0 +1,4 @@
+SET(COMPILE_FILES AUTO)
+SET(MOC_FILES fourarrowsmodule.h)
+RCONSOLE_QT_MODULE()
+

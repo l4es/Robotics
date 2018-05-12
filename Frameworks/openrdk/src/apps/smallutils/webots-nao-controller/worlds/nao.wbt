@@ -1,0 +1,77 @@
+#VRML_SIM V5.0 utf8
+#000000
+#!mainWindow: 0 0 0.552076 0.675464
+#!sceneTreeWindow: 0.0648216 0.58651 0.444283 0.370479 0.101966
+#!logWindow: 0.549162 0 0.450838 0.676442
+
+WorldInfo {
+  info [
+    "Nao robots playing the Robocup standard league"
+    "Olivier Michel <Olivier.Michel@cyberbotics.com>"
+    "Date: 12 OCT 2007"
+  ]
+  title "Nao Robocup"
+  basicTimeStep 40
+  runRealTime TRUE
+}
+Viewpoint {
+  orientation 0.0788341 0.984084 0.15926 3.94758
+  position -1.76514 0.871671 -1.30726
+}
+Background {
+  skyColor [
+    0.435294 0.4 0.317647
+  ]
+}
+PointLight {
+  ambientIntensity 0.2
+  attenuation 0.2 0.2 0.2
+  location 3 0.5 2
+}
+PointLight {
+  ambientIntensity 0.2
+  attenuation 0.2 0.2 0.2
+  location -3 0.5 0.4
+}
+PointLight {
+  ambientIntensity 0.2
+  attenuation 0.2 0.2 0.2
+  location 0 1 -2
+}
+SoccerField {
+}
+DEF YELLOW_GOAL Goal {
+  translation 3 0 0
+}
+DEF BLUE_GOAL Goal {
+  translation -3 0 0
+  rotation 0 1 0 3.14159
+  postColor 0 1 1
+}
+DEF BALL Ball {
+  translation 0 0.0428038 0
+}
+Supervisor {
+  children [
+    Emitter {
+      name "emitter"
+    }
+    Receiver {
+      name "receiver"
+    }
+  ]
+  name "soccer referee"
+  controller "ball_supervisor_tcp"
+}
+DEF RED_PLAYER_1 Nao {
+  translation 0.500207 0.321954 -3.06775e-05
+  rotation 0.000378822 1 0.000292135 -1.57
+  color 1 0 0
+  texture [
+    "textures/red_logo.png"
+  ]
+  controller "nao_tcp"
+  controllerArgs "-p 54001"
+  name "red goal keeper"
+  windowPosition 0.885222 0.148883
+}

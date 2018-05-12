@@ -1,0 +1,627 @@
+#!/bin/bash
+###############################################################################
+##    Copyright (C) 2009, 2010 Daniele Calisi (daniele.calisi@gmail.com)     ##
+##                                                                           ##
+##    This file is part of the OpenRDK framework (http://openrdk.sf.net).    ##
+##                                                                           ##
+##    Foobar is free software: you can redistribute it and/or modify         ##
+##    it under the terms of the GNU General Public License as published by   ##
+##    the Free Software Foundation, either version 3 of the License, or      ##
+##    (at your option) any later version.                                    ##
+##                                                                           ##
+##    Foobar is distributed in the hope that it will be useful,              ##
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of         ##
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          ##
+##    GNU General Public License for more details.                           ##
+##                                                                           ##
+##    You should have received a copy of the GNU General Public License      ##
+##    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.        ##
+###############################################################################
+
+# version
+VERSION=0.7
+
+# exit code on error
+ERROR_EXIT_CODE=1
+
+# default options
+MACHINE_READABLE=0
+COLORED_OUTPUT=1
+
+# paths and filenames
+RDK_ENVIRONMENTS_FILE=~/.OpenRDK/environments.txt
+RDK_DEFAULT_ENVIRONMENT_FILE=~/.OpenRDK/default-environment.txt
+RDK_MANIFEST_FILE=openrdk_manifest.txt
+
+# utility variables
+BOLD="\e[1m"
+NORMAL="\e[0m"
+GREEN="\e[0;32m"
+RED="\e[0;31m"
+BOLD_GREEN="\e[1;32m"
+BOLD_RED="\e[1;31m"
+
+mkdir -p ~/.OpenRDK	
+[ ! -e $RDK_ENVIRONMENTS_FILE ] && touch $RDK_ENVIRONMENTS_FILE
+[ ! -e $RDK_DEFAULT_ENVIRONMENT_FILE ] && touch $RDK_DEFAULT_ENVIRONMENT_FILE
+
+#######################
+## UTILITY FUNCTIONS ##
+#######################
+
+function get_env_dir
+{
+	if [ -e $1/$RDK_MANIFEST_FILE ]; then
+		echo $1
+	else
+		envs=( `cat $RDK_ENVIRONMENTS_FILE | awk '{print $1}'` )
+		aliases=( `cat $RDK_ENVIRONMENTS_FILE | awk '{print "x"$2}'` )
+		#echo $aliases
+		declare -A al
+		for i in `seq 0 $(( ${#envs[*]} - 1))`; do
+			if [ "$(($i+1))" == "$1" ]; then
+				echo ${envs[$i]}
+				return
+			fi
+			#echo "... $i) ${aliases[$i]}"
+			[ "${aliases[$i]}" != "x" ] && al[${aliases[$i]:1}]=${envs[$i]}
+		done
+		if [ "${al[$1]}" != "" ]; then
+			echo ${al[$1]}
+		else
+			echo ""
+		fi
+	fi
+}
+
+
+#################################
+## ENVIRONMENT LIST AND SEARCH ##
+#################################
+
+function list_environments
+{
+	# no parameter for this function
+	# no interactive mode is available for this function
+
+	if [ $MACHINE_READABLE -eq 0 ]; then
+		echo -e "\nThese are the OpenRDK environments currently installed in your system:\n"
+		envs=( `cat $RDK_ENVIRONMENTS_FILE` )
+
+		i=0
+		defenv=`cat $RDK_DEFAULT_ENVIRONMENT_FILE | head -n 1`
+		cat $RDK_ENVIRONMENTS_FILE | while read d a; do
+			echo -n "$(($i+1))) $d "
+			[ "$a" != "" ] && echo -n "(alias: $a) "
+			[ "$d" == "$defenv" ] && echo -n "(default) "
+			echo
+			i=$((i+1))
+		done
+		echo
+	else
+		defenv=`cat $RDK_DEFAULT_ENVIRONMENT_FILE | head -n 1`
+		cat $RDK_ENVIRONMENTS_FILE | while read d a; do
+			echo -n "$d $a"
+			[ "$d" == "$defenv" ] && echo -n " default"
+			echo
+		done
+	fi
+}
+
+function search_environments
+{
+	# no parameter is required for this function
+	# no interactive mode is provided for this function
+
+	[ $MACHINE_READABLE -eq 0 ] && echo -e "\nSearching for OpenRDK environments...\n"
+
+	envlist=`locate -ebr "$RDK_MANIFEST_FILE$"`
+
+	i=1
+	for env in $envlist; do
+		[ $MACHINE_READABLE -eq 0 ] && echo -n "$i) "
+		i=$(($i+1))
+		if [ $COLORED_OUTPUT -eq 0 ]; then
+			if grep `dirname $env` $RDK_ENVIRONMENTS_FILE &>/dev/null; then	echo "`dirname $env` *"
+			else echo "`dirname $env` ?"
+			fi
+		else
+			if grep `dirname $env` $RDK_ENVIRONMENTS_FILE &>/dev/null; then	echo -e "$BOLD`dirname $env`$NORMAL"
+			else echo "`dirname $env`"
+			fi
+		fi
+	done
+
+	if [ $MACHINE_READABLE -eq 0 ]; then
+		echo
+		if [ $COLORED_OUTPUT -eq 0 ]; then
+			echo "? means that the environment is not installed in your system, * means that it is already installed."
+		else
+			echo -e "${BOLD}Bold environments$NORMAL are installed in your system, the others are not."
+		fi
+	fi
+}
+
+
+###############################
+## SET ENVIRONMENT VARIABLES ##
+###############################
+
+function set_environment
+{
+	# $1 is the environment directory
+	# interactive mode if no $1 is provided (choose the OpenRDK environment interactively)
+
+	choice=$1
+	if [ "$1" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode because you asked machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+
+		list_environments
+
+		echo -n "Please choose one OpenRDK setup (either by number, full path or alias): "
+		read choice
+	fi
+	
+	envdir=`get_env_dir $choice`
+	if [ "$envdir" == "" ]; then
+		echo "Unknown OpenRDK environment '$choice'."
+		return $ERROR_EXIT_CODE
+	else
+		if [ ! -e $envdir/$RDK_MANIFEST_FILE ]; then
+			echo "No OpenRDK environment in directory $envdir, did you compiled OpenRDK?."
+			return $ERROR_EXIT_CODE
+		else
+			if [ "$1" != "" -a "$1" != "$envdir" ]; then
+				echo "Setting OpenRDK environment to '$1' ($envdir)."
+			else
+				echo "Setting OpenRDK environment to $envdir."
+			fi
+			if [ -x $envdir/setenv ]; then
+				source $envdir/setenv;
+			else
+				echo "Directory $envdir does not contain setenv, please configure and compile the OpenRDK in this directory."
+				return $ERROR_EXIT_CODE
+			fi
+		fi
+	fi
+	clear_environment &>/dev/null
+	cd $envdir && . setenv &>/dev/null && cd - &>/dev/null
+}
+
+function set_default_environment
+{
+	defenv=`cat $RDK_DEFAULT_ENVIRONMENT_FILE`
+	if [ "$defenv" == "" ]; then
+		newdef=`tail -n 1 $RDK_ENVIRONMENTS_FILE | awk '{ print $1; }'`
+		if [ "$newdef" != "" ]; then
+			echo "The default environment has not been chosen yet: setting $newdef as the default environment."
+			choose_default_environment $newdef
+			set_environment $newdef
+		else
+			echo >&2 "No OpenRDK environment seems to be installed in this system, cannot set default environment."
+			return $ERROR_EXIT_CODE
+		fi
+	else
+		set_environment $defenv
+	fi
+}
+
+function clear_environment
+{
+	# exported RDK environment variables
+	unset RDK_LOG
+	unset RDK_LOG_COLOR
+	unset RDK_ROOT
+	unset RDK_BUILD_DIR
+
+	# removing all OpenRDK environments from PATH, LD_LIBRARY_PATH and DYLD_LIBRARY_PATH variables
+	for e in `cat ~/.OpenRDK/environments.txt | awk '{print $1}'`; do
+		[ "$PATH" != "" ] && PATH=`echo $PATH | sed -e "s@$e[^:]*@@g" -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+		[ "$LD_LIBRARY_PATH" != "" ] && LD_LIBRARY_PATH=`echo $LD_LIBRARY_PATH | sed -e "s@$e[^:]*@@g" -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+		[ "$DYLD_LIBRARY_PATH" != "" ] && DYLD_LIBRARY_PATH=`echo $DYLD_LIBRARY_PATH | sed -e "s@$e[^:]*@@g" -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'`
+	done
+
+	echo "All OpenRDK-related environment variables have been unset and OpenRDK environments have been removed from PATH, LD_LIBRARY_PATH or DYLD_LIBRARY_PATH variables."
+}
+
+###############################################
+## INSTALL, REMOVE, ALIAS and CHOOSE DEFAULT ##
+###############################################
+
+function install_environment
+{
+	# $1 is the environment to install
+	# interactive mode if no $1 is provided
+
+	envtoadd=$1
+
+	# interactive mode
+	if [ "$envtoadd" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode, because you asked for a machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+		search_environments
+
+		echo -n "Please give the number of the environment to add, or type the full path: "
+		read envtoadd
+
+		envlist=`locate -ebr "$RDK_MANIFEST_FILE$"`
+		i=1
+		for env in $envlist; do
+			if [ "$i" == "$envtoadd" ]; then
+				envtoadd=`dirname $env`
+				break
+			fi
+			i=$(($i+1))
+		done
+		echo
+	fi
+
+	# non-interactive mode
+	if [ ! -e "$envtoadd/$RDK_MANIFEST_FILE" ]; then
+		echo >&2 "Directory $envtoadd does not appear to be an OpenRDK environment directory (no $RDK_MANIFEST_FILE is present)."
+		return $ERROR_EXIT_CODE
+	fi
+
+	found=$(cat $RDK_ENVIRONMENTS_FILE | awk '{print $1}' | while read line; do
+		if [ "$line" == "$envtoadd" ]; then
+			echo 1
+			exit
+		fi
+	done)
+
+	if [ "$found" == "1" ]; then
+		echo $envtoadd is already installed as an OpenRDK environment.
+	else
+		echo $envtoadd >> $RDK_ENVIRONMENTS_FILE
+		cp $RDK_ENVIRONMENTS_FILE $RDK_ENVIRONMENTS_FILE.tmp
+		cat $RDK_ENVIRONMENTS_FILE.tmp | sort -u > $RDK_ENVIRONMENTS_FILE
+		rm $RDK_ENVIRONMENTS_FILE.tmp
+		echo $envtoadd has been installed as an OpenRDK environment.
+	fi
+}
+
+function remove_environment
+{
+	environ=$1
+	if [ "$environ" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode because you asked machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+
+		list_environments
+
+		echo -n "Please choose one OpenRDK environment to remove (either by number, full path er alias): "
+		read environ
+	fi
+	
+	environ=`get_env_dir $environ`
+	mv $RDK_ENVIRONMENTS_FILE{,.tmp}
+	found=`cat $RDK_ENVIRONMENTS_FILE.tmp | while read d a; do
+		if [ "$d" != "$environ" ]; then
+			echo $d $a >>$RDK_ENVIRONMENTS_FILE
+		else
+			echo 1
+		fi
+	done`
+	rm $RDK_ENVIRONMENTS_FILE.tmp
+	if [ "$found" == "1" ]; then echo "The environment $environ has been removed from the installed OpenRDK environments.";
+	else echo >&2 "The environment $environ has not been found among the installed OpenRDK environments."
+	fi
+}
+
+function create_alias
+{
+	environ=$1
+	newalias=$2
+	if [ "$environ" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode because you asked machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+
+		list_environments
+
+		echo -n "Please choose one OpenRDK environment (either by number, full path or alias): "
+		read environ
+	fi
+	
+	environ=`get_env_dir $environ`
+
+	if [ "$newalias" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode because you asked machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+		echo -n "Please provide a new alias for this environment (leave blank to remove the alias): "
+		read newalias
+	fi
+
+	mv $RDK_ENVIRONMENTS_FILE{,.tmp}
+	found=`cat $RDK_ENVIRONMENTS_FILE.tmp | while read d a; do
+		if [ "$d" == "$environ" ]; then
+			echo $d $newalias >>$RDK_ENVIRONMENTS_FILE
+			echo 1
+		else
+			echo $d $a >>$RDK_ENVIRONMENTS_FILE
+		fi
+	done`
+	rm $RDK_ENVIRONMENTS_FILE.tmp
+	if [ "$found" == "1" ]; then echo "The OpenRDK environment $environ has alias $newalias.";
+	else echo >&2 "The environment $environ has not been found among the installed OpenRDK environments."
+	fi
+}
+
+function choose_default_environment
+{
+	choice=$1
+	if [ "$choice" == "" ]; then
+		if [ $MACHINE_READABLE -eq 1 ]; then
+			echo >&2 "Cannot start interactive mode because you asked machine readable output."
+			return $ERROR_EXIT_CODE
+		fi
+
+		list_environments
+
+		echo -n "Please choose one OpenRDK setup to consider as default (either by number, full path or alias): "
+		read choice
+	fi
+	
+	envdir=`get_env_dir $choice`
+	if [ "$envdir" == "" ]; then
+		echo "Unknown OpenRDK environment '$choice'."
+		return $ERROR_EXIT_CODE
+	else
+		if [ ! -e $envdir/$RDK_MANIFEST_FILE ]; then
+			echo "No OpenRDK environment in directory $envdir, did you compiled OpenRDK?."
+			return $ERROR_EXIT_CODE
+		else
+			echo $envdir >$RDK_DEFAULT_ENVIRONMENT_FILE
+			if [ "$1" != "" -a "$1" != "$envdir" ]; then
+				echo "The default OpenRDK environment is now '$1' ($envdir)."
+			else
+				echo "The default OpenRDK environment is now $envdir."
+			fi
+		fi
+	fi
+}
+
+
+#########################
+## INSTALL THIS SCRIPT ##
+#########################
+
+function install_me
+{
+	# non-interactive mode
+	if [ "$1" != "" ]; then
+		cp $0 $1
+		if [ $? -ne 0 ]; then
+			echo >&2 "Cannot copy rdkenv script to directory $1, do you have permission to write to that directory?"
+			return $ERROR_EXIT_CODE
+		fi
+		return 0
+	fi
+
+	# interactive mode
+	if [ $MACHINE_READABLE -eq 1 ]; then
+		echo >&2 "Please provide the directory where the rdkenv script should have been installed."
+		return $ERROR_EXIT_CODE
+	fi
+
+	echo
+	echo "The following directories are in your PATH environment variable, that is the search path for commands in your system."
+	echo "You should install this script to one of these directories (usually /usr/bin or /usr/local/bin)."
+	echo "Please note that, in order to install the script in system directory (e.g., /usr/bin or /usr/local/bin),"
+	echo "you should have write permission to those directories (i.e., you should be root or run this script with sudo rdkenv --install-me)."
+	echo 
+	i=1
+	found_rdkenvs=0
+	for d in `echo $PATH | tr ':' '\n'`; do
+		recommended=0
+		[ "$d" == "/usr/bin" -o "$d" == "/usr/local/bin" ] && recommended=1
+		writable=0
+		[ -w $d ] && writable=1
+		
+		echo -n "$i) "
+		if [ $COLORED_OUTPUT -eq 1 ]; then
+			[ $writable -eq 1 -a $recommended -eq 1 ] && echo -en $BOLD_GREEN
+			[ $writable -eq 1 -a $recommended -eq 0 ] && echo -en $GREEN
+			[ $writable -eq 0 -a $recommended -eq 1 ] && echo -en $BOLD
+		fi
+		echo -n "$d"
+		if [ $COLORED_OUTPUT -eq 1 ]; then
+			echo -en $NORMAL
+		else
+			if [ "$d" == "/usr/bin" -o "$d" == "/usr/local/bin" ]; then
+				echo -n " (recommended)"
+			fi
+			if [ -w $d ]; then
+				echo -n " (writable)"
+			fi
+		fi
+		if [ -x $d/rdkenv ]; then
+			echo -n " *"
+			found_rdkenvs=$(($found_rdkenvs+1))
+		fi
+		echo
+		binpaths[$i]=$d
+		i=$((i+1))
+	done
+	echo
+	if [ $found_rdkenvs -eq 1 ]; then
+		if [ $COLORED_OUTPUT -eq 1 ]; then echo -en "${BOLD}NOTE$NORMAL"
+		else echo -n "NOTE"; fi
+		echo ": There is already an rdkenv installed in your system (it is the one with the asterisk *), it is better that you re-install the script in the same directory."
+	elif [ $found_rdkenvs -gt 1 ]; then
+		if [ $COLORED_OUTPUT -eq 1 ]; then echo -en "${BOLD}NOTE$NORMAL"
+		else echo -n "NOTE"; fi
+		echo ": you installed the rdkenv script in more than one system directories (they are those with the asterisk *), it is better to keep only one of them."
+	fi
+	if [ $COLORED_OUTPUT -eq 1 ]; then
+		echo -e "${BOLD}Bold$NORMAL directories are recommended, ${GREEN}green$NORMAL directories are writable."
+		echo -e "${BOLD_GREEN}Bold and green$NORMAL directories are recommended AND writable."
+	fi
+	echo -n "Directory with an asterisk * are those where there is already a copy of the rdkenv script."
+	echo -ne "\nChoose one of these directories (it should be writable) to install rdkenv to: "
+	read n
+	
+	if [ $n -gt ${#binpaths[@]} -o $n -lt 0 ]; then
+		echo >&2 "Please choose one of the options."
+		return $ERROR_EXIT_CODE
+	fi
+
+	echo "Installing $0 to ${binpaths[$n]}..."
+	cp $0 ${binpaths[$n]}
+	if [ $? -ne 0 ]; then
+		echo >&2 "Cannot copy rdkenv script to directory ${binpaths[$n]}, do you have permission to write to that directory?"
+		return $ERROR_EXIT_CODE
+	fi
+}
+
+function check_version
+{
+	found=0
+	for d in `echo $PATH | tr ':' '\n'`; do
+		if [ -x $d/rdkenv ]; then
+			found=$(($found+1))
+			if [ $0 -nt $d/rdkenv ]; then
+				echo "$d/rdkenv is an old version of the rdkenv script, you better update it."
+				return $ERROR_EXIT_CODE
+			else
+				echo "$d/rdkenv is up to date."
+				return 0
+			fi
+		fi
+	done
+}
+
+function usage
+{
+	cat <<EOF
+USAGE: `basename $0` [<options>] [<action> [<parameters>]]
+
+Version: $VERSION
+
+If `basename $0` is called without arguments, the default action is to set the default OpenRDK environment ('default' action)
+
+Actions (alternative forms in parentheses):
+
+  list (l)                 list the OpenRDK environments currently installed in your system
+  search                   search OpenRDK environments in your system and show them
+
+  set (s) [<env>]          set the current environment to <env> (<env> can be an environment directory or an alias)
+                           if no <env> is provided, the script interactively asks for it
+  default (d, def)         set the current environment to the default environment
+  clear (c, clr)           unset and clean all shell variables from OpenRDK-related information
+
+  install (i, add) [<env>] install a new OpenRDK environment in your system, if <env> is not provided, the scripts
+                           interactively asks for the environment to add
+  remove (r) [<env>]       remove an OpenRDK environment from your system, if <env> is not provided, the script interactively asks for it
+                           if no <env> is provided, the script interactively asks for the environment to remove from the system
+
+  alias [<env> [<alias>]]  create an alias <alias> for the installed environment <env>, if the <alias> or both parameters are omitted,
+                           the script interactively asks for them
+  choose-default [<env>]   choose which OpenRDK environment to use as default, if no <env> is given, the scripts interactively
+                           asks which environment to use as default
+
+  print (p) [<env>]        print the environment directory corresponding to <env> (e.g., an alias) to the standard output,
+                           if no <env> is given, print the environment directory corresponding to the default environment
+
+  help (-?)                show this help and exit
+
+  install-me               install this script in a directory contained in the PATH environment variable (so that you can call it
+                           using `basename $0`, instead of ./`basename $0`)
+
+Options:
+
+  -human          show output in a format that is easily readable by a human user (default)
+  -machine (-m)   show output in a machine-interpretable format (without labels and captions),
+                  deactivate -color as side effect and exit with an error if the script is run in interactive mode
+
+  -color          show colored output (is silently deactivated by -machine) (default)
+  -no-color (-n)  disable the colored output
+EOF
+}
+
+action=
+error=0
+unset arg
+
+while [ "$1" != "" ]; do
+	case "$1" in
+		-human )                      MACHINE_READABLE=0; COLORED_OUTPUT=1 ;;
+		-m | -machine | --machine )   MACHINE_READABLE=1; COLORED_OUTPUT=0 ;;
+		-c | -color | --color )       [ $MACHINE_READABLE -eq 0 ] && COLORED_OUTPUT=1 ;;
+		-n | -no-color | -nocolor | --no-color )
+                                              COLORED_OUTPUT=0 ;;
+		-\? )                         action=usage ;;
+		-* )                          echo >&2 "Unknown option $1."; error=1 ;;
+		
+		list | l )          action=list ;;			# list all installed environments
+		search )            action=search ;;			# list all environments (installed and possibly also uninstalled)
+
+		set | s )           action=setenv ;;			# set the environment
+		default | def | d ) action=setdefenv ;;			# set the default environment
+		clear | clr | c )   action=clearenv ;;			# unset all OpenRDK-related environment variables
+
+		install | i | add)  action=installenv ;;		# install a new environment
+		remove | rem | r )  action=removeenv ;;			# remove an environment
+		alias | a )         action=aliasenv ;;			# create an alias
+		choose-default )    action=choose_default ;;		# choose the default environment
+
+		install-me )        action=install_me ;;		# install this script in a PATH directory
+		check-version )     action=check_version ;;		# checks for version
+		help )              action=usage ;;			# show help
+
+		p | print )         action=printenv ;;                  # print environment directory
+
+		* )
+			arg=( ${arg[@]-} $1 )
+	esac
+	shift
+done
+
+if [ $error -ne 0 ]; then
+	false
+else
+	if [ "$action" == "" ]; then
+		if [ "${arg[0]}" == "" ]; then
+			set_default_environment
+		else
+			set_environment ${arg[0]}
+		fi
+	else
+		case "$action" in
+			list) list_environments ;;				# hn: ok, mn: ok, hc: na, mc: na
+			search) search_environments ;;				# hn: ok, mn: ok, hc: ok, mc: ok
+
+			setenv) set_environment ${arg[0]} ;;
+			setdefenv) set_default_environment ;;
+			clearenv) clear_environment ;;
+
+			installenv) install_environment ${arg[0]} ;;
+			removeenv) remove_environment ${arg[0]} ;;
+			aliasenv) create_alias ${arg[0]} ${arg[1]} ;;
+			choose_default) choose_default_environment ${arg[0]} ;;
+
+			install_me) install_me ;;
+			check_version) check_version ;;
+			usage) usage ;;
+			printenv ) 
+				if [ "${arg[0]}" != "" ]; then
+					echo `get_env_dir ${arg[0]}`
+				else
+					cat $RDK_DEFAULT_ENVIRONMENT_FILE
+				fi
+				;;
+			*) echo "Unknown action '$action'."; false ;;
+		esac
+	fi
+fi
+
