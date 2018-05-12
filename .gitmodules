@@ -29,19 +29,19 @@
 	path = UAV/Paparazzi/paparazzi-hardware
 	url = https://github.com/paparazzi/paparazzi-hardware.git
 [submodule "MotorControl/VESC/bldc-bootloader"]
-	path = MotorControl/VESC/bldc-bootloader
+	path = Libraries/Hardware/Motor/bldc-bootloader
 	url = https://github.com/vedderb/bldc-bootloader.git
 [submodule "MotorControl/VESC/bldc"]
-	path = MotorControl/VESC/bldc
+	path = Libraries/Hardware/Motor/bldc
 	url = https://github.com/vedderb/bldc.git
 [submodule "MotorControl/VESC/bldc-tool"]
-	path = MotorControl/VESC/bldc-tool
+	path = Libraries/Hardware/Motor/bldc-tool
 	url = https://github.com/vedderb/bldc-tool.git
 [submodule "MotorControl/VESC/bldc-logger"]
-	path = MotorControl/VESC/bldc-logger
+	path = Libraries/Hardware/Motor/bldc-logger
 	url = https://github.com/vedderb/bldc-logger.git
 [submodule "MotorControl/VESC/bldc_uart_comm_stm32f4_discovery"]
-	path = MotorControl/VESC/bldc_uart_comm_stm32f4_discovery
+	path = Libraries/Hardware/Motor/bldc_uart_comm_stm32f4_discovery
 	url = https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery.git
 [submodule "UAV/QuadcopterSystem"]
 	path = UAV/QuadcopterSystem
@@ -50,7 +50,7 @@
 	path = Libraries/Vision/libcvd
 	url = https://github.com/edrosten/libcvd.git
 [submodule "RFCommunication/Libraries/libblepp"]
-	path = RFCommunication/Libraries/libblepp
+	path = Libraries/Hardware/RemoteControl/libblepp
 	url = https://github.com/edrosten/libblepp.git
 [submodule "UAV/MatrixPilot"]
 	path = UAV/MatrixPilot
