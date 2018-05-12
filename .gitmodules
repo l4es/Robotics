@@ -158,58 +158,58 @@
 	path = Frameworks/WPILibSuite/wpiutil
 	url = https://github.com/wpilibsuite/wpiutil.git
 [submodule "VikingRobotics580/C-Style-Guide"]
-	path = VikingRobotics580/C-Style-Guide
+	path = Projects/VikingRobotics580/C-Style-Guide
 	url = https://github.com/VikingRobotics580/C-Style-Guide.git
 [submodule "VikingRobotics580/EventRobot"]
-	path = VikingRobotics580/EventRobot
+	path = Projects/VikingRobotics580/EventRobot
 	url = https://github.com/VikingRobotics580/EventRobot.git
 [submodule "VikingRobotics580/RobotCode2016"]
-	path = VikingRobotics580/RobotCode2016
+	path = Projects/VikingRobotics580/RobotCode2016
 	url = https://github.com/VikingRobotics580/RobotCode2016.git
 [submodule "IronPanthers/FRC-2015"]
-	path = IronPanthers/FRC-2015
+	path = Projects/IronPanthers/FRC-2015
 	url = https://github.com/Iron-Panthers/FRC-2015.git
 [submodule "Pollen-Robotics/luos"]
-	path = Pollen-Robotics/luos
+	path = Projects/Pollen-Robotics/luos
 	url = https://github.com/pollen-robotics/luos.git
 [submodule "Pollen-Robotics/luos-drivers"]
-	path = Pollen-Robotics/luos-drivers
+	path = Projects/Pollen-Robotics/luos-drivers
 	url = https://github.com/pollen-robotics/luos-drivers.git
 [submodule "Pollen-Robotics/robus"]
-	path = Pollen-Robotics/robus
+	path = Projects/Pollen-Robotics/robus
 	url = https://github.com/pollen-robotics/robus.git
 [submodule "Pollen-Robotics/stm32f0"]
-	path = Pollen-Robotics/stm32f0
+	path = Projects/Pollen-Robotics/stm32f0
 	url = https://github.com/pollen-robotics/stm32f0.git
 [submodule "Pollen-Robotics/stm32-mockup-hal"]
-	path = Pollen-Robotics/stm32-mockup-hal
+	path = Projects/Pollen-Robotics/stm32-mockup-hal
 	url = https://github.com/pollen-robotics/stm32-mockup-hal.git
 [submodule "Pollen-Robotics/robus-gate"]
-	path = Pollen-Robotics/robus-gate
+	path = Projects/Pollen-Robotics/robus-gate
 	url = https://github.com/pollen-robotics/robus-gate.git
 [submodule "Braun-Robotics/rust-lpc82x-hal"]
-	path = Braun-Robotics/rust-lpc82x-hal
+	path = Projects/Braun-Robotics/rust-lpc82x-hal
 	url = https://github.com/braun-robotics/rust-lpc82x-hal.git
 [submodule "Braun-Robotics/rust-lpc82x"]
-	path = Braun-Robotics/rust-lpc82x
+	path = Projects/Braun-Robotics/rust-lpc82x
 	url = https://github.com/braun-robotics/rust-lpc82x.git
 [submodule "BotBakery/wpirb"]
-	path = BotBakery/wpirb
+	path = Projects/BotBakery/wpirb
 	url = https://github.com/althebaker43/wpirb.git
 [submodule "BotBakery/frc_cpputest_examples"]
-	path = BotBakery/frc_cpputest_examples
+	path = Projects/BotBakery/frc_cpputest_examples
 	url = https://github.com/althebaker43/frc_cpputest_examples.git
 [submodule "MIDDLEWARE/mrpt"]
 	path = Libraries/Dynamics-Simulation/mrpt
 	url = https://github.com/MRPT/mrpt.git
 [submodule "HebiRobotics/hebi-cpp-examples"]
-	path = HebiRobotics/hebi-cpp-examples
+	path = Projects/HebiRobotics/hebi-cpp-examples
 	url = https://github.com/HebiRobotics/hebi-cpp-examples.git
 [submodule "MIDDLEWARE/trajopt"]
 	path = Libraries/Motion-Planning-and-Control/trajopt
 	url = https://github.com/joschu/trajopt.git
 [submodule "Purdue-ACM-SIGBots/pros"]
-	path = Purdue-ACM-SIGBots/pros
+	path = Projects/Purdue-ACM-SIGBots/pros
 	url = https://github.com/purduesigbots/pros.git
 [submodule "GetRobot/robot"]
 	path = GetRobot/robot
@@ -239,7 +239,7 @@
 	path = Frameworks/MTF
 	url = https://github.com/abhineet123/MTF.git
 [submodule "VikingRobotics4121/2015-Robot"]
-	path = VikingRobotics4121/2015-Robot
+	path = Projects/VikingRobotics4121/2015-Robot
 	url = https://github.com/FRC-4121/2015-Robot.git
 [submodule "RobotPy/robotpy-wpilib"]
 	path = RobotPy/robotpy-wpilib
