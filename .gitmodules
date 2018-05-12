@@ -29,19 +29,19 @@
 	path = UAV/Paparazzi/paparazzi-hardware
 	url = https://github.com/paparazzi/paparazzi-hardware.git
 [submodule "MotorControl/VESC/bldc-bootloader"]
-	path = Libraries/Hardware/Motor/bldc-bootloader
+	path = Libraries/Hardware/Motor/VESC/bldc-bootloader
 	url = https://github.com/vedderb/bldc-bootloader.git
 [submodule "MotorControl/VESC/bldc"]
-	path = Libraries/Hardware/Motor/bldc
+	path = Libraries/Hardware/Motor/VESC/bldc
 	url = https://github.com/vedderb/bldc.git
 [submodule "MotorControl/VESC/bldc-tool"]
-	path = Libraries/Hardware/Motor/bldc-tool
+	path = Libraries/Hardware/Motor/VESC/bldc-tool
 	url = https://github.com/vedderb/bldc-tool.git
 [submodule "MotorControl/VESC/bldc-logger"]
-	path = Libraries/Hardware/Motor/bldc-logger
+	path = Libraries/Hardware/Motor/VESC/bldc-logger
 	url = https://github.com/vedderb/bldc-logger.git
 [submodule "MotorControl/VESC/bldc_uart_comm_stm32f4_discovery"]
-	path = Libraries/Hardware/Motor/bldc_uart_comm_stm32f4_discovery
+	path = Libraries/Hardware/Motor/VESC/bldc_uart_comm_stm32f4_discovery
 	url = https://github.com/vedderb/bldc_uart_comm_stm32f4_discovery.git
 [submodule "UAV/QuadcopterSystem"]
 	path = UAV/QuadcopterSystem
@@ -292,3 +292,9 @@
 [submodule "Frameworks/Orocos/ocl"]
 	path = Frameworks/Orocos/ocl
 	url = https://github.com/orocos-toolchain/ocl.git
+[submodule "Libraries/Hardware/Motor/ODrive"]
+	path = Libraries/Hardware/Motor/ODrive/firmware
+	url = https://github.com/madcowswe/ODrive.git
+[submodule "Libraries/Hardware/Motor/ODriveHardware"]
+	path = Libraries/Hardware/Motor/ODrive/hardware
+	url = https://github.com/madcowswe/ODriveHardware.git
