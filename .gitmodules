@@ -47,7 +47,7 @@
 	path = UAV/QuadcopterSystem
 	url = https://github.com/vedderb/QuadcopterSystem.git
 [submodule "ComputerVision/Libraries/libcvd"]
-	path = ComputerVision/Libraries/libcvd
+	path = Libraries/Vision/libcvd
 	url = https://github.com/edrosten/libcvd.git
 [submodule "RFCommunication/Libraries/libblepp"]
 	path = RFCommunication/Libraries/libblepp
@@ -227,7 +227,7 @@
 	path = MIDDLEWARE/boxbot
 	url = https://github.com/ericjang/boxbot.git
 [submodule "ComputerVision/Frameworks/slam-SDVL"]
-	path = ComputerVision/Frameworks/JdeRobot/slam-SDVL
+	path = Libraries/SLAM/slam-SDVL
 	url = https://github.com/JdeRobot/slam-SDVL.git
 [submodule "MIDDLEWARE/OMPL/ompl"]
 	path = Libraries/Motion-Planning-and-Control/OMPL/ompl
