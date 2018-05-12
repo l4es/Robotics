@@ -298,3 +298,6 @@
 [submodule "Libraries/Hardware/Motor/ODriveHardware"]
 	path = Libraries/Hardware/Motor/ODrive/hardware
 	url = https://github.com/madcowswe/ODriveHardware.git
+[submodule "Libraries/Robot-Platform/OPRoS"]
+	path = Libraries/Robot-Platform/OPRoS
+	url = https://github.com/OPRoS/OPRoS.git
