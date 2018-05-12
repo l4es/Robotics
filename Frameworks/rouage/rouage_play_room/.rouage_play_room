@@ -1,0 +1,31 @@
+menu=Room
+ command=newroom,New room,images/nroom.gif
+ command=openroom,Open room,images/oroom.gif
+ command=closeroom,Close room,images/croom.gif
+ separator
+ command=exit,Exit,images/exit.gif
+menu=Robot
+ command=newrobot,New robot def,images/nrobot.gif
+ command=openrobot,Open robot def,images/orobot.gif
+ command=callrobot,Call robot,images/wrobot.gif
+ command=byerobot,Bye robot,images/srobot.gif
+menu=View
+ command=viewfloor,Floor plan,images/vfloor.gif
+ command=viewface,Face to face,images/vface.gif
+ command=viewfollow,Follow,images/vfollow.gif
+ command=viewcamera,Camera,images/vcamera.gif
+ command=vieweyes,Robot eyes,images/veyes.gif
+ command=viewanswer,Graphical answer,images/vplate.gif
+menu=Options
+ command=configure,Setup rouage play room
+menu=User
+menu=Help
+ command=help,User help
+ command=docs,Developper help
+
+status:language->loading:images/exit.gif:images/exit.gif
+status:language->ready:images/exit.gif:images/exit.gif
+
+sw -v face to face
+sw -w lutin
+sw -x lutin.test

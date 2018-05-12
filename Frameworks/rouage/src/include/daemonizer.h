@@ -1,0 +1,4 @@
+class Daemonizer{
+  Daemonizer();
+  ~Daemonizer();
+}

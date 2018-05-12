@@ -1,0 +1,115 @@
+<html><head><title>ROUAGE Home Page</title></head>  
+    <body background="images/fond.png">
+	<h1>
+	 <a href="logo.html"><img src="images/rouage.png" border="0" alt="Rouage logo"></a>
+	  ROUAGE Home Page
+	  <br>
+	</h1>
+	<h2>
+	  (RObot Utilities Assembly Generic Entities)
+	</h2>
+      <img src="images/ligne.png">
+	<div align="center" class="pageheader" style="font-weight: bold; padding: 5px;">
+	 <a href="http://sourceforge.net/projects/rouage"><img src="images/home.png" border="0" alt="HOME">home</a>
+	 <a href="http://sourceforge.net/cvs/?group_id=49120"><img src="images/cvs.png" border="0" alt="Referential CVS">cvs</a>
+	 <a href="http://sourceforge.net/project/showfiles.php?group_id=49120"><img src="images/down.png" border="0" alt="DOWNLOADS">download</a>
+	 <a href="http://sourceforge.net/tracker/?group_id=49120"><img src="images/tracker.png" border="0" alt="SUPPORT">support</a>
+	 <a href="http://sourceforge.net/pm/?group_id=49120"><img src="images/task.png" border="0" alt="TASKS">tasks</a>
+	 <a href="http://sourceforge.net/docman/?group_id=49120"><img src="images/docs.png" border="0" alt="DOCUMENTATION">docs</a>
+	 <a href="http://sourceforge.net/forum/?group_id=49120"><img src="images/forum.png" border="0" alt\
+="FORUMS">forums</a>
+	 <a href="http://sourceforge.net/mail/?group_id=49120"><img src="images/mailing.png" border="0" alt\
+="MAILING LIST">mailing</a>
+	 <a href="mailto:davidlopez@freeworld.be"><img src="images/mail.png" border="0" alt\
+="MAIL">Admin</a>
+	</div>
+	<hr>
+	<p>
+<h2>Intro:</h2>
+The idea is to create a full set of C++ classes easy to assemble.
+
+<br>
+<h2>Project scheme:</h2>
+I'm imposed my-self the following development steps<br>
+
+<ul>
+<li>Build a working perl module</li>
+<li>Test-it</li>
+<li>Perl release(Phase I)</li>
+<li>Write a C++ port</li>
+<li>Test-it</li>
+<li>Source release(Phase II)</li>
+<li>Cross-compile</li>
+<li>test-it</li>
+<li>Binary release(Phase II)</li>
+<li>Build some working robots(Phase IV)</li>
+</ul>
+
+<h2>Rouage's robot structure</h2>
+Some objects are organized hierarchically<br>
+<ul>
+<li>Robot
+ <ul>
+ <li>Symbol processing</li>
+  <ul>
+  <li>dictionary method</li>
+  <li>neural network method</li>
+  </ul>
+ <li>Natural language processing
+  <ul>
+  <li>yacc parser method</li>
+  <li>prolog method</li>
+  </ul>
+ </li>
+ <li>Space management</li>
+ <li>Motion system</li>
+ <li>Image</li>
+ <li>Sound</li>
+ <li>Touch</li>
+ <li>...</li>
+ </ul>
+</li>
+</ul>
+
+<h2>Rouage source code structure</h2>
+The source tree, on perl or c++ version, reflects the robot structure.<br>
+On each directory, we found one or more alternative modules.<br>
+By example, we must choose between a dictionary and a neural approach on symbol processing problem.<br>
+I don't know what method is the best, but I want to test the two (or more approaches).<br>
+
+
+<h2>How to pick-up components and assemble a robot.</h2>
+A robot definition is a little perl script (phase 1) with a "use module" list and a object construction sequence<br>
+You can write a definition from scratch, or use the rouage_play_room application, or the rouage on-line factory to do the same thing a bit more fun<br>
+
+<h2>Testing without electronic stuff. Th rouage play room project</h2>
+I 'm not a rich man, and I wish to be reasonably certain that the robot will work <strong>before</strong> buying the electronics<br>
+That is the rouage play room project reason to exist<br>
+
+	<div align="center" class="pageheader" style="font-weight: bold; padding: 5px;">
+	 <a href="http://sourceforge.net/projects/rouage"><img src="images/home.png" border="0" alt="HOME">home</a>
+	 <a href="http://sourceforge.net/cvs/?group_id=49120"><img src="images/cvs.png" border="0" alt="Referential CVS">cvs</a>
+	 <a href="http://sourceforge.net/project/showfiles.php?group_id=49120"><img src="images/down.png" border="0" alt="DOWNLOADS">download</a>
+	 <a href="http://sourceforge.net/tracker/?group_id=49120"><img src="images/tracker.png" border="0" alt="SUPPORT">support</a>
+	 <a href="http://sourceforge.net/pm/?group_id=49120"><img src="images/task.png" border="0" alt="TASKS">tasks</a>
+	 <a href="http://sourceforge.net/docman/?group_id=49120"><img src="images/docs.png" border="0" alt="DOCUMENTATION">docs</a>
+	 <a href="http://sourceforge.net/forum/?group_id=49120"><img src="images/forum.png" border="0" alt\
+="FORUMS">forums</a>
+	 <a href="http://sourceforge.net/mail/?group_id=49120"><img src="images/mailing.png" border="0" alt\
+="MAILING LIST">mailing</a>
+	 <a href="mailto:DavidLopez@freeworld.be"><img src="images/mail.png" border="0" alt\
+="MAIL">Admin</a>
+	</div>
+
+	<p>
+	  <center>
+	    <a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=49120&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a>
+	  </center>
+	</p>
+    </body>
+</html>
+
+
+
+
+

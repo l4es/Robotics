@@ -340,3 +340,6 @@
 [submodule "DRONE/ProjectFalcon"]
 	path = DRONE/ProjectFalcon
 	url = https://github.com/raymoss/ProjectFalcon.git
+[submodule "Frameworks/RobotFramework"]
+	path = Frameworks/RobotFramework
+	url = https://github.com/robotframework/robotframework.git

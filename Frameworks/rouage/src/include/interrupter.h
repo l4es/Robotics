@@ -1,0 +1,4 @@
+class Interrupter {
+  Interrupter();
+  ~Interrupter();
+};

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!ELEMENT robot (module+)>
+<!ELEMENT module (module*)>
+
+<!ATTLIST robot name CDATA "Noname">
+<!ATTLIST robot version CDATA "1.0">
