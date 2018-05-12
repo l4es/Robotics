@@ -221,7 +221,7 @@
 	path = Libraries/Machine-Learning/FidoProject/Hardware
 	url = https://github.com/FidoProject/Hardware.git
 [submodule "MIDDLEWARE/boxbot"]
-	path = MIDDLEWARE/boxbot
+	path = Frameworks/boxbot
 	url = https://github.com/ericjang/boxbot.git
 [submodule "ComputerVision/Frameworks/slam-SDVL"]
 	path = Libraries/SLAM/slam-SDVL
