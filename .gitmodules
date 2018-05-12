@@ -319,3 +319,15 @@
 [submodule "Frameworks/MOOS/core-moos"]
 	path = Frameworks/MOOS/core-moos
 	url = https://github.com/themoos/core-moos.git
+[submodule "DRONE/AQ32Plus"]
+	path = DRONE/AQ32Plus
+	url = https://github.com/jihlein/AQ32Plus.git
+[submodule "DRONE/BaseFlightPlus"]
+	path = DRONE/BaseFlightPlus
+	url = https://github.com/jihlein/BaseFlightPlus.git
+[submodule "DRONE/DJI/Onboard-SDK"]
+	path = DRONE/DJI/Onboard-SDK
+	url = https://github.com/dji-sdk/Onboard-SDK.git
+[submodule "DRONE/DJI/Guidance-SDK"]
+	path = DRONE/DJI/Guidance-SDK
+	url = https://github.com/dji-sdk/Guidance-SDK.git
