@@ -331,3 +331,9 @@
 [submodule "DRONE/DJI/Guidance-SDK"]
 	path = DRONE/DJI/Guidance-SDK
 	url = https://github.com/dji-sdk/Guidance-SDK.git
+[submodule "Projects/RTno2"]
+	path = Projects/RTno2
+	url = https://github.com/sugarsweetrobotics/RTno2.git
+[submodule "Projects/RTno"]
+	path = Projects/RTno
+	url = https://github.com/sugarsweetrobotics/RTno.git
