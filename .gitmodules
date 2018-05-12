@@ -221,7 +221,7 @@
 	path = Libraries/Machine-Learning/FidoProject/Hardware
 	url = https://github.com/FidoProject/Hardware.git
 [submodule "MIDDLEWARE/boxbot"]
-	path = Frameworks/boxbot
+	path = Frameworks/Boxbot/
 	url = https://github.com/ericjang/boxbot.git
 [submodule "ComputerVision/Frameworks/slam-SDVL"]
 	path = Libraries/SLAM/slam-SDVL
@@ -301,3 +301,6 @@
 [submodule "Libraries/Robot-Platform/OPRoS"]
 	path = Libraries/Robot-Platform/OPRoS
 	url = https://github.com/OPRoS/OPRoS.git
+[submodule "Frameworks/Carmen/carmen"]
+	path = Frameworks/Carmen/carmen
+	url = https://github.com/kralf/carmen.git
