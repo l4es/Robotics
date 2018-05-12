@@ -316,3 +316,6 @@
 [submodule "GIMBAL-CONTROLLER/STorM32BGC/storm32bgc"]
 	path = GIMBAL-CONTROLLER/STorM32BGC/storm32bgc
 	url = https://github.com/olliw42/storm32bgc.git
+[submodule "Frameworks/MOOS/core-moos"]
+	path = Frameworks/MOOS/core-moos
+	url = https://github.com/themoos/core-moos.git
