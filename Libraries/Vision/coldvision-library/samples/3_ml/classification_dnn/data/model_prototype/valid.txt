@@ -1,0 +1,14 @@
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_06739.jpg 0
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_06747.jpg 0
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05114.jpg 1
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05138.jpg 1
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_06630.jpg 2
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_06647.jpg 2
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05635.jpg 3
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05672.jpg 3
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05166.jpg 4
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_05178.jpg 4
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_07184.jpg 5
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_07180.jpg 5
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_07213.jpg 6
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/bvlc_oxford102/data/jpg/image_08104.jpg 6

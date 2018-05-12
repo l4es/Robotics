@@ -1,0 +1,7 @@
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_06759.jpg 0
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_05113.jpg 1
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_06628.jpg 2
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_05680.jpg 3
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_05147.jpg 4
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_07187.jpg 5
+/data/Workspace/coldvisionio/coldvision-library/samples/3_ml/classification_dnn/data/model_prototype/jpg/image_07216.jpg 6

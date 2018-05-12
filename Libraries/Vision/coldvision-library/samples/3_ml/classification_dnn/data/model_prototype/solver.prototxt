@@ -1,0 +1,40 @@
+# Settings follow the example for fine-tuning on Flickr style images:
+# http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html
+
+# this is a mock configuration to train a model with only 56 pictures for 7 classes, an optimal configuration is bellow commented out 
+# the 56 pictures are used as follows: 5x7 (training), 2x7(validation), 1x7 (testing)
+net: "train_val.prototxt"
+test_iter: 10        # enough iterations to cover the 6,149 images with a batch size of 50
+test_interval: 20  
+base_lr: 0.001        # lr for fine-tuning should be lower than when starting from scratch
+lr_policy: "step"
+gamma: 0.1
+stepsize: 20       # stepsize should also be lower, as we're closer to being done
+display: 50
+max_iter: 100
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 25
+snapshot_prefix: "snapshot"
+solver_mode: GPU
+
+
+# a good dataset should have a few thousend images per class
+# the configuration bellow is good for a dataset with ~100 classes and 50k images in total
+#net: "train_val.prototxt"
+#test_iter: 124        # enough iterations to cover the 6,149 images with a batch size of 50
+#test_interval: 500  
+#base_lr: 0.001        # lr for fine-tuning should be lower than when starting from scratch
+#lr_policy: "step"
+#gamma: 0.1
+#stepsize: 20000       # stepsize should also be lower, as we're closer to being done
+#display: 50
+#max_iter: 50000
+#momentum: 0.9
+#weight_decay: 0.0005
+#snapshot: 10000
+#snapshot_prefix: "snapshot"
+#solver_mode: GPU
+
+# Command to run:
+#/data/Downloads/caffe-master/build/tools/caffe train --solver=solver.prototxt -gpu 0

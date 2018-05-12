@@ -1,0 +1,246 @@
+"""
+Player display for 3D images.
+"""
+
+# Contributors : Nicolas BEUCHER
+
+try:
+    import tkinter as tk
+    from tkinter import ttk
+except ImportError:
+    import Tkinter as tk
+    import ttk
+
+import time
+from PIL import Image
+from PIL import ImageTk
+
+from . import constants
+from . import palette
+from . import display3D_proj
+
+# Mamba imports
+import mamba3D as m3D
+import mamba
+import mamba.utils as utils
+
+PLAYXBM = """
+#define play_width 32
+#define play_height 32
+static unsigned char play_bits[] = {
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x1c, 0x00, 0x00,
+   0x00, 0x3c, 0x00, 0x00, 0x00, 0x7c, 0x00, 0x00, 0x00, 0xfc, 0x00, 0x00,
+   0x00, 0xfc, 0x01, 0x00, 0x00, 0xfc, 0x03, 0x00, 0x00, 0xfc, 0x07, 0x00,
+   0x00, 0xfc, 0x0f, 0x00, 0x00, 0xfc, 0x0f, 0x00, 0x00, 0xfc, 0x07, 0x00,
+   0x00, 0xfc, 0x03, 0x00, 0x00, 0xfc, 0x01, 0x00, 0x00, 0xfc, 0x00, 0x00,
+   0x00, 0x7c, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00, 0x1c, 0x00, 0x00,
+   0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+"""
+STOPXBM = """
+#define stop_width 32
+#define stop_height 32
+static unsigned char stop_bits[] = {
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+"""
+
+NEXTXBM = """
+#define next_width 32
+#define next_height 32
+static unsigned char next_bits[] = {
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x60, 0x00, 0x00, 0x1c, 0x60, 0x00,
+   0x00, 0x3c, 0x60, 0x00, 0x00, 0x7c, 0x60, 0x00, 0x00, 0xfc, 0x60, 0x00,
+   0x00, 0xfc, 0x61, 0x00, 0x00, 0xfc, 0x63, 0x00, 0x00, 0xfc, 0x67, 0x00,
+   0x00, 0xfc, 0x6f, 0x00, 0x00, 0xfc, 0x6f, 0x00, 0x00, 0xfc, 0x67, 0x00,
+   0x00, 0xfc, 0x63, 0x00, 0x00, 0xfc, 0x61, 0x00, 0x00, 0xfc, 0x60, 0x00,
+   0x00, 0x7c, 0x60, 0x00, 0x00, 0x3c, 0x60, 0x00, 0x00, 0x1c, 0x60, 0x00,
+   0x00, 0x0c, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+"""
+
+PREVXBM = """
+#define prev_width 32
+#define prev_height 32
+static unsigned char prev_bits[] = {
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x30, 0x00, 0x00, 0x06, 0x38, 0x00,
+   0x00, 0x06, 0x3c, 0x00, 0x00, 0x06, 0x3e, 0x00, 0x00, 0x06, 0x3f, 0x00,
+   0x00, 0x86, 0x3f, 0x00, 0x00, 0xc6, 0x3f, 0x00, 0x00, 0xe6, 0x3f, 0x00,
+   0x00, 0xf6, 0x3f, 0x00, 0x00, 0xf6, 0x3f, 0x00, 0x00, 0xe6, 0x3f, 0x00,
+   0x00, 0xc6, 0x3f, 0x00, 0x00, 0x86, 0x3f, 0x00, 0x00, 0x06, 0x3f, 0x00,
+   0x00, 0x06, 0x3e, 0x00, 0x00, 0x06, 0x3c, 0x00, 0x00, 0x06, 0x38, 0x00,
+   0x00, 0x06, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+"""
+
+class Display3D_Player(tk.Frame):
+    
+    # Constructor ##############################################################
+    def __init__(self, master):
+    
+        # Window creation
+        tk.Frame.__init__(self, master)
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=1)
+        
+        # Local variables
+        self.x = 0
+        self.y = 0
+        self.z = 0
+        self.im_ref = None
+        self.delay = tk.IntVar()
+        self.delay.set(50)
+        
+        # Event binding
+        master.bind("<KeyRelease>", self.keyboardEvent)
+        
+    # Events handling ##########################################################
+    
+    def movingEvent(self, x, y, plane, state):
+        # When the mouse moves inside a plane
+        self.x = x
+        self.y = y
+        value = self.im_ref().getPixel((self.x, self.y, self.z))
+        self.posLabel.config(text="At (%d,%d,%d) = %d" % (self.x, self.y, self.z,value))
+    
+    def keyboardEvent(self, event):
+        # Keyboard events handling
+        if event.keycode==65:
+            # space bar is play/stop
+            if not self.playing:
+                self.play()
+            else:
+                self.stop()
+        elif event.keycode==112:
+            # page up is next
+            self.setNextImage()
+        elif event.keycode==117:
+            # page down is previous
+            self.setPrevImage()
+
+    # Public method : called by the display window #############################
+    
+    def connect(self, im_ref):
+        # Connection of the 3D image to the display
+        self.playing = False
+        self.im_ref = im_ref
+        W, H, self.L = self.im_ref().getSize()
+        self.x = 0
+        self.y = 0
+        self.z = 0
+        imsize = [W, H]
+        zoom = 1.0
+        while imsize[0]<constants._MIN or imsize[1]<constants._MIN:
+            imsize[0] = imsize[0]*2
+            imsize[1] = imsize[1]*2
+            zoom = zoom*2
+        while imsize[0]>constants._MAX or imsize[1]>constants._MAX:
+            imsize[0] = imsize[0]/2
+            imsize[1] = imsize[1]/2
+            zoom = zoom/2
+        self.columnconfigure(0, weight=1 )
+        self.rowconfigure(0, weight=1 )
+        self.planez = display3D_proj.planeFrame(self, [W,H], "Sequence", zoom=zoom)
+        self.planez.grid(row=0, column=0, sticky=tk.W+tk.E+tk.N+tk.S)
+        lb = ttk.LabelFrame(self, text="Information", labelanchor=tk.NW)
+        lb.grid(row=0, column=1, sticky=tk.W+tk.E+tk.N+tk.S)
+        self.playbm = tk.BitmapImage(data=PLAYXBM, foreground="#009900")
+        self.stopbm = tk.BitmapImage(data=STOPXBM, foreground="red")
+        self.nextbm = tk.BitmapImage(data=NEXTXBM)
+        self.prevbm = tk.BitmapImage(data=PREVXBM)
+        self.bprev = ttk.Button(lb, image=self.prevbm, command=self.setPrevImage, takefocus=0)
+        self.bprev.grid(row=0,column=0,sticky=tk.W)
+        self.bplay = ttk.Button(lb, image=self.playbm, command=self.play, takefocus=0)
+        self.bplay.grid(row=0,column=1,sticky=tk.W+tk.E)
+        self.bnext = ttk.Button(lb, image=self.nextbm, command=self.setNextImage, takefocus=0)
+        self.bnext.grid(row=0,column=2,sticky=tk.E)
+        ttk.Label(lb, text="speed : ").grid(row=1, column=0, sticky=tk.W)
+        scale = ttk.Scale(lb, from_=1000, to=50, orient=tk.HORIZONTAL, variable=self.delay)
+        scale.grid(row=1, column=1, columnspan=2, sticky=tk.W+tk.E)
+        self.volLabel = ttk.Label(lb, text="Volume : 0")
+        self.volLabel.grid(row=2, column=0, columnspan=3, sticky=tk.W)
+        self.posLabel = ttk.Label(lb, text="At (0,0,0) = 0")
+        self.posLabel.grid(row=3, column=0, columnspan=3, sticky=tk.W)
+        self.planeLabel = ttk.Label(lb, text="")
+        self.planeLabel.grid(row=4, column=0, columnspan=3, sticky=tk.W)
+        
+    def updateim(self):
+        # Updates the display (perform a rendering)
+        volume = m3D.computeVolume3D(self.im_ref())
+        if self.im_ref().getDepth()==32:
+            immb = mamba.imageMb(self.im_ref()[self.z], 8)
+            if self.master.bplane==4:
+                mamba.convert(self.im_ref()[self.z], immb)
+                self.planeLabel.config(text="Plane : all")
+            else:
+                mamba.copyBytePlane(self.im_ref()[self.z],self.master.bplane,immb)
+                self.planeLabel.config(text="Plane : %d" % (self.master.bplane))
+            im = utils.convertToPILFormat(immb.mbIm)
+        else:
+            self.planeLabel.config(text="")
+            im = utils.convertToPILFormat(self.im_ref()[self.z].mbIm)
+        if self.master.palname:
+            im.putpalette(palette.getPalette(self.master.palname))
+        self.planez.display(im)
+        self.volLabel.config(text="Volume : %d" % (volume))
+        value = self.im_ref().getPixel((self.x, self.y, self.z))
+        self.posLabel.config(text="At (%d,%d,%d) = %d" % (self.x, self.y, self.z,value))
+
+    def onHide(self):
+        self.stop()
+    def onShow(self):
+        pass
+    def onRestore(self):
+        W, H, L = self.im_ref().getSize()
+        imsize = [W, H]
+        zoom = 1.0
+        while imsize[0]<constants._MIN or imsize[1]<constants._MIN:
+            imsize[0] = imsize[0]*2
+            imsize[1] = imsize[1]*2
+            zoom = zoom*2
+        while imsize[0]>constants._MAX or imsize[1]>constants._MAX:
+            imsize[0] = imsize[0]/2
+            imsize[1] = imsize[1]/2
+            zoom = zoom/2
+        self.planez.setZoom(zoom)
+
+    # Sequence playing functions and commands ##################################
+
+    def setNextImage(self):
+        self.z = (self.z+1)%self.L
+        self.updateim()
+    def setPrevImage(self):
+        if self.z==0:
+            self.z = self.L
+        self.z = (self.z-1)
+        self.updateim()
+    def play(self):
+        self.playing = True
+        self.after(self.delay.get(), self._playerCb)
+        self.bplay.config(image=self.stopbm, command=self.stop)
+    def _playerCb(self):
+        if self.playing:
+            self.setNextImage()
+            self.after(self.delay.get(), self._playerCb)
+        else:
+            self.bplay.config(image=self.playbm, command=self.play)
+    def stop(self):
+        self.playing = False
