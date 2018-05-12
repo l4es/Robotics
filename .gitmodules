@@ -280,3 +280,9 @@
 [submodule "Projects/iNavFlight/configurator"]
 	path = Projects/iNavFlight/configurator
 	url = https://github.com/iNavFlight/inav-configurator.git
+[submodule "Projects/ROSflight/firmware"]
+	path = Projects/ROSflight/firmware
+	url = https://github.com/rosflight/firmware.git
+[submodule "Projects/ROSflight/rosflight"]
+	path = Projects/ROSflight/rosflight
+	url = https://github.com/rosflight/rosflight.git
