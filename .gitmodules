@@ -239,7 +239,7 @@
 	path = Libraries/Motion-Planning-and-Control/flann
 	url = https://github.com/mariusmuja/flann.git
 [submodule "MIDDLEWARE/MTF"]
-	path = MIDDLEWARE/MTF
+	path = Frameworks/MTF
 	url = https://github.com/abhineet123/MTF.git
 [submodule "VikingRobotics4121/2015-Robot"]
 	path = VikingRobotics4121/2015-Robot
