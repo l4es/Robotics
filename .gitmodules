@@ -307,3 +307,12 @@
 [submodule "DRONE/Drone"]
 	path = DRONE/Drone
 	url = https://github.com/bertrandF/Drone.git
+[submodule "GIMBAL-CONTROLLER/EvvGC/Hardware"]
+	path = GIMBAL-CONTROLLER/EvvGC/Hardware
+	url = https://github.com/EvvGC/Hardware.git
+[submodule "GIMBAL-CONTROLLER/EvvGC/Firmware"]
+	path = GIMBAL-CONTROLLER/EvvGC/Firmware
+	url = https://github.com/EvvGC/Firmware.git
+[submodule "GIMBAL-CONTROLLER/STorM32BGC/storm32bgc"]
+	path = GIMBAL-CONTROLLER/STorM32BGC/storm32bgc
+	url = https://github.com/olliw42/storm32bgc.git
