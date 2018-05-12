@@ -215,10 +215,10 @@
 	path = GetRobot/robot
 	url = https://github.com/Robot/robot.git
 [submodule "FidoProject/Fido"]
-	path = FidoProject/Fido
+	path = Libraries/Machine-Learning/FidoProject/Fido
 	url = https://github.com/FidoProject/Fido.git
 [submodule "FidoProject/Hardware"]
-	path = FidoProject/Hardware
+	path = Libraries/Machine-Learning/FidoProject/Hardware
 	url = https://github.com/FidoProject/Hardware.git
 [submodule "MIDDLEWARE/SFML"]
 	path = MIDDLEWARE/SFML
