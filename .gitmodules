@@ -262,3 +262,6 @@
 [submodule "Frameworks/Miro"]
 	path = Frameworks/Miro
 	url = https://github.com/hhutz/Miro.git
+[submodule "Libraries/SLAM/rt-slam"]
+	path = Libraries/SLAM/rt-slam
+	url = https://github.com/LumaPictures/rt-slam.git
