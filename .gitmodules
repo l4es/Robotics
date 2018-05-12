@@ -304,3 +304,6 @@
 [submodule "Frameworks/Carmen/carmen"]
 	path = Frameworks/Carmen/carmen
 	url = https://github.com/kralf/carmen.git
+[submodule "DRONE/Drone"]
+	path = DRONE/Drone
+	url = https://github.com/bertrandF/Drone.git
