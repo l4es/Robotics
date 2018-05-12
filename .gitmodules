@@ -286,3 +286,9 @@
 [submodule "Projects/ROSflight/rosflight"]
 	path = Projects/ROSflight/rosflight
 	url = https://github.com/rosflight/rosflight.git
+[submodule "Frameworks/Orocos/rtt"]
+	path = Frameworks/Orocos/rtt
+	url = https://github.com/orocos-toolchain/rtt.git
+[submodule "Frameworks/Orocos/ocl"]
+	path = Frameworks/Orocos/ocl
+	url = https://github.com/orocos-toolchain/ocl.git
