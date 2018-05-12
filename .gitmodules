@@ -259,3 +259,6 @@
 [submodule "Simulators/morse"]
 	path = Simulators/morse
 	url = https://github.com/morse-simulator/morse.git
+[submodule "Frameworks/Miro"]
+	path = Frameworks/Miro
+	url = https://github.com/hhutz/Miro.git
