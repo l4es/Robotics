@@ -262,3 +262,21 @@
 [submodule "Libraries/SLAM/rt-slam"]
 	path = Libraries/SLAM/rt-slam
 	url = https://github.com/LumaPictures/rt-slam.git
+[submodule "Projects/Cleanflight/firmware"]
+	path = Projects/Cleanflight/firmware
+	url = https://github.com/cleanflight/cleanflight.git
+[submodule "Projects/Cleanflight/configurator"]
+	path = Projects/Cleanflight/configurator
+	url = https://github.com/cleanflight/cleanflight-configurator.git
+[submodule "Projects/Betaflight/firmware"]
+	path = Projects/Betaflight/firmware
+	url = https://github.com/betaflight/betaflight.git
+[submodule "Projects/Betaflight/configurator"]
+	path = Projects/Betaflight/configurator
+	url = https://github.com/betaflight/betaflight-configurator.git
+[submodule "Projects/iNavFlight/firmware"]
+	path = Projects/iNavFlight/firmware
+	url = https://github.com/iNavFlight/inav.git
+[submodule "Projects/iNavFlight/configurator"]
+	path = Projects/iNavFlight/configurator
+	url = https://github.com/iNavFlight/inav-configurator.git
