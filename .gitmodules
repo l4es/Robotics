@@ -220,9 +220,6 @@
 [submodule "FidoProject/Hardware"]
 	path = Libraries/Machine-Learning/FidoProject/Hardware
 	url = https://github.com/FidoProject/Hardware.git
-[submodule "MIDDLEWARE/SFML"]
-	path = MIDDLEWARE/SFML
-	url = https://github.com/SFML/SFML.git
 [submodule "MIDDLEWARE/boxbot"]
 	path = MIDDLEWARE/boxbot
 	url = https://github.com/ericjang/boxbot.git
