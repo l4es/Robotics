@@ -355,3 +355,12 @@
 [submodule "Libraries/Behaviour-Control/behaviour_control_framework"]
 	path = Libraries/Behaviour-Control/behaviour_control_framework
 	url = https://github.com/AIS-Bonn/behaviour_control_framework.git
+[submodule "Frameworks/UZH-RPG/rpg_quadrotor_control"]
+	path = Frameworks/UZH-RPG/rpg_quadrotor_control
+	url = https://github.com/uzh-rpg/rpg_quadrotor_control.git
+[submodule "Frameworks/UZH-RPG/rpg_quadrotor_common"]
+	path = Frameworks/UZH-RPG/rpg_quadrotor_common
+	url = https://github.com/uzh-rpg/rpg_quadrotor_common.git
+[submodule "Frameworks/UZH-RPG/rpg_monocular_pose_estimator"]
+	path = Frameworks/UZH-RPG/rpg_monocular_pose_estimator
+	url = https://github.com/uzh-rpg/rpg_monocular_pose_estimator.git
