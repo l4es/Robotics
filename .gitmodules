@@ -346,3 +346,6 @@
 [submodule "Libraries/Vision/obviously"]
 	path = Libraries/Vision/obviously
 	url = https://github.com/autonohm/obviously.git
+[submodule "Simulators/FCND-Controls-CPP"]
+	path = Simulators/FCND-Controls-CPP
+	url = https://github.com/udacity/FCND-Controls-CPP.git
