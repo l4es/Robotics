@@ -343,3 +343,6 @@
 [submodule "Frameworks/RobotFramework"]
 	path = Frameworks/RobotFramework
 	url = https://github.com/robotframework/robotframework.git
+[submodule "Libraries/Vision/obviously"]
+	path = Libraries/Vision/obviously
+	url = https://github.com/autonohm/obviously.git
