@@ -349,3 +349,9 @@
 [submodule "Simulators/FCND-Controls-CPP"]
 	path = Simulators/FCND-Controls-CPP
 	url = https://github.com/udacity/FCND-Controls-CPP.git
+[submodule "Libraries/Behaviour-Control/state_controller_library"]
+	path = Libraries/Behaviour-Control/state_controller_library
+	url = https://github.com/AIS-Bonn/state_controller_library.git
+[submodule "Libraries/Behaviour-Control/behaviour_control_framework"]
+	path = Libraries/Behaviour-Control/behaviour_control_framework
+	url = https://github.com/AIS-Bonn/behaviour_control_framework.git
