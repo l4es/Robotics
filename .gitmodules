@@ -364,3 +364,6 @@
 [submodule "Frameworks/UZH-RPG/rpg_monocular_pose_estimator"]
 	path = Frameworks/UZH-RPG/rpg_monocular_pose_estimator
 	url = https://github.com/uzh-rpg/rpg_monocular_pose_estimator.git
+[submodule "Libraries/awesome-robotics-libraries"]
+	path = Libraries/awesome-robotics-libraries
+	url = https://github.com/jslee02/awesome-robotics-libraries.git
