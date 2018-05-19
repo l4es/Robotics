@@ -367,3 +367,6 @@
 [submodule "Libraries/awesome-robotics-libraries"]
 	path = Libraries/awesome-robotics-libraries
 	url = https://github.com/jslee02/awesome-robotics-libraries.git
+[submodule "Libraries/LDTPLibrary"]
+	path = Libraries/LDTPLibrary
+	url = https://github.com/wywincl/LDTPLibrary.git
