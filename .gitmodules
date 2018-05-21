@@ -409,3 +409,12 @@
 [submodule "Libraries/Hardware/Sensors/robot-odometry"]
 	path = Libraries/Hardware/Sensors/robot-odometry
 	url = https://github.com/jmaye/robot-odometry.git
+[submodule "Libraries/Hardware/Motor/libdynamixel"]
+	path = Libraries/Hardware/Motor/libdynamixel
+	url = https://github.com/jmaye/libdynamixel.git
+[submodule "Libraries/Hardware/Motor/libnanotec"]
+	path = Libraries/Hardware/Motor/libnanotec
+	url = https://github.com/kralf/libnanotec.git
+[submodule "Libraries/Hardware/Motor/libpololu"]
+	path = Libraries/Hardware/Motor/libpololu
+	url = https://github.com/kralf/libpololu.git
