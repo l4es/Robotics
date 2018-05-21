@@ -436,3 +436,9 @@
 [submodule "Libraries/Vision/libpmd"]
 	path = Libraries/Vision/libpmd
 	url = https://github.com/ethz-asl/libpmd.git
+[submodule "Libraries/Hardware/Sensors/libxsensmt"]
+	path = Libraries/Hardware/Sensors/libxsensmt
+	url = https://github.com/ethz-asl/libxsensmt.git
+[submodule "Libraries/Hardware/Sensors/liboptoforce"]
+	path = Libraries/Hardware/Sensors/liboptoforce
+	url = https://github.com/ethz-asl/liboptoforce.git
