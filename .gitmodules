@@ -373,3 +373,6 @@
 [submodule "Libraries/Vision/libvisensor"]
 	path = Libraries/Vision/libvisensor
 	url = https://github.com/ethz-asl/libvisensor.git
+[submodule "Libraries/Protocol/libpcan"]
+	path = Libraries/Protocol/libpcan
+	url = https://github.com/kralf/libpcan.git
