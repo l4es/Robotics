@@ -370,3 +370,6 @@
 [submodule "Libraries/LDTPLibrary"]
 	path = Libraries/LDTPLibrary
 	url = https://github.com/wywincl/LDTPLibrary.git
+[submodule "Libraries/Vision/libvisensor"]
+	path = Libraries/Vision/libvisensor
+	url = https://github.com/ethz-asl/libvisensor.git
