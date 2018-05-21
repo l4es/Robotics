@@ -445,3 +445,6 @@
 [submodule "Libraries/Protocol/libcanplusplus"]
 	path = Libraries/Protocol/libcanplusplus
 	url = https://github.com/ethz-asl/libcanplusplus.git
+[submodule "Libraries/Vision/libseekthermal"]
+	path = Libraries/Vision/libseekthermal
+	url = https://github.com/ethz-asl/libseekthermal.git
