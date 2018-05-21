@@ -427,3 +427,12 @@
 [submodule "Libraries/Hardware/Platform/librobox"]
 	path = Libraries/Hardware/Platform/librobox
 	url = https://github.com/kralf/librobox.git
+[submodule "Libraries/Vision/libmv"]
+	path = Libraries/Vision/libmv
+	url = https://github.com/jmaye/libmv.git
+[submodule "Libraries/Vision/libfovis"]
+	path = Libraries/Vision/libfovis
+	url = https://github.com/srv/libfovis.git
+[submodule "Libraries/Vision/libpmd"]
+	path = Libraries/Vision/libpmd
+	url = https://github.com/ethz-asl/libpmd.git
