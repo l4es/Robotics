@@ -382,3 +382,30 @@
 [submodule "Libraries/Protocol/libcpc"]
 	path = Libraries/Protocol/libcpc
 	url = https://github.com/kralf/libcpc.git
+[submodule "Libraries/Hardware/Sensors/libaxt"]
+	path = Libraries/Hardware/Sensors/libaxt
+	url = https://github.com/kralf/libaxt.git
+[submodule "Libraries/Hardware/Sensors/libnav420"]
+	path = Libraries/Hardware/Sensors/libnav420
+	url = https://github.com/kralf/libnav420.git
+[submodule "Libraries/Hardware/Sensors/libnsick"]
+	path = Libraries/Hardware/Sensors/libnsick
+	url = https://github.com/kralf/libnsick.git
+[submodule "Libraries/Hardware/Sensors/libomnistar"]
+	path = Libraries/Hardware/Sensors/libomnistar
+	url = https://github.com/kralf/libomnistar.git
+[submodule "Libraries/Hardware/Sensors/libdsp3000"]
+	path = Libraries/Hardware/Sensors/libdsp3000
+	url = https://github.com/kralf/libdsp3000.git
+[submodule "Libraries/Hardware/Sensors/libvelodyne"]
+	path = Libraries/Hardware/Sensors/libvelodyne
+	url = https://github.com/jmaye/libvelodyne.git
+[submodule "Libraries/Hardware/Sensors/libposlv"]
+	path = Libraries/Hardware/Sensors/libposlv
+	url = https://github.com/jmaye/libposlv.git
+[submodule "Libraries/Hardware/Sensors/libdai"]
+	path = Libraries/Hardware/Sensors/libdai
+	url = https://github.com/jmaye/libdai.git
+[submodule "Libraries/Hardware/Sensors/robot-odometry"]
+	path = Libraries/Hardware/Sensors/robot-odometry
+	url = https://github.com/jmaye/robot-odometry.git
