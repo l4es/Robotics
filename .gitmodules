@@ -379,3 +379,6 @@
 [submodule "Libraries/Protocol/libcan"]
 	path = Libraries/Protocol/libcan
 	url = https://github.com/kralf/libcan.git
+[submodule "Libraries/Protocol/libcpc"]
+	path = Libraries/Protocol/libcpc
+	url = https://github.com/kralf/libcpc.git
