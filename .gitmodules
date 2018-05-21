@@ -448,3 +448,6 @@
 [submodule "Libraries/Vision/libseekthermal"]
 	path = Libraries/Vision/libseekthermal
 	url = https://github.com/ethz-asl/libseekthermal.git
+[submodule "Libraries/Vision/libVISCA2"]
+	path = Libraries/Vision/libVISCA2
+	url = https://github.com/mkoppanen/libVISCA2.git
