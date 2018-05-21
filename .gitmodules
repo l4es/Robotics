@@ -442,3 +442,6 @@
 [submodule "Libraries/Hardware/Sensors/liboptoforce"]
 	path = Libraries/Hardware/Sensors/liboptoforce
 	url = https://github.com/ethz-asl/liboptoforce.git
+[submodule "Libraries/Protocol/libcanplusplus"]
+	path = Libraries/Protocol/libcanplusplus
+	url = https://github.com/ethz-asl/libcanplusplus.git
