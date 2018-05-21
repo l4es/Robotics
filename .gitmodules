@@ -418,3 +418,12 @@
 [submodule "Libraries/Hardware/Motor/libpololu"]
 	path = Libraries/Hardware/Motor/libpololu
 	url = https://github.com/kralf/libpololu.git
+[submodule "Libraries/Hardware/Platform/robox-linux"]
+	path = Libraries/Hardware/Platform/robox-linux
+	url = https://github.com/kralf/robox-linux.git
+[submodule "Libraries/Hardware/Platform/libsmartter"]
+	path = Libraries/Hardware/Platform/libsmartter
+	url = https://github.com/kralf/libsmartter.git
+[submodule "Libraries/Hardware/Platform/librobox"]
+	path = Libraries/Hardware/Platform/librobox
+	url = https://github.com/kralf/librobox.git
