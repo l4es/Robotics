@@ -454,3 +454,33 @@
 [submodule "Libraries/Protocol/rotor"]
 	path = Libraries/Protocol/rotor
 	url = https://github.com/kralf/rotor.git
+[submodule "Libraries/Hardware/Motor/Tarocco"]
+	path = Libraries/Hardware/Motor/Tarocco
+	url = https://github.com/ottoragam/Tarocco.git
+[submodule "Libraries/Hardware/Motor/bldc-drive"]
+	path = Libraries/Hardware/Motor/bldc-drive
+	url = https://github.com/pekkaroi/bldc-drive.git
+[submodule "Libraries/Hardware/Motor/nano_stepper"]
+	path = Libraries/Hardware/Motor/nano_stepper
+	url = https://github.com/Misfittech/nano_stepper.git
+[submodule "Libraries/Hardware/Motor/ottercontrol"]
+	path = Libraries/Hardware/Motor/ottercontrol
+	url = https://github.com/NiklasFauth/ottercontrol.git
+[submodule "Libraries/Hardware/Motor/uStepper"]
+	path = Libraries/Hardware/Motor/uStepper
+	url = https://github.com/uStepper/uStepper.git
+[submodule "Libraries/Hardware/Motor/STM32-Scalar-Motor-Control"]
+	path = Libraries/Hardware/Motor/STM32-Scalar-Motor-Control
+	url = https://github.com/Montanari9/STM32-Scalar-Motor-Control.git
+[submodule "Libraries/Hardware/Motor/MotorControl"]
+	path = Libraries/Hardware/Motor/MotorControl
+	url = https://github.com/dlynch7/MotorControl.git
+[submodule "Libraries/Hardware/Motor/Motor-Control-with-Tiva-EK-TM4C123GXL"]
+	path = Libraries/Hardware/Motor/Motor-Control-with-Tiva-EK-TM4C123GXL
+	url = https://github.com/ntua-cslep/Motor-Control-with-Tiva-EK-TM4C123GXL.git
+[submodule "Libraries/Hardware/Motor/DC-Motor-Control-TLE94112EL"]
+	path = Libraries/Hardware/Motor/DC-Motor-Control-TLE94112EL
+	url = https://github.com/Infineon/DC-Motor-Control-TLE94112EL.git
+[submodule "Libraries/Hardware/Motor/sw_motor_control"]
+	path = Libraries/Hardware/Motor/sw_motor_control
+	url = https://github.com/xcore/sw_motor_control.git
