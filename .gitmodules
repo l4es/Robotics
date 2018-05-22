@@ -451,3 +451,6 @@
 [submodule "Libraries/Vision/libVISCA2"]
 	path = Libraries/Vision/libVISCA2
 	url = https://github.com/mkoppanen/libVISCA2.git
+[submodule "Libraries/Protocol/rotor"]
+	path = Libraries/Protocol/rotor
+	url = https://github.com/kralf/rotor.git
