@@ -487,3 +487,9 @@
 [submodule "Frameworks/MRROC++/mrrocpp"]
 	path = Frameworks/MRROC++/mrrocpp
 	url = https://github.com/ptroja/mrrocpp.git
+[submodule "Frameworks/youbot_driver"]
+	path = Frameworks/Youbot/driver
+	url = https://github.com/youbot/youbot_driver.git
+[submodule "Frameworks/Youbot/youbot_applications"]
+	path = Frameworks/Youbot/applications
+	url = https://github.com/youbot/youbot_applications.git
