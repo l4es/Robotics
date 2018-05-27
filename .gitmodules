@@ -484,3 +484,6 @@
 [submodule "Libraries/Hardware/Motor/sw_motor_control"]
 	path = Libraries/Hardware/Motor/sw_motor_control
 	url = https://github.com/xcore/sw_motor_control.git
+[submodule "Frameworks/MRROC++/mrrocpp"]
+	path = Frameworks/MRROC++/mrrocpp
+	url = https://github.com/ptroja/mrrocpp.git
