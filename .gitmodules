@@ -496,3 +496,27 @@
 [submodule "Libraries/Hardware/Motor/smartMotorLib"]
 	path = Libraries/Hardware/Motor/smartMotorLib
 	url = https://github.com/jpearman/smartMotorLib.git
+[submodule "Libraries/Hardware/Motor/Trinamic/TMC26XStepper"]
+	path = Libraries/Hardware/Motor/Trinamic/TMC26XStepper
+	url = https://github.com/trinamic/TMC26XStepper.git
+[submodule "Libraries/Hardware/Motor/Trinamic/TRAMS"]
+	path = Libraries/Hardware/Motor/Trinamic/TRAMS
+	url = https://github.com/trinamic/TRAMS.git
+[submodule "Libraries/Hardware/Motor/Trinamic/TRAMS-Firmware"]
+	path = Libraries/Hardware/Motor/Trinamic/TRAMS-Firmware
+	url = https://github.com/trinamic/TRAMS-Firmware.git
+[submodule "Libraries/Hardware/Motor/Trinamic/stepRocker-PCB"]
+	path = Libraries/Hardware/Motor/Trinamic/stepRocker-PCB
+	url = https://github.com/trinamic/stepRocker-PCB.git
+[submodule "Libraries/Hardware/Motor/Trinamic/stepRocker-Library"]
+	path = Libraries/Hardware/Motor/Trinamic/stepRocker-Library
+	url = https://github.com/trinamic/stepRocker-Library.git
+[submodule "Libraries/Hardware/Motor/Trinamic/stepRocker-Update"]
+	path = Libraries/Hardware/Motor/Trinamic/stepRocker-Update
+	url = https://github.com/trinamic/stepRocker-Update.git
+[submodule "Libraries/Hardware/Motor/Trinamic/stepRocker-Android"]
+	path = Libraries/Hardware/Motor/Trinamic/stepRocker-Android
+	url = https://github.com/trinamic/stepRocker-Android.git
+[submodule "Libraries/Hardware/Motor/Trinamic/TOS-100"]
+	path = Libraries/Hardware/Motor/Trinamic/TOS-100
+	url = https://github.com/trinamic/TOS-100.git
