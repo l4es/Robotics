@@ -520,3 +520,6 @@
 [submodule "Libraries/Hardware/Motor/Trinamic/TOS-100"]
 	path = Libraries/Hardware/Motor/Trinamic/TOS-100
 	url = https://github.com/trinamic/TOS-100.git
+[submodule "Libraries/Hardware/Motor/libtmcl"]
+	path = Libraries/Hardware/Motor/libtmcl
+	url = https://github.com/mhaberler/libtmcl.git
