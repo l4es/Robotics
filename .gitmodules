@@ -523,3 +523,6 @@
 [submodule "Libraries/Hardware/Motor/libtmcl"]
 	path = Libraries/Hardware/Motor/libtmcl
 	url = https://github.com/mhaberler/libtmcl.git
+[submodule "Libraries/Hardware/Motor/SilentStepStick"]
+	path = Libraries/Hardware/Motor/SilentStepStick
+	url = https://github.com/watterott/SilentStepStick.git
