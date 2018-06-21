@@ -526,3 +526,9 @@
 [submodule "Libraries/Hardware/Motor/SilentStepStick"]
 	path = Libraries/Hardware/Motor/SilentStepStick
 	url = https://github.com/watterott/SilentStepStick.git
+[submodule "Simulators/ARGoS3/argos3"]
+	path = Simulators/ARGoS3/argos3
+	url = https://github.com/ilpincy/argos3.git
+[submodule "Simulators/ARGoS3/argos3-kilobot"]
+	path = Simulators/ARGoS3/argos3-kilobot
+	url = https://github.com/ilpincy/argos3-kilobot.git
