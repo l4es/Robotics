@@ -535,3 +535,6 @@
 [submodule "Libraries/Hardware/Motor/firmatacpp"]
 	path = Libraries/Hardware/Motor/firmatacpp
 	url = https://github.com/simlrh/firmatacpp.git
+[submodule "Frameworks/Johnny-Five/johnny-five"]
+	path = Frameworks/Johnny-Five/johnny-five
+	url = https://github.com/rwaldron/johnny-five.git
