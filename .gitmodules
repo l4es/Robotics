@@ -538,3 +538,18 @@
 [submodule "Frameworks/Johnny-Five/johnny-five"]
 	path = Frameworks/Johnny-Five/johnny-five
 	url = https://github.com/rwaldron/johnny-five.git
+[submodule "Projects/Decepticon/Communication-Software"]
+	path = Projects/Decepticon/Communication-Software
+	url = https://github.com/hsnoble/Decepticon-Communication-Software
+[submodule "Projects/MJRobot/Web-RPi-Robot"]
+	path = Projects/MJRobot/Web-RPi-Robot
+	url = https://github.com/Mjrovai/MJRoBot-Web-RPi-Robot
+[submodule "Projects/Makerbot"]
+	path = Projects/Makerbot
+	url = https://github.com/kylemcdonald/Makerbot
+[submodule "Projects/Electron-Dust/ScrewPicker"]
+	path = Projects/Electron-Dust/ScrewPicker
+	url = https://github.com/T-Kuhn/ScrewPicker
+[submodule "Projects/Electron-Dust/DeltaPicker"]
+	path = Projects/Electron-Dust/DeltaPicker
+	url = https://github.com/T-Kuhn/DeltaPicker
